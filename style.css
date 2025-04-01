@@ -1,282 +1,284 @@
-/* ----------------------------------------------
-   🎨 ESTILOS GENERALES PARA EL PORTFOLIO DE IRATXE
--------------------------------------------------- */
+/* ---------------------------------------------
+🎨 ESTILOS GENERALES DEL PORTFOLIO DE IRATXE OLAIZOLA
+------------------------------------------------- */
 
-/* Fuente general */
+/* Tipografía base */
 body {
     font-family: 'Montserrat', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f9f9f9;
-    color: #333;
+    background-color: #ffffff; /* Fondo blanco profesional */
+    color: #333333; /* Texto gris oscuro */
+    line-height: 1.6;
 }
 
-/* ----------------------------------------------
-   🌸 BARRA DE NAVEGACIÓN
--------------------------------------------------- */
-nav {
-    width: 100%;
-    background-color: #f8cdd8;
-    padding: 10px 0;
-    text-align: center;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    margin-top: 30px; /* Separación respecto al contenido superior */
+/* 🎨 Paleta de colores principales como variables */
+:root {
+    --main-pink: #e89cb9;     /* Rosa suave */
+    --dark-pink: #a04e72;     /* Rosa oscuro (botones, títulos) */
+    --light-gray: #f5f5f5;    /* Gris muy claro (fondos) */
+    --button-hover: #822d50;  /* Color del botón al pasar el mouse */
 }
 
-nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-}
-
-nav ul li a {
-    color: #6a1b4d;
+/* ---------------------------------------------
+🔗 ENLACES GENERALES
+------------------------------------------------- */
+a {
+    color: var(--dark-pink);
     text-decoration: none;
-    font-size: 18px;
-    padding: 10px 15px;
-    border-radius: 5px;
-    transition: background-color 0.3s;
+}
+a:hover {
+    text-decoration: underline;
 }
 
-nav ul li a:hover {
-    background-color: #ffb6c1;
-}
-
-/* ----------------------------------------------
-   📸 ENCABEZADO CON FOTO
--------------------------------------------------- */
+/* ---------------------------------------------
+🧍‍♀️ ENCABEZADO CON FOTO Y TEXTO
+------------------------------------------------- */
 header {
-    background-color: #f8cdd8;
-    color: white;
+    background-color: var(--light-gray);
+    padding: 40px 20px;
     text-align: center;
-    padding: 50px 20px;
-    border-radius: 0 0 20px 20px;
+    border-bottom: 2px solid var(--main-pink);
 }
 
 .header-container {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    gap: 20px;
-    flex-wrap: wrap;
-    padding-bottom: 20px; /* Añadido para separar la imagen del menú */
+    gap: 15px;
 }
 
 .header-img {
-    width: 150px;
-    height: 150px;
-    object-fit: cover;
+    width: 140px;
+    height: 140px;
     border-radius: 50%;
-    border: 3px solid white;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    border: 3px solid var(--main-pink);
+    object-fit: cover;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
-.header-text {
-    text-align: left;
-}
-
-header h1 {
-    margin: 15px 0 5px;
+.header-text h1 {
     font-size: 2.5em;
-    font-weight: bold;
-    color: #6a1b4d;
+    margin: 10px 0 0;
+    color: var(--dark-pink);
 }
 
-header p {
+.header-text p {
     font-size: 1.2em;
-    color: #6a1b4d;
+    color: #666;
 }
 
-/* ----------------------------------------------
-   🌷 SECCIONES GENERALES
--------------------------------------------------- */
+/* ---------------------------------------------
+🌍 SELECTOR DE IDIOMA (arriba a la derecha)
+------------------------------------------------- */
+.lang-switcher {
+    text-align: right;
+    padding: 10px 20px;
+    font-size: 0.9em;
+    background-color: var(--light-gray);
+}
+
+.lang-switcher span {
+    font-weight: bold;
+    color: var(--dark-pink);
+    text-decoration: underline;
+    cursor: default;
+}
+
+/* ---------------------------------------------
+🧭 NAVEGACIÓN STICKY (se queda arriba al hacer scroll)
+------------------------------------------------- */
+nav {
+    position: sticky;
+    top: 0;
+    background-color: white;
+    border-bottom: 1px solid #ddd;
+    padding: 10px 0;
+    z-index: 999;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav a {
+    color: #444;
+    font-weight: 600;
+    padding: 8px 12px;
+}
+
+nav a:hover {
+    background-color: var(--main-pink);
+    color: white;
+    border-radius: 4px;
+}
+
+/* ---------------------------------------------
+📦 SECCIONES PRINCIPALES
+------------------------------------------------- */
 section {
-    background-color: #f8cdd8;
-    color: #6a1b4d;
+    padding: 60px 20px;
     text-align: center;
-    padding: 50px 20px;
-    margin: 20px;
-    border-radius: 15px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    border-bottom: 1px solid #eee;
 }
 
 section h2 {
-    font-size: 2.5rem;
+    font-size: 2em;
     margin-bottom: 20px;
-    text-transform: uppercase;
+    color: var(--dark-pink);
 }
 
 section p, section ul {
-    font-size: 1.2rem;
-    line-height: 1.6;
     max-width: 800px;
-    margin: 0 auto 20px;
+    margin: auto;
+    font-size: 1.1em;
+    color: #555;
 }
 
-section ul {
-    padding-left: 20px;
+/* Listas alineadas a la izquierda */
+ul {
     text-align: left;
+    padding-left: 30px;
 }
 
-/* ----------------------------------------------
-   🧠 BOTONES Y ENLACES
--------------------------------------------------- */
-.button-container {
+/* ---------------------------------------------
+📘 CAJAS DE PROYECTOS Y ESTUDIOS
+------------------------------------------------- */
+.project-box {
+    background-color: var(--light-gray);
+    border: 1px solid #ddd;
+    border-left: 6px solid var(--main-pink);
+    padding: 30px 40px; /* ⬅️ Añadimos padding lateral (antes era 20px) */
+    text-align: left;
+    border-radius: 8px;
+    box-sizing: border-box;
+    margin: 30px auto;
+    max-width: 900px; /* ⬅️ Limita el ancho para que no se pegue a los bordes */
+}
+
+#curso-projects {
+    padding: 40px 20px;
     display: flex;
-    gap: 20px;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Título de cada caja */
+.project-box h3 {
+    color: var(--dark-pink);
+    margin-top: 0;
+}
+
+/* Estilo específico para la caja del curso (centrado visual) */
+.centered-box {
+    text-align: center;
+    max-width: 800px;
+    margin: 30px auto;
+}
+
+/* ---------------------------------------------
+🎓 CONTENEDOR PARA DOS CAJAS UNA JUNTO A OTRA
+------------------------------------------------- */
+.degree-wrapper {
+    display: flex;
     justify-content: center;
+    gap: 5px; /* 🔧 Menor separación entre cajas */
     flex-wrap: wrap;
     margin-top: 30px;
 }
 
-.button {
-    background-color: #ffb6c1;
+/* Cada caja: tamaño igual, compacto y sin márgenes extra */
+.degree-wrapper .project-box {
+    flex: 1 1 280px;       /* Base width más estrecha */
+    max-width: 420px;      /* Limita el ancho para que no se desmadre */
+}
+
+/* ---------------------------------------------
+🎯 BOTONES GENERALES
+------------------------------------------------- */
+.button,
+.button-container a {
+    display: inline-block;
+    background-color: var(--dark-pink);
     color: white;
-    padding: 10px 20px;
-    text-decoration: none;
+    padding: 10px 18px;
     border-radius: 5px;
-    transition: background-color 0.3s, transform 0.3s;
+    transition: background-color 0.3s ease;
+    font-weight: bold;
+    text-align: center;
+}
+.button:hover,
+.button-container a:hover {
+    background-color: var(--button-hover);
 }
 
-.button:hover {
-    background-color: #6a1b4d;
-    transform: scale(1.05);
-}
-
-/* ----------------------------------------------
-   🌸 REDES SOCIALES
--------------------------------------------------- */
-.social-links {
+/* Contenedor de botones agrupados */
+.button-container {
+    margin-top: 20px;
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
     gap: 15px;
+}
+
+/* ---------------------------------------------
+📱 REDES SOCIALES
+------------------------------------------------- */
+.social-links {
     margin-top: 10px;
+    font-size: 1em;
 }
 
-.social-links img {
-    width: 35px;
-    transition: transform 0.3s ease-in-out;
-}
-
-.social-links img:hover {
-    transform: scale(1.2);
-}
-
-/* ----------------------------------------------
-   🎓 ESTILO UNIVERSIDAD (bloques de grados)
--------------------------------------------------- */
-.uni-box {
-    background-color: #fff0f5;
-    padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-    margin: 20px auto;
-    max-width: 800px;
-    text-align: left;
-}
-
-.uni-box h3 {
-    color: #6a1b4d;
-    font-size: 1.8rem;
-    margin-bottom: 10px;
-}
-
-.uni-box p {
-    font-size: 1.1rem;
-    line-height: 1.6;
-    margin-bottom: 15px;
-}
-
-/* ----------------------------------------------
-   📨 FORMULARIO DE CONTACTO
--------------------------------------------------- */
-.contact-form {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    max-width: 500px;
-    margin: 20px auto;
-}
-
-.contact-form input,
-.contact-form textarea {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 1rem;
-    resize: vertical;
-}
-
-.contact-form button {
-    background-color: #6a1b4d;
-    color: white;
-    border: none;
-    padding: 10px;
-    border-radius: 5px;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.contact-form button:hover {
-    background-color: #ffb6c1;
-}
-
-/* ----------------------------------------------
-   🦶 PIE DE PÁGINA
--------------------------------------------------- */
+/* ---------------------------------------------
+🦶 PIE DE PÁGINA
+------------------------------------------------- */
 footer {
-    background-color: #eee;
+    background-color: #fafafa;
     text-align: center;
     padding: 20px;
-    color: #333;
-    font-size: 0.9rem;
-    margin-top: 30px;
+    font-size: 0.9em;
+    color: #777;
 }
 
-/* ----------------------------------------------
-   📱 DISEÑO RESPONSIVO
--------------------------------------------------- */
+/* ---------------------------------------------
+📱 RESPONSIVE PARA MÓVILES
+------------------------------------------------- */
 @media (max-width: 768px) {
-    header h1 {
+    nav ul {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .header-text h1 {
         font-size: 2em;
     }
 
-    header p {
-        font-size: 1.1em;
-    }
-
-    section {
-        width: 90%;
-        margin: 20px auto;
-    }
-
-    .header-container {
+    /* Las cajas se apilan una sobre otra en móviles */
+    .degree-wrapper {
         flex-direction: column;
-        text-align: center;
+        gap: 20px;
     }
 
-    .header-text {
-        text-align: center;
+    .degree-wrapper .project-box {
+        max-width: 100%;
     }
 }
+/* Contenedor para alinear las dos cajas del curso */
+.project-wrapper {
+    display: flex;
+    justify-content: center;
+    gap: 10px;               /* Espacio entre cajas */
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
 
-/* ----------------------------------------------
-   🎯 ESTILO PROYECTOS (individuales)
--------------------------------------------------- */
-.project {
-    background-color: #fff0f5;
-    padding: 20px;
-    border-radius: 10px;
-    margin-bottom: 20px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    max-width: 700px;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: left;
+.project-wrapper .project-box {
+    flex: 1 1 350px;
+    max-width: 450px;
 }
