@@ -2,112 +2,237 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="Professional portfolio of Iratxe Olaizola, journalist, advertiser, and community manager." />
-  <title>Iratxe Olaizola | Community Manager</title>
-
-  <!-- Fuente y estilos -->
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Professional portfolio of Iratxe Olaizola — journalist, advertiser, community manager and digital strategist." />
+  <title>Iratxe Olaizola | Community Manager & Digital Strategist</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,700;1,400&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-<!-- 🌍 Selector de idioma -->
+
+<!-- 🌍 Idiomas -->
 <div class="lang-switcher">
-  <a href="index.html" lang="es" hreflang="es">ES</a> |
-  <span>EN</span> |
-  <a href="index-eu.html" lang="eu" hreflang="eu">EU</a>
+  <a href="index.html">ES</a><span class="sep">·</span>
+  <span class="active-lang">EN</span><span class="sep">·</span>
+  <a href="index-eu.html">EU</a><span class="sep">·</span>
+  <a href="index-sv.html">SV</a>
 </div>
 
-<!-- Encabezado -->
-<header>
-  <div class="header-container">
-    <img src="foto.png" alt="Photo of Iratxe Olaizola" class="header-img" />
-    <div class="header-text">
-      <h1>Iratxe Olaizola</h1>
-      <p>Community Manager | Creative Digital Strategist</p>
+<!-- HERO -->
+<header class="hero">
+  <div class="hero-inner">
+    <div class="hero-photo">
+      <img src="foto.png" alt="Iratxe Olaizola" />
+    </div>
+    <div class="hero-text">
+      <p class="hero-eyebrow">Portfolio · Community · Research</p>
+      <h1 class="hero-name">Iratxe<br><em>Olaizola</em></h1>
+      <p class="hero-tagline">Community Manager & Digital Strategist</p>
+      <div class="hero-pills">
+        <span class="pill">🎮 FUZED Borås</span>
+        <span class="pill">🤖 AI & Communication</span>
+        <span class="pill">📰 Journalism</span>
+        <span class="pill">💡 Advertising</span>
+        <span class="pill">💻 Code</span>
+        <span class="pill">🇸🇪 Svenska</span>
+      </div>
+      <div class="hero-cta">
+        <a href="#projects" class="btn-primary">See projects →</a>
+        <a href="#contact" class="btn-secondary">Contact</a>
+      </div>
     </div>
   </div>
-
-  <!-- Menú de navegación -->
-  <nav>
-    <ul>
-      <li><a href="#about">About Me</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#university">Education</a></li>
-      <li><a href="#contact">Contact</a></li>
-      <li><a href="#cv">CV</a></li>
-    </ul>
-  </nav>
+  <div class="scroll-hint">scroll</div>
 </header>
 
-<!-- Sección "About Me" -->
-<section id="about">
-  <h2>About Me</h2>
-  <p><strong>Hello!</strong> I'm Iratxe, a journalist and advertiser specializing in digital strategy. I’m passionate about building authentic communities and creating meaningful content that connects.</p>
+<!-- NAV -->
+<nav aria-label="Main menu">
   <ul>
-    <li>🎯 Strategies based on data and creativity.</li>
-    <li>💬 Authentic community management.</li>
-    <li>📈 Analytical, adaptable, and always up to date.</li>
+    <li><a href="#about">About Me</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#university">Education</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="#cv">CV</a></li>
   </ul>
-</section>
+</nav>
+</header>
 
-<!-- Sección "Projects" -->
-<section id="projects">
-  <h2>Projects</h2>
+<main>
 
-  <!-- Curso de Community Manager -->
-  <div class="project-box">
-    <h3>Community Manager Course</h3>
-    <p>Two key projects developed during the course: one for Euskalduna Palace and another for the fashion brand Scaffers.</p>
-    <a href="curso-community-manager-en.html" class="button">View the projects</a>
-  </div>
-</section>
-
-<!-- Sección "Education" -->
-<section id="university">
-  <h2>Education</h2>
-  <p>🎓 Dual degree in Journalism and Advertising (UPV/EHU). Focus on communication, strategy, and critical thinking.</p>
-
-  <div class="degree-wrapper">
-    <!-- Periodismo -->
-    <div class="project-box">
-      <h3>Journalism</h3>
-      <p>📢 The <strong>Journalism Degree</strong> prepared me to seek truth, tell impactful stories, and understand the ethics and social responsibility of journalism. At UPV/EHU, I learned not only to write and produce content in various formats, but also to investigate, verify sources, and develop a critical view of reality.</p>
-      <a href="periodismo-en.html" class="button">View final project</a>
+  <section id="about">
+    <div class="section-inner">
+      <h2>About Me</h2>
+      <p class="section-lead">Journalist and advertiser specialising in digital strategy, community management and communication research. Currently based in Sweden, learning Swedish and developing real-world projects in multicultural environments.</p>
+      <ul>
+        <li>🎯 Strategies built on data and creativity — from idea to metric.</li>
+        <li>💬 Authentic community management with empathy and long-term vision.</li>
+        <li>📈 Analytical, adaptable and always up to date with new tools.</li>
+        <li>🤖 Researcher in AI applied to communication and higher education.</li>
+        <li>💻 Programming knowledge in C and an active curiosity for code.</li>
+      </ul>
     </div>
+  </section>
 
-    <!-- Publicidad y Relaciones Públicas -->
-    <div class="project-box">
-      <h3>Advertising and Public Relations</h3>
-      <p>💡 During the <strong>Advertising and Public Relations Degree</strong>, I discovered the power of ideas, creativity, and strategy to build authentic brands and lasting connections. I studied branding, storytelling, digital communication, and how to design effective campaigns for diverse audiences and platforms.</p>
-      <a href="publicidad-en.html" class="button">View final project</a>
+  <section id="projects">
+    <div class="section-inner">
+      <h2>Projects</h2>
+      <p class="section-lead">A selection of real work — campaigns, content, community management and graphic design.</p>
+
+      <div class="card">
+        <div class="card-accent"><div class="card-icon-wrap">🎮</div><h3>FUZED Borås — Social Media & AI Game Jam</h3></div>
+        <p>I built FUZED Borås's social media presence from scratch. FUZED is a city-run centre that combines gaming with physical activity. I managed Instagram with original photography (with proper parental permissions), AI-generated graphics edited in Procreate, and professional photography sessions.</p>
+        <p>During summer 2025 I also ran the <strong>ung.boras</strong> account, where Stories proved to be the highest-performing format with the target audience. I designed signage and posters for the physical space: opening hours, capacity signs, flyers and internal communications.</p>
+        <p>The flagship project was the <strong>AI Based Game Jam</strong> — a 12-hour overnight event for young people aged 13–19 where they learned to build video games using AI. I managed the full campaign, secured <strong>10,800 kr</strong> in funding, and the event became an official Summer Goal of the programme.</p>
+        <div class="tag-row">
+          <span class="tag">Instagram</span><span class="tag">Canva</span><span class="tag">Procreate</span>
+          <span class="tag">Generative AI</span><span class="tag">Community Management</span><span class="tag">Graphic Design</span>
+        </div>
+        <div class="links-row">
+          <a href="https://www.instagram.com/fuzed_boras/" target="_blank" class="link-chip">📸 @fuzed_boras</a>
+          <a href="https://www.instagram.com/ung.boras/" target="_blank" class="link-chip">📸 @ung.boras</a>
+        </div>
+        <div class="gallery">
+          <div class="gallery-item"><img src="imagenes/AI GAME JAM - poster.png" alt="AI Game Jam poster" /></div>
+          <div class="gallery-item"><img src="imagenes/Gemini_Generated_Image_yu8cntyu8cntyu8c.png" alt="FUZED visual" /></div>
+          <div class="gallery-item"><div class="gallery-placeholder">📄 <a href="imagenes/A4 - Signals for FUZED.pdf" target="_blank">Signals PDF</a></div></div>
+          <div class="gallery-item"><div class="gallery-placeholder">📄 <a href="imagenes/GAME NIGHT - Casper - LAN.pdf" target="_blank">Game Night PDF</a></div></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-accent"><div class="card-icon-wrap">🏃</div><h3>Edsbergs fritidsgård — Exercise Cards with AI</h3></div>
+        <p>For this youth centre I designed a full set of custom avatars from scratch in Procreate, then animated and refined them using AI. The result was a series of engaging, accessible exercise cards for young people, including adapted versions for wheelchair users.</p>
+        <div class="tag-row">
+          <span class="tag">Procreate</span><span class="tag">Generative AI</span><span class="tag">Inclusive design</span>
+        </div>
+        <div class="gallery">
+          <div class="gallery-item"></div>
+          <div class="gallery-item"></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-accent"><div class="card-icon-wrap">📱</div><h3>Community Manager Course — Euskalduna & Scaffers</h3></div>
+        <p>Two strategic projects developed during my Community Manager course at Lanbide: a campaign for Euskalduna Palace in Bilbao and another for fashion brand Scaffers. Content strategy, editorial calendars, audience analysis and creative proposals.</p>
+        <div class="links-row">
+          <a href="pdfs/Trabajo sobre scuffers.pdf" target="_blank" class="link-chip">📄 View Scaffers project</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-accent"><div class="card-icon-wrap">✨</div><h3>Centro Estética Thais — Freelance</h3></div>
+        <p>A local business in Getxo hired me on a temporary freelance basis to create and manage their social media from the ground up. I developed the Instagram visual identity, created content and scheduled it according to the client's brief. A valuable experience in client management and creative adaptability.</p>
+        <div class="links-row">
+          <a href="https://www.instagram.com/centroesteticathais/" target="_blank" class="link-chip">📸 View Instagram</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-accent"><div class="card-icon-wrap">🏢</div><h3>Global Data Media Tech — Community Manager (7 months)</h3></div>
+        <p>Managed social media accounts for <strong>Metro Bilbao</strong> and <strong>Euskalduna Bilbao</strong> — content creation, scheduling, analytics and client coordination.</p>
+        <div class="notice">🔒 Work from this period cannot be shown due to a signed confidentiality agreement.</div>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- Sección "Contact" -->
-<section id="contact">
-  <h2>Contact</h2>
-  <p>✉️ <a href="mailto:iratxeolaizolavargas@gmail.com">iratxeolaizolavargas@gmail.com</a></p>
-  <div class="social-links">
-    <a href="https://linkedin.com/in/iratxe-olaizola" target="_blank">LinkedIn</a> |
-    <a href="https://instagram.com/iratxeolaizola" target="_blank">Instagram</a>
-  </div>
-</section>
+  <section id="university">
+    <div class="section-inner">
+      <h2>Education</h2>
+      <p class="section-lead">Double university degree, master's, PhD, programming school and continuous digital training.</p>
 
-<!-- Sección "CV" -->
-<section id="cv">
-  <h2>Download My CV</h2>
-  <div class="button-container">
-    <a href="pdfs/cv-english.pdf" class="button" download>English</a>
-  </div>
-</section>
+      <div class="card">
+        <div class="card-accent"><div class="card-icon-wrap">🔬</div><h3>PhD in progress — AI & Communication (UPV/EHU)</h3></div>
+        <p>Currently pursuing a part-time doctorate with a research focus on artificial intelligence applied to communication. A natural extension of my master's thesis and a long-term commitment to academic research in this field.</p>
+        <div class="tag-row"><span class="tag">Research</span><span class="tag">AI</span><span class="tag">Communication</span></div>
+      </div>
 
-<!-- Pie de página -->
+      <div class="card">
+        <div class="card-accent"><div class="card-icon-wrap">🎓</div><h3>Master's in Social Communication — UPV/EHU</h3></div>
+        <p>I deepened my understanding of communication as a social phenomenon and built a solid foundation in academic research. I analysed social networks, digital television and communication policies, and attended research seminars and conferences.</p>
+        <p><strong>Thesis:</strong> <em>Artificial intelligence in higher education: Challenges and opportunities for Journalism and Advertising degrees at UPV/EHU.</em></p>
+        <div class="links-row">
+          <a href="https://www.ehu.eus/es/web/master/master-comunicacion-social" target="_blank" class="link-chip">→ View master's</a>
+          <a href="pdfs/TFM_Iratxe_Olaizola_-_La_inteligencia_artificial_en_la_educación_superior__Retos_y_oportunidades_para_los_grados_de_Periodismo_y_Publicidad_y_Relaciones_Públicas_de_la_UPV_EHU.pdf" class="link-chip" download>📄 Download thesis</a>
+        </div>
+      </div>
+
+      <div class="degree-wrapper">
+        <div class="card">
+          <div class="card-accent"><div class="card-icon-wrap">📰</div><h3>Journalism — UPV/EHU</h3></div>
+          <p>Training in journalistic ethics, research, source verification and multi-format content production.</p>
+          <p><strong>Geure Geurean (EiTB):</strong> Started as a monthly collaborator in 2017, moved to weekly in 2018-19, and presented the full show in 2019-20.</p>
+          <p><strong>Getxotik mundura: ondas de solidaridad</strong> — Radio programme presenter.</p>
+          <div class="links-row">
+            <a href="https://www.ivoox.com/en/podcast-geure-geurean_sq_f1385732_1.html" target="_blank" class="link-chip">🎙 Geure Geurean</a>
+            <a href="https://www.ivoox.com/en/podcast-getxotik-mundura-ondas-solidaridad_sq_f11073203_1.html" target="_blank" class="link-chip">🎙 Getxotik mundura</a>
+            <a href="https://www.deia.eus/bizkaia/2020/06/17/once-vuelve-normalidad-sido-duro-4698571.amp.html" target="_blank" class="link-chip">📰 ONCE post-pandemic</a>
+            <a href="https://www.deia.eus/cultura/2020/07/29/pianista-antonio-oyarzabal-prepara-debut-4689133.amp.html" target="_blank" class="link-chip">📰 Aurrera Fest!</a>
+            <a href="https://www.deia.eus/cultura/2020/07/30/eskarabillera-liburua-aurkeztu-du-aldundiak-4688723.amp.html" target="_blank" class="link-chip">📰 Eskarabillera</a>
+            <a href="https://www.deia.eus/bizkaia/2020/07/31/43-3-grados-bizkaia-fuego-4688525.amp.html" target="_blank" class="link-chip">📰 43.3°C in Bizkaia</a>
+            <a href="pdfs/tfg-periodismo.pdf" target="_blank" class="link-chip">📄 View Journalism thesis</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-accent"><div class="card-icon-wrap">💡</div><h3>Advertising & PR — UPV/EHU</h3></div>
+          <p>Branding, storytelling, digital communication and campaign design for diverse audiences and platforms.</p>
+          <p><strong>Internship at Irudigital</strong> — Digital Marketing Agency: content creation, scheduling and editorial planning for multiple client brands.</p>
+          <p><strong>Internship at Cadena SER</strong> — Communications via Mailchimp, Canva and Adobe InDesign.</p>
+          <div class="links-row">
+            <a href="https://www.irudigital.com/" target="_blank" class="link-chip">→ Irudigital</a>
+            <a href="pdfs/tfg-publicidad.pdf" target="_blank" class="link-chip">📄 View Advertising thesis</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-accent"><div class="card-icon-wrap">💻</div><h3>42 Urduliz — C Programming (Sep 2023 – Mar 2025)</h3></div>
+        <p>Nearly two years at 42 Urduliz, a peer-to-peer programming school. Focused mainly on C, completing several projects available on my GitHub. I continue learning to code independently because it genuinely excites me.</p>
+        <div class="links-row">
+          <a href="https://github.com/irolaizo" target="_blank" class="link-chip">💻 GitHub</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-accent"><div class="card-icon-wrap">📋</div><h3>Continuous Learning</h3></div>
+        <p><strong>AI for Content Creation & Community Managers — UPV/EHU (March 2026):</strong> Final project based on organising the real-world AI Game Jam event at FUZED Borås, with 10,800 kr in secured funding.</p>
+        <p><strong>Community Manager Course — Lanbide (February 2025):</strong> Social media management, content marketing, web analytics, Hootsuite, Canva and Google Analytics.</p>
+        <p><strong>Swedish (Svenska) — Kurs C:</strong> Currently studying Swedish. Whatever happens next, I want to keep the door open to returning to Sweden.</p>
+        <div class="tag-row">
+          <span class="tag">Hootsuite</span><span class="tag">Google Analytics</span><span class="tag">Canva</span>
+          <span class="tag">Generative AI</span><span class="tag">Svenska</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="section-inner">
+      <h2>Contact</h2>
+      <p class="section-lead">Got a project, a proposal or just want to chat? Write to me.</p>
+      <p>✉️ <a href="mailto:iratxeolaizolavargas@gmail.com">iratxeolaizolavargas@gmail.com</a></p>
+      <div class="social-links">
+        <a href="https://linkedin.com/in/iratxe-olaizola" target="_blank" class="link-chip">LinkedIn</a>
+        <a href="https://instagram.com/iratxeolaizola" target="_blank" class="link-chip">Instagram</a>
+        <a href="https://github.com/irolaizo" target="_blank" class="link-chip">GitHub</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="cv">
+    <div class="section-inner">
+      <h2>Download CV</h2>
+      <div class="button-container">
+        <a href="pdfs/cv-english.pdf" class="button" download>📄 English</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
 <footer>
-  <p>&copy; 2025 Iratxe Olaizola | Built with 💻 and care</p>
+  <p>&copy; 2025 Iratxe Olaizola · Built with 💻 and care</p>
 </footer>
-
 <script src="script.js"></script>
 </body>
 </html>

@@ -3,112 +3,236 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Iratxe Olaizolaren portfolio profesionala, kazetaria, publizista eta komunitate kudeatzailea." />
-    <title>Iratxe Olaizola | Komunitate Kudeatzailea</title>
-
-    <!-- Kanpoko iturriak eta estiloak -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet" />
+    <meta name="description" content="Iratxe Olaizolaren portfolio profesionala — kazetaria, publizista, komunitate kudeatzailea eta ikerlaria." />
+    <title>Iratxe Olaizola | Komunitate Kudeatzailea & Estratega Digitala</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,700;1,400&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-<!-- 🌍 Hizkuntza hautatzailea -->
-<div class="lang-switcher" aria-label="Hizkuntza aukeratzailea">
-    <a href="index.html" lang="es" hreflang="es">ES</a> |
-    <a href="index-en.html" lang="en" hreflang="en">EN</a> |
-    <span>EU</span>
+
+<!-- 🌍 Idiomas -->
+<div class="lang-switcher">
+    <a href="index.html">ES</a><span class="sep">·</span>
+    <a href="index-en.html">EN</a><span class="sep">·</span>
+    <span class="active-lang">EU</span><span class="sep">·</span>
+    <a href="index-sv.html">SV</a>
 </div>
 
-<!-- 🏠 Goiburua -->
-<header>
-    <div class="header-container">
-        <img src="foto.png" alt="Iratxe Olaizolaren argazkia" class="header-img" />
-        <div class="header-text">
-            <h1>Iratxe Olaizola</h1>
-            <p>Komunitate Kudeatzailea | Sormen Estratega Digitala</p>
+<!-- HERO -->
+<header class="hero">
+    <div class="hero-inner">
+        <div class="hero-photo">
+            <img src="foto.png" alt="Iratxe Olaizola" />
+        </div>
+        <div class="hero-text">
+            <p class="hero-eyebrow">Portfolio · Komunitatea · Ikerketa</p>
+            <h1 class="hero-name">Iratxe<br><em>Olaizola</em></h1>
+            <p class="hero-tagline">Komunitate Kudeatzailea & Estratega Digitala</p>
+            <div class="hero-pills">
+                <span class="pill">🎮 FUZED Borås</span>
+                <span class="pill">🤖 AI & Komunikazioa</span>
+                <span class="pill">📰 Kazetaritza</span>
+                <span class="pill">💡 Publizitatea</span>
+                <span class="pill">💻 Kodea</span>
+                <span class="pill">🇸🇪 Svenska</span>
+            </div>
+            <div class="hero-cta">
+                <a href="#projects" class="btn-primary">Proiektuak ikusi →</a>
+                <a href="#contact" class="btn-secondary">Kontaktua</a>
+            </div>
         </div>
     </div>
-
-    <!-- Nabigazio menua -->
-    <nav aria-label="Menu nagusia">
-        <ul>
-            <li><a href="#about">Niri buruz</a></li>
-            <li><a href="#projects">Proiektuak</a></li>
-            <li><a href="#university">Hezkuntza</a></li>
-            <li><a href="#contact">Kontaktua</a></li>
-            <li><a href="#cv">CV</a></li>
-        </ul>
-    </nav>
+    <div class="scroll-hint">scroll</div>
 </header>
 
-<!-- 🔽 Eduki nagusia -->
+<!-- NAV -->
+<nav aria-label="Menu nagusia">
+    <ul>
+        <li><a href="#about">Niri buruz</a></li>
+        <li><a href="#projects">Proiektuak</a></li>
+        <li><a href="#university">Hezkuntza</a></li>
+        <li><a href="#contact">Kontaktua</a></li>
+        <li><a href="#cv">CV</a></li>
+    </ul>
+</nav>
+</header>
+
 <main>
-    <!-- 🧑‍💼 Niri buruz -->
+
     <section id="about">
-        <h2>Niri buruz</h2>
-        <p><strong>Kaixo!</strong> Iratxe naiz, kazetaria eta publizista, estrategia digitalean espezializatua. Benetako komunitateak eraikitzea eta konektatzen duten eduki esanguratsuak sortzea maite dut.</p>
-        <ul>
-            <li>🎯 Datuetan eta sormenean oinarritutako estrategiak.</li>
-            <li>💬 Komunitateen kudeaketa autentikoa.</li>
-            <li>📈 Analitikoa, moldakorra eta beti eguneratua.</li>
-        </ul>
+        <div class="section-inner">
+            <h2>Niri buruz</h2>
+            <p class="section-lead">Kazetaria eta publizista, estrategia digitalean, komunitate kudeaketan eta komunikazio ikerketan espezializatua. Gaur egun Suedian nago, suediera ikasten eta ingurune kulturaniztunetan proiektu errealak garatzen.</p>
+            <ul>
+                <li>🎯 Datuan eta sormena oinarritutako estrategiak — ideia batetik metrika arte.</li>
+                <li>💬 Komunitate kudeaketa autentikoa, enpatia eta epe luzeko ikuspegiz.</li>
+                <li>📈 Profil analitikoa, moldakorra eta tresna berriekin eguneratua.</li>
+                <li>🤖 Komunikazioan eta goi-mailako hezkuntzan AI aplikatzen duen ikerlaria.</li>
+                <li>💻 C programazio ezagutzak eta kodearen aldeko jakin-mina aktiboa.</li>
+            </ul>
+        </div>
     </section>
 
-    <!-- 🛠️ Proiektuak -->
     <section id="projects">
-        <h2>Proiektuak</h2>
-        <div class="project-box">
-            <h3>Komunitate Kudeatzailearen Ikastaroa</h3>
-            <p>Ikastaroan garatutako bi proiektu nagusi: bat Euskalduna Jauregiarentzat eta bestea Scaffers moda markarentzat.</p>
-            <a href="curso-community-manager-eu.html" class="button">Proiektuak ikusi</a>
+        <div class="section-inner">
+            <h2>Proiektuak</h2>
+            <p class="section-lead">Lan errealak — kanpainak, edukia, komunitate kudeaketa eta diseinu grafikoa.</p>
+
+            <div class="card">
+                <div class="card-accent"><div class="card-icon-wrap">🎮</div><h3>FUZED Borås — Sare sozialak & AI Game Jam</h3></div>
+                <p>FUZED Boråsen sare sozialak hutsetik sortu nituen. FUZED gaminea eta jarduera fisikoa konbinatzen dituen Borås hiriko zentroa da. Instagram kudeatu nuen argazki propioekin (guraso baimenekin), Procreate-rekin editatutako AI grafikoekin eta saio batzuetan argazkilari profesional baten laguntzarekin.</p>
+                <p>2025eko udan <strong>ung.boras</strong> kontua ere kudeatu nuen. Storiesek emaitza onenak eman zituzten xede publikoarekin. Lokalerako seinaleak eta kartelak diseinatu nituen: ordutegiak, edukiera seinaleak, flyers eta barne komunikazioa.</p>
+                <p>Proiektu nagusia <strong>AI Based Game Jam</strong> izan zen — 13-19 urte bitarteko gazteentzako 12 orduko gaueko ekitaldia, non IA erabiliz bideojokoak sortzen ikasi zuten. Kanpaina osoa antolatu nuen, <strong>10.800 kr</strong> lortu nituen eta ekitaldia programa-ren udako helburu ofizial bihurtu zen.</p>
+                <div class="tag-row">
+                    <span class="tag">Instagram</span><span class="tag">Canva</span><span class="tag">Procreate</span>
+                    <span class="tag">AI sortzailea</span><span class="tag">Komunitate kudeaketa</span><span class="tag">Diseinu grafikoa</span>
+                </div>
+                <div class="links-row">
+                    <a href="https://www.instagram.com/fuzed_boras/" target="_blank" class="link-chip">📸 @fuzed_boras</a>
+                    <a href="https://www.instagram.com/ung.boras/" target="_blank" class="link-chip">📸 @ung.boras</a>
+                </div>
+                <div class="gallery">
+                    <div class="gallery-item"><img src="imagenes/AI GAME JAM - poster.png" alt="AI Game Jam poster" /></div>
+                    <div class="gallery-item"><img src="imagenes/Gemini_Generated_Image_yu8cntyu8cntyu8c.png" alt="FUZED visual" /></div>
+                    <div class="gallery-item"><div class="gallery-placeholder">📄 <a href="imagenes/A4 - Signals for FUZED.pdf" target="_blank">Señaleak PDF</a></div></div>
+                    <div class="gallery-item"><div class="gallery-placeholder">📄 <a href="imagenes/GAME NIGHT - Casper - LAN.pdf" target="_blank">Game Night PDF</a></div></div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-accent"><div class="card-icon-wrap">🏃</div><h3>Edsbergs fritidsgård — Ariketa taulak AIrekin</h3></div>
+                <p>Gazte zentro honentzat pertsonalizatutako avatar sorta bat diseinatu nuen Procreate-rekin hutsetik, gero AIrekin animatu eta erefinatu nituenak. Emaitza gazteentzako ariketa taula erakargarriak eta irisgarriak izan ziren, gurpildun aulkiko bertsio egokituak barne.</p>
+                <div class="tag-row">
+                    <span class="tag">Procreate</span><span class="tag">AI sortzailea</span><span class="tag">Diseinu inklusiboa</span>
+                </div>
+                <div class="gallery">
+                    <div class="gallery-item"></div>
+                    <div class="gallery-item"></div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-accent"><div class="card-icon-wrap">📱</div><h3>Komunitate Kudeatzailearen Ikastaroa — Euskalduna & Scaffers</h3></div>
+                <p>Lanbideko Community Manager ikastaroan garatutako bi proiektu estrategiko: Euskalduna Jauregiarentzako kanpaina eta Scaffers moda markarentzako beste bat. Eduki estrategia, editorial egutegiak, audientzia analisia eta proposamen sortzaileak.</p>
+                <div class="links-row">
+                    <a href="pdfs/Trabajo sobre scuffers.pdf" target="_blank" class="link-chip">📄 Scaffers proiektua ikusi</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-accent"><div class="card-icon-wrap">✨</div><h3>Centro Estética Thais — Freelance</h3></div>
+                <p>Getxoko tokiko enpresa batek aldi baterako eta freelance gisa kontratatu ninduen sare sozialak hutsetik sortu eta kudeatzeko. Instagram identitate bisuala garatu nuen, edukia sortu eta bezeroaren argibideen arabera programatu nuen.</p>
+                <div class="links-row">
+                    <a href="https://www.instagram.com/centroesteticathais/" target="_blank" class="link-chip">📸 Instagram ikusi</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-accent"><div class="card-icon-wrap">🏢</div><h3>Global Data Media Tech — Community Manager (7 hilabete)</h3></div>
+                <p><strong>Metro Bilbao</strong> eta <strong>Euskalduna Bilbao</strong> kontuak kudeatu nituen — eduki sorkuntza, programazioa, metrika analisia eta bezero koordinazioa.</p>
+                <div class="notice">🔒 Konfidentzialtasun hitzarmena sinatu nuenez ezin dut aldi honetako lanak erakutsi.</div>
+            </div>
         </div>
     </section>
 
-    <!-- 🎓 Hezkuntza akademikoa -->
     <section id="university">
-        <h2>Prestakuntza akademikoa</h2>
-        <p>🎓 Kazetaritza eta Publizitateko gradu bikoitza (UPV/EHU). Komunikazioa, estrategia eta pentsamendu kritikoa ardatz hartuta.</p>
+        <div class="section-inner">
+            <h2>Prestakuntza</h2>
+            <p class="section-lead">Unibertsitateko gradu bikoitza, masterra, doktoretza, programazioa eta etengabeko prestakuntza digitala.</p>
 
-        <div class="degree-wrapper">
-            <!-- 📘 Kazetaritza -->
-            <div class="project-box">
-                <h3>Kazetaritza</h3>
-                <p>📢 <strong>Kazetaritzako Gradua</strong> egia bilatzeko, istorio garrantzitsuak kontatzeko eta kazetaritzaren etikaren eta erantzukizun sozialaren garrantzia ulertzeko prestatu ninduen. UPV/EHU-n formatu ezberdinetan idazten eta ekoizten ikasi nuen, baita ikertzen, iturriak kontrastatzen eta errealitatearen aurrean ikuspegi kritikoa garatzen ere.</p>
-                <a href="periodismo-eu.html" class="button">Ikusi gradu amaierako lana</a>
+            <div class="card">
+                <div class="card-accent"><div class="card-icon-wrap">🔬</div><h3>Doktoretza abian — AI & Komunikazioa (UPV/EHU)</h3></div>
+                <p>Gaur egun doktoretza ikertzen ari naiz part-time modalitatean, komunikazioan aplikatutako adimen artifizialean zentratuta. Masterreko TFMaren luzapen naturala eta arlo honetan ikerketa akademikoarekiko epe luzeko konpromisoa.</p>
+                <div class="tag-row"><span class="tag">Ikerketa</span><span class="tag">AI</span><span class="tag">Komunikazioa</span></div>
             </div>
 
-            <!-- 🎨 Publizitatea eta Harreman Publikoak -->
-            <div class="project-box">
-                <h3>Publizitatea eta Harreman Publikoak</h3>
-                <p>💡 <strong>Publizitate eta Harreman Publikoetako Gradua</strong> ikasita, ideien, sormenaren eta estrategiaren indarra ezagutu nuen marka benetakoak eta harreman iraunkorrak sortzeko. Branding-a, storytelling-a, komunikazio digitala eta kanpaina eraginkorrak diseinatzeko tresnak ikasi nituen, publiko eta plataforma ezberdinetarako egokituta.</p>
-                <a href="publicidad-eu.html" class="button">Ikusi gradu amaierako lana</a>
+            <div class="card">
+                <div class="card-accent"><div class="card-icon-wrap">🎓</div><h3>Gizarte Komunikazioko Masterra — UPV/EHU</h3></div>
+                <p>Masterrean komunikazioa gizarte-fenomeno gisa sakondu nuen eta ikerketa akademikorako oinarri sendoak eskuratu nituen. Sare sozialak, telebista digitala eta komunikazio-politikak aztertu nituen. Ikerketa seminario eta jardunaldietara joan nintzen.</p>
+                <p><strong>TFM:</strong> <em>Adimen artifiziala goi-mailako hezkuntzan: Erronkak eta aukerak UPV/EHUko Kazetaritza eta Publizitate graduentzat.</em></p>
+                <div class="links-row">
+                    <a href="https://www.ehu.eus/es/web/master/master-comunicacion-social" target="_blank" class="link-chip">→ Masterra ikusi</a>
+                    <a href="pdfs/TFM_Iratxe_Olaizola_-_La_inteligencia_artificial_en_la_educación_superior__Retos_y_oportunidades_para_los_grados_de_Periodismo_y_Publicidad_y_Relaciones_Públicas_de_la_UPV_EHU.pdf" class="link-chip" download>📄 TFM deskargatu</a>
+                </div>
+            </div>
+
+            <div class="degree-wrapper">
+                <div class="card">
+                    <div class="card-accent"><div class="card-icon-wrap">📰</div><h3>Kazetaritza — UPV/EHU</h3></div>
+                    <p>Kazetaritzako etika, ikerketa, iturriak kontrastatzea eta formatu anitzetan edukia ekoiztea.</p>
+                    <p><strong>Geure Geurean (EiTB):</strong> 2017an kolaboratzaile hilabetekari gisa hasi nintzen, 2018-19an astekari bihurtu zen eta 2019-20ko ikasturtean programa gidatu nuen.</p>
+                    <p><strong>Getxotik mundura: ondas de solidaridad</strong> — Irrati programaren aurkezlea.</p>
+                    <div class="links-row">
+                        <a href="https://www.ivoox.com/en/podcast-geure-geurean_sq_f1385732_1.html" target="_blank" class="link-chip">🎙 Geure Geurean</a>
+                        <a href="https://www.ivoox.com/en/podcast-getxotik-mundura-ondas-solidaridad_sq_f11073203_1.html" target="_blank" class="link-chip">🎙 Getxotik mundura</a>
+                        <a href="https://www.deia.eus/bizkaia/2020/06/17/once-vuelve-normalidad-sido-duro-4698571.amp.html" target="_blank" class="link-chip">📰 ONCE pandemia ostean</a>
+                        <a href="https://www.deia.eus/cultura/2020/07/29/pianista-antonio-oyarzabal-prepara-debut-4689133.amp.html" target="_blank" class="link-chip">📰 Aurrera Fest!</a>
+                        <a href="https://www.deia.eus/cultura/2020/07/30/eskarabillera-liburua-aurkeztu-du-aldundiak-4688723.amp.html" target="_blank" class="link-chip">📰 Eskarabillera</a>
+                        <a href="https://www.deia.eus/bizkaia/2020/07/31/43-3-grados-bizkaia-fuego-4688525.amp.html" target="_blank" class="link-chip">📰 43,3°C Bizkaian</a>
+                        <a href="pdfs/tfg-periodismo.pdf" target="_blank" class="link-chip">📄 Kazetaritza GrAL</a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-accent"><div class="card-icon-wrap">💡</div><h3>Publizitatea eta HHPP — UPV/EHU</h3></div>
+                    <p>Branding, storytelling, komunikazio digitala eta publiko eta plataforma ezberdintarako kanpainak diseinatzen.</p>
+                    <p><strong>Irudigital-en praktikak</strong> — Marketing Digital Agentzia: eduki sorkuntza, programazioa eta editoriala planifikazioa hainbat marka bezerorentzat.</p>
+                    <p><strong>Cadena SER-en praktikak</strong> — Mailchimp bidezko komunikazioak, Canva eta Adobe InDesign erabiliz.</p>
+                    <div class="links-row">
+                        <a href="https://www.irudigital.com/" target="_blank" class="link-chip">→ Irudigital</a>
+                        <a href="pdfs/tfg-publicidad.pdf" target="_blank" class="link-chip">📄 Publizitate GrAL</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-accent"><div class="card-icon-wrap">💻</div><h3>42 Urduliz — C Programazioa (2023ko ira. – 2025eko mar.)</h3></div>
+                <p>Ia bi urtez 42 Urduliz-en ikasi nuen, peer-to-peer metodologiako programazio eskola. Batez ere C lengoaian zentratu nintzen, GitHub-en ikus daitezkeen hainbat proiektu osatuz. Nire kontura programatzen jarraitzen dut, benetan interesatzen zaidan gaia delako.</p>
+                <div class="links-row">
+                    <a href="https://github.com/irolaizo" target="_blank" class="link-chip">💻 GitHub</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-accent"><div class="card-icon-wrap">📋</div><h3>Etengabeko prestakuntza</h3></div>
+                <p><strong>AI eduki sorkuntza eta community manager-entzat — UPV/EHU (2026ko martxoa):</strong> Azken proiektua FUZED Borås-eko AI Game Jam ekitaldiaren antolaketan oinarritu zen, 10.800 kr lortuz.</p>
+                <p><strong>Community Manager ikastaroa — Lanbide (2025eko otsaila):</strong> Sare sozialen kudeaketa, eduki marketina, web analitika, Hootsuite, Canva eta Google Analytics.</p>
+                <p><strong>Suediera (Svenska) — C Maila:</strong> Gaur egun suediera ikasten ari naiz. Zer gerta ere, Suediara itzultzeko aukera irekita utzi nahi dut.</p>
+                <div class="tag-row">
+                    <span class="tag">Hootsuite</span><span class="tag">Google Analytics</span><span class="tag">Canva</span>
+                    <span class="tag">AI sortzailea</span><span class="tag">Svenska</span>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- 📞 Kontaktua -->
     <section id="contact">
-        <h2>Kontaktua</h2>
-        <p>✉️ <a href="mailto:iratxeolaizolavargas@gmail.com">iratxeolaizolavargas@gmail.com</a></p>
-        <div class="social-links">
-            <a href="https://linkedin.com/in/iratxe-olaizola" target="_blank">LinkedIn</a> |
-            <a href="https://instagram.com/iratxeolaizola" target="_blank">Instagram</a>
+        <div class="section-inner">
+            <h2>Kontaktua</h2>
+            <p class="section-lead">Proiektu bat, proposamen bat edo hitz egin nahi duzu? Idatzi iezadazu.</p>
+            <p>✉️ <a href="mailto:iratxeolaizolavargas@gmail.com">iratxeolaizolavargas@gmail.com</a></p>
+            <div class="social-links">
+                <a href="https://linkedin.com/in/iratxe-olaizola" target="_blank" class="link-chip">LinkedIn</a>
+                <a href="https://instagram.com/iratxeolaizola" target="_blank" class="link-chip">Instagram</a>
+                <a href="https://github.com/irolaizo" target="_blank" class="link-chip">GitHub</a>
+            </div>
         </div>
     </section>
 
-    <!-- 📄 CV -->
     <section id="cv">
-        <h2>Nire CV-a deskargatu</h2>
-        <div class="button-container">
-            <a href="pdfs/cv-euskara.pdf" class="button" download>Euskaraz</a>
+        <div class="section-inner">
+            <h2>Nire CV-a deskargatu</h2>
+            <div class="button-container">
+                <a href="pdfs/cv-euskara.pdf" class="button" download>📄 Euskaraz</a>
+            </div>
         </div>
     </section>
+
 </main>
 
-<!-- 🦶 Orri-oina -->
 <footer>
-    <p>&copy; 2025 Iratxe Olaizola | 💻 eta arretaz egina</p>
+    <p>&copy; 2025 Iratxe Olaizola · 💻 eta arretaz egina</p>
 </footer>
-
 <script src="script.js"></script>
 </body>
 </html>
