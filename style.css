@@ -721,3 +721,20 @@ footer a:hover { color: var(--blush); }
     .hero-pills, .hero-cta, .scroll-hint { animation: none; opacity: 1; }
     .card { opacity: 1; transform: none; animation: none; }
 }
+
+/* ── Pills como enlaces ── */
+a.pill {
+    color: var(--deep-rose);
+    text-decoration: none;
+    cursor: pointer;
+}
+a.pill:hover {
+    background: var(--blush);
+    transform: translateY(-2px);
+    text-decoration: none;
+    color: var(--deep-rose);
+}
+/* ── Offset para scroll con nav sticky ── */
+[id^="card-"] {
+    scroll-margin-top: 80px;
+}

@@ -5,12 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Professionell portfolio för Iratxe Olaizola — journalist, reklammare, community manager och digital strateg." />
     <title>Iratxe Olaizola | Community Manager & Digital Strateg</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,700;1,400&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-<!-- 🌍 Idiomas -->
 <div class="lang-switcher">
     <a href="index.html">ES</a><span class="sep">·</span>
     <a href="index-en.html">EN</a><span class="sep">·</span>
@@ -18,7 +17,6 @@
     <span class="active-lang">SV</span>
 </div>
 
-<!-- HERO -->
 <header class="hero">
     <div class="hero-inner">
         <div class="hero-photo">
@@ -29,10 +27,10 @@
             <h1 class="hero-name">Iratxe<br><em>Olaizola</em></h1>
             <p class="hero-tagline">Community Manager & Digital Strateg</p>
             <div class="hero-pills">
-                <span class="pill">🤖 AI & Kommunikation</span>
-                <span class="pill">📰 Journalistik</span>
-                <span class="pill">💡 Reklam</span>
-                <span class="pill">💻 Kod</span>
+                <a href="#card-ai" class="pill">🤖 AI & Kommunikation</a>
+                <a href="#card-journalism" class="pill">📰 Journalistik</a>
+                <a href="#card-advertising" class="pill">💡 Reklam</a>
+                <a href="#card-code" class="pill">💻 Kod</a>
             </div>
             <div class="hero-cta">
                 <a href="#projects" class="btn-primary">Se projekt →</a>
@@ -43,7 +41,6 @@
     <div class="scroll-hint">scrolla</div>
 </header>
 
-<!-- NAV -->
 <nav aria-label="Huvudmeny">
     <ul>
         <li><a href="#about">Om mig</a></li>
@@ -53,14 +50,14 @@
         <li><a href="#cv">CV</a></li>
     </ul>
 </nav>
-</header>
 
 <main>
 
     <section id="about">
         <div class="section-inner">
             <h2>Om mig</h2>
-            <p class="section-lead">Kommunikationsprofessionell med bakgrund inom journalistik, reklam och digital marknadsföring. Erfarenhet av community management, innehållsskapande och projektkoordinering. Brinner för att skapa kontakter, organisera evenemang och främja engagemang i mångkulturella miljöer. Öppen för internationella möjligheter och engagerad i kontinuerlig professionell utveckling i flerspråkiga sammanhang.</p>
+            <div class="section-divider"></div>
+            <p class="section-lead">Kommunikationsprofessionell med bakgrund inom journalistik, reklam och digital marknadsföring. Erfarenhet av community management, innehållsskapande och projektkoordinering. Brinner för att skapa kontakter, organisera evenemang och främja engagemang i mångkulturella miljöer.</p>
             <ul>
                 <li>🎯 Strategier byggda på data och kreativitet — från idé till mätetal.</li>
                 <li>💬 Autentiskt community management med empati och långsiktigt tänk.</li>
@@ -74,6 +71,7 @@
     <section id="projects">
         <div class="section-inner">
             <h2>Projekt</h2>
+            <div class="section-divider"></div>
             <p class="section-lead">Ett urval av verkligt arbete — kampanjer, innehåll, community management och grafisk design.</p>
 
             <div class="card">
@@ -92,6 +90,7 @@
                 <div class="gallery">
                     <div class="gallery-item"><img src="imagenes/AI GAME JAM - poster.png" alt="AI Game Jam poster" /></div>
                     <div class="gallery-item"><img src="imagenes/Pride Veckan - Avatars.png" alt="FUZED visual" /></div>
+                </div>
             </div>
 
             <div class="card">
@@ -100,7 +99,7 @@
                 <div class="tag-row">
                     <span class="tag">Procreate</span><span class="tag">Generativ AI</span><span class="tag">Inkluderande design</span>
                 </div>
-                <div class="links-row" style="margin-top:12px">
+                <div class="links-row">
                     <a href="imagenes/edsbergs fritidsgard - A4 - SPORTS.pdf" target="_blank" class="link-chip">📄 Se träningstabellerna</a>
                 </div>
             </div>
@@ -126,32 +125,30 @@
                 <p>Skötte sociala medier för <strong>Metro Bilbao</strong> och <strong>Euskalduna Bilbao</strong> — innehållsskapande, schemaläggning, analysarbete och kundkoordinering.</p>
                 <div class="notice">🔒 Arbetet från denna period kan inte visas på grund av ett undertecknat sekretessavtal.</div>
             </div>
+
         </div>
     </section>
 
     <section id="university">
         <div class="section-inner">
             <h2>Utbildning</h2>
+            <div class="section-divider"></div>
             <p class="section-lead">Dubbelexamen på universitetet, masterexamen, doktorand, programmeringsskola och löpande digital kompetensutveckling.</p>
 
-            <div class="card">
+            <div class="card" id="card-ai">
                 <div class="card-accent"><div class="card-icon-wrap">🔬</div><h3>Doktorand — AI & Kommunikation (UPV/EHU)</h3></div>
                 <p>Bedriver för närvarande doktorandstudier på deltid med inriktning på artificiell intelligens tillämpad på kommunikation. En naturlig förlängning av min masteruppsats och ett långsiktigt engagemang för akademisk forskning inom detta område.</p>
-                <div class="tag-row"><span class="tag">Forskning</span><span class="tag">AI</span><span class="tag">Kommunikation</span></div>
-            </div>
-
-            <div class="card">
-                <div class="card-accent"><div class="card-icon-wrap">🎓</div><h3>Master i Social Kommunikation — UPV/EHU</h3></div>
-                <p>Under mastern fördjupade jag förståelsen av kommunikation som ett socialt fenomen och byggde en solid grund i akademisk forskning. Jag analyserade sociala medier, digital-tv och kommunikationspolitik, och deltog i forskningsseminarier och konferenser.</p>
                 <p><strong>Masteruppsats:</strong> <em>Artificiell intelligens i högre utbildning: Utmaningar och möjligheter för Journalistik- och Reklamutbildningar vid UPV/EHU.</em></p>
+                <div class="tag-row"><span class="tag">Forskning</span><span class="tag">AI</span><span class="tag">Kommunikation</span></div>
                 <div class="links-row">
                     <a href="https://www.ehu.eus/es/web/master/master-comunicacion-social" target="_blank" class="link-chip">→ Se programmet</a>
-                    <a href="pdfs/TFM_Iratxe_Olaizola_-_La_inteligencia_artificial_en_la_educación_superior__Retos_y_oportunidades_para_los_grados_de_Periodismo_y_Publicidad_y_Relaciones_Públicas_de_la_UPV_EHU.pdf" class="link-chip" download>📄 Ladda ner uppsats</a>
+                    <a href="pdfs/TFM%20Iratxe%20Olaizola%20-%20La%20inteligencia%20artificial%20en%20la%20educación%20superior_%20Retos%20y%20oportunidades%20para%20los%20grados%20de%20Periodismo%20y%20Publicidad%20y%20Relaciones%20Públicas%20de%20la%20UPV_EHU.pdf" class="link-chip" download>📄 Ladda ner uppsats (spanska)</a>
+                    <a href="pdfs/TFM%20-%20Presentación%20-%20La%20inteligencia%20artificial%20en%20la%20educación%20superior%20Retos%20y%20oportunidades%20para%20los%20grados%20de%20Periodismo%20y%20Publicidad%20y%20Relacioneúblicas%20de%20la%20UPVEHU.pdf" class="link-chip" download>📄 Ladda ner presentationen (spanska)</a>
                 </div>
             </div>
 
             <div class="degree-wrapper">
-                <div class="card">
+                <div class="card" id="card-journalism">
                     <div class="card-accent"><div class="card-icon-wrap">📰</div><h3>Journalistik — UPV/EHU</h3></div>
                     <p>Utbildning i journalistisk etik, research, källgranskning och innehållsproduktion i flera format.</p>
                     <p><strong>Geure Geurean (EiTB):</strong> Började som månatlig medarbetare 2017, gick över till veckovis 2018-19 och ledde hela programmet under 2019-20.</p>
@@ -167,7 +164,7 @@
                     </div>
                 </div>
 
-                <div class="card">
+                <div class="card" id="card-advertising">
                     <div class="card-accent"><div class="card-icon-wrap">💡</div><h3>Reklam & PR — UPV/EHU</h3></div>
                     <p>Varumärkesbyggande, storytelling, digital kommunikation och kampanjdesign för olika målgrupper och plattformar.</p>
                     <p><strong>Praktik på Irudigital</strong> — Digital marknadsföringsbyrå: innehållsskapande, schemaläggning och redaktionell planering för flera kundvarumärken.</p>
@@ -179,7 +176,7 @@
                 </div>
             </div>
 
-            <div class="card">
+            <div class="card" id="card-code">
                 <div class="card-accent"><div class="card-icon-wrap">💻</div><h3>42 Urduliz — C-programmering (sep. 2023 – mar. 2025)</h3></div>
                 <p>Nästan två år på 42 Urduliz, en programmeringsskola med peer-to-peer-metodik. Fokuserade främst på C, och slutförde flera projekt som finns på min GitHub. Jag fortsätter att lära mig programmering på egen hand för att det genuint intresserar mig.</p>
                 <div class="links-row">
@@ -197,12 +194,14 @@
                     <span class="tag">Generativ AI</span><span class="tag">Svenska</span>
                 </div>
             </div>
+
         </div>
     </section>
 
     <section id="contact">
         <div class="section-inner">
             <h2>Kontakt</h2>
+            <div class="section-divider"></div>
             <p class="section-lead">Har du ett projekt, ett förslag eller vill du bara prata? Skriv till mig.</p>
             <p>✉️ <a href="mailto:iratxeolaizolavargas@gmail.com">iratxeolaizolavargas@gmail.com</a></p>
             <div class="social-links">
@@ -217,7 +216,7 @@
         <div class="section-inner">
             <h2>Ladda ner CV</h2>
             <div class="button-container">
-                <a href="pdfs/cv-svenska.pdf" class="button" download>📄 CV Svenska</a>
+                <a href="pdfs/cv-svenska.pdf" class="button" download>📄 Svenska</a>
             </div>
         </div>
     </section>
@@ -225,7 +224,7 @@
 </main>
 
 <footer>
-    <p>&copy; 2025 Iratxe Olaizola · Byggd med 💻 och omsorg</p>
+    <p>&copy; 2026 Iratxe Olaizola · Byggd med 💻 och omsorg</p>
 </footer>
 <script src="script.js"></script>
 </body>
