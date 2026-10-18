@@ -28,7 +28,7 @@
     pride: ['pride'], gamenight: seq('gamenight', 2), sports: seq('sports', 10), tables: [...seq('tables', 20), ...seq('names', 3)],
     oppettider: seq('oppettider', 5), skattjakt: [...seq('skattjakt', 2), 'stopp-01'], pinkavatar: ['pinkavatar-01', ...seq('esmaker', 10)],
     tetris: ['tetris-01'], welcome: [...seq('valkommen', 2), 'promo-01', ...seq('flyer', 2)], regler: [...seq('regler', 2), 'info-01'],
-    edsbergs: seq('edsbergs', 10), scuffers: seq('scuffers', 6), tfm: seq('tfm', 13)
+    edsbergs: seq('edsbergs', 10), icehotel: seq('icehotel', 4), certmicro: ['cert-micro'], certlanbide: ['cert-lanbide'], scuffers: seq('scuffers', 6), tfm: seq('tfm', 13)
   };
   const TRACK = [
     ['gamejam', 'gamejam-poster'], ['signals', 'signals-01'], ['stories', 'stories-06'], ['pride', 'pride'],
@@ -279,7 +279,7 @@
 
   /* ---------------- Pegatinas arrastrables ---------------- */
   const board = $('#board');
-  const spots = [[0, 4, -8], [52, -2, 6], [0, 64, 5], [50, 90, -4], [64, 42, 10], [0, 34, -4]];
+  const spots = [[0, 4, -8], [52, -2, 6], [0, 64, 5], [50, 90, -4], [64, 42, 10], [0, 34, -4], [64, 20, 7]];
   $$('.sticker', board).forEach((s, i) => {
     const [x, y, r] = spots[i % spots.length];
     s.style.left = x + '%'; s.style.top = y + '%'; s.style.transform = `rotate(${r}deg)`;
@@ -334,8 +334,8 @@
   /* ---------------- Terminal ---------------- */
   const out = $('#termOut');
   const termScript = () => ({
-    es: 'Sigo programando por mi cuenta\nporque me apasiona.', eu: 'Nire kabuz programatzen jarraitzen dut,\nasko gustatzen zaidalako.',
-    en: 'I keep coding on my own\nbecause I love it.', sv: 'Jag fortsätter koda på egen hand\nför att jag älskar det.'
+    es: 'Conocimientos básicos de C\ny muchas ganas de seguir aprendiendo.', eu: 'C-ren oinarrizko ezagutzak\neta ikasten jarraitzeko gogo handia.',
+    en: 'Basic knowledge of C\nand lots of curiosity to keep learning.', sv: 'Grundläggande kunskaper i C\noch massor av nyfikenhet.'
   })[lang];
   const repos = ['libft', 'ft_printf', 'get_next_line', 'minitalk', 'so_long'];
   let typed = false;
@@ -467,7 +467,7 @@
       tlPath.style.strokeDashoffset = tlLen * (1 - tp);
       let yr = tlItems[0].querySelector('time').textContent;
       tlItems.forEach(li => { const on = li.getBoundingClientRect().top < innerHeight * .65; li.style.setProperty('--s', on ? 1.6 : 1); if (on) yr = li.querySelector('time').textContent; });
-      if (yr !== tlYear.textContent) { tlYear.textContent = yr; anim(tlYear, [{ transform: 'translateY(60%) rotate(8deg)', opacity: 0 }, { transform: 'none', opacity: 1 }], { duration: 600, easing: E.back, fill: 'none' }); }
+      if (yr !== tlYear.textContent) { tlYear.textContent = yr; tlYear.parentNode.classList.toggle('long', yr.length > 4); anim(tlYear, [{ transform: 'translateY(60%) rotate(8deg)', opacity: 0 }, { transform: 'none', opacity: 1 }], { duration: 600, easing: E.back, fill: 'none' }); }
 
       if (Math.abs(smoothVel) > 4500 && t - fastTalk > 6000) { fastTalk = t; both('dizzy', 1500); talk(L().fast, 1800); }
     }
