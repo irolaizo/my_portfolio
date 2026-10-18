@@ -1,245 +1,375 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Portfolio profesional de Iratxe Olaizola — periodista, publicista, community manager y estratega digital." />
-    <title>Iratxe Olaizola | Community Manager & Estratega Digital</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="style.css" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Iratxe Olaizola</title>
+<meta name="description" content="Portfolio de Iratxe Olaizola: community manager, periodista, publicista e investigadora en IA y comunicación.">
+<meta property="og:title" content="Iratxe Olaizola · Portfolio">
+<meta property="og:description" content="Community manager, periodista, publicista e investigadora en IA y comunicación.">
+<meta property="og:image" content="assets/work/pride.webp">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,300..800&family=Instrument+Sans:ital,wght@0,400..700;1,400&family=Caveat:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/avatar.css">
+<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-<div class="lang-switcher">
-    <span class="active-lang">ES</span><span class="sep">·</span>
-    <a href="index-en.html">EN</a><span class="sep">·</span>
-    <a href="index-eu.html">EU</a><span class="sep">·</span>
-    <a href="index-sv.html">SV</a>
-</div>
+<a class="skip" href="#sobre-mi" data-i="skip">Saltar al contenido</a>
+<div class="progress" aria-hidden="true"><span></span></div>
+<div class="cursor" aria-hidden="true"><span class="cursor-dot"></span><span class="cursor-ring"><span class="cursor-label"></span></span></div>
 
-<header class="hero">
-    <div class="hero-inner">
-        <div class="hero-photo">
-            <img src="foto.png" alt="Iratxe Olaizola" />
-        </div>
-        <div class="hero-text">
-            <p class="hero-eyebrow">Portfolio · Comunidad · Investigación</p>
-            <h1 class="hero-name">Iratxe<br><em>Olaizola</em></h1>
-            <p class="hero-tagline">Community Manager & Estratega Digital</p>
-            <div class="hero-pills">
-                <a href="#card-ai" class="pill">🤖 IA & Comunicación</a>
-                <a href="#card-journalism" class="pill">📰 Periodismo</a>
-                <a href="#card-advertising" class="pill">💡 Publicidad</a>
-                <a href="#card-code" class="pill">💻 Código</a>
-            </div>
-            <div class="hero-cta">
-                <a href="#projects" class="btn-primary">Ver proyectos →</a>
-                <a href="#contact" class="btn-secondary">Contacto</a>
-            </div>
-        </div>
-    </div>
-    <div class="scroll-hint">scroll</div>
+<!-- ===== Navegación ===== -->
+<header class="nav">
+  <a href="#inicio" class="nav-logo" aria-label="Inicio">Iratxe<span>.</span></a>
+  <nav class="nav-links" id="menu" aria-label="Menú principal">
+    <a href="#sobre-mi" data-i="nav.about">Sobre mí</a>
+    <a href="#fuzed" data-i="nav.fuzed">FUZED</a>
+    <a href="#proyectos" data-i="nav.projects">Proyectos</a>
+    <a href="#investigacion" data-i="nav.research">TFM y TFG</a>
+    <a href="#trayectoria" data-i="nav.path">Trayectoria</a>
+    <a href="#contacto" data-i="nav.contact">Contacto</a>
+  </nav>
+  <div class="lang" role="group" aria-label="Idioma">
+    <button type="button" data-lang="es" aria-pressed="true">ES</button>
+    <button type="button" data-lang="eu" aria-pressed="false">EU</button>
+    <button type="button" data-lang="en" aria-pressed="false">EN</button>
+    <button type="button" data-lang="sv" aria-pressed="false">SV</button>
+  </div>
+  <button class="nav-burger" type="button" aria-expanded="false" aria-controls="menu"><span></span><span></span><span class="sr" data-i="nav.menu">Menú</span></button>
 </header>
 
-<nav aria-label="Menú principal">
-    <ul>
-        <li><a href="#about">Sobre mí</a></li>
-        <li><a href="#projects">Proyectos</a></li>
-        <li><a href="#university">Formación</a></li>
-        <li><a href="#contact">Contacto</a></li>
-        <li><a href="#cv">CV</a></li>
-    </ul>
-</nav>
-
 <main>
+<!-- ===== HERO ===== -->
+<section class="hero" id="inicio">
+  <div class="hero-shapes" aria-hidden="true">
+    <span class="shape s1"></span><span class="shape s2"></span><span class="shape s3"></span><span class="shape s4"></span>
+  </div>
+  <div class="hero-grid">
+    <div class="hero-copy">
+      <p class="hand hero-hi" data-i="hero.hi">¡Kaixo! Soy</p>
+      <h1 class="hero-name" aria-label="Iratxe Olaizola">
+        <span class="line" data-split>Iratxe</span>
+        <span class="line" data-split>Olaizola</span>
+      </h1>
+      <p class="hero-role">
+        <span data-i="hero.role">Community manager y</span>
+        <span class="rotator" aria-live="polite"><span class="rot-word">periodista</span></span>
+      </p>
+      <p class="hero-lead" data-i="hero.lead">Creo comunidades, campañas y piezas visuales. Ahora investigo cómo la inteligencia artificial está cambiando la forma de comunicar y de enseñar.</p>
+      <div class="hero-cta">
+        <a href="#fuzed" class="btn btn-ink magnetic" data-i="hero.cta1">Ver mi trabajo</a>
+        <a href="#contacto" class="btn btn-ghost magnetic" data-i="hero.cta2">Escríbeme</a>
+      </div>
+    </div>
 
-    <section id="about">
-        <div class="section-inner">
-            <h2>Sobre mí</h2>
-            <div class="section-divider"></div>
-            <p class="section-lead">Profesional de la comunicación con formación en periodismo, publicidad y marketing digital. Experiencia en community management, creación de contenidos y coordinación de proyectos. Apasionada por generar conexiones, organizar eventos y fomentar el compromiso en entornos diversos. Abierta a oportunidades internacionales y comprometida con el crecimiento profesional continuo en contextos multiculturales.</p>
-            <ul>
-                <li>🎯 Estrategias basadas en datos y creatividad — de la idea a la métrica.</li>
-                <li>💬 Gestión de comunidades auténticas, con empatía y visión a largo plazo.</li>
-                <li>📈 Perfil analítico, adaptable y siempre actualizada en nuevas herramientas.</li>
-                <li>🤖 Investigadora en IA aplicada a la comunicación y la educación superior.</li>
-                <li>💻 Conocimientos de programación en C y curiosidad activa por el código.</li>
-            </ul>
+    <div class="hero-stage">
+      <div class="blob" aria-hidden="true"></div>
+      <div class="orbit" aria-hidden="true">
+        <span class="orb o1">Procreate</span><span class="orb o2">Instagram</span><span class="orb o3">IA</span><span class="orb o4">Radio</span>
+      </div>
+      <div class="avatar" id="heroAvatar" tabindex="0" role="button" aria-label="Avatar de Iratxe. Haz clic para que reaccione.">
+        <div class="bubble hide" aria-live="polite"><span class="bubble-text"></span></div>
+      </div>
+      <p class="hand hero-hint" data-i="hero.hint">mueve el ratón… y prueba a hacer clic en mi cara</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Cinta ===== -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <span>Instagram</span><i></i><span>Stories</span><i></i><span>Procreate</span><i></i><span>Canva</span><i></i><span>IA generativa</span><i></i><span>Periodismo</span><i></i><span>Radio</span><i></i><span>Investigación</span><i></i><span>Euskara</span><i></i><span>Svenska</span><i></i><span>English</span><i></i><span>Lenguaje C</span><i></i>
+  </div>
+</div>
+
+<!-- ===== Sobre mí ===== -->
+<section class="about" id="sobre-mi">
+  <div class="wrap about-grid">
+    <div class="about-text">
+      <h2 class="h2" data-i="about.title">Sobre mí</h2>
+      <p class="scrub" data-i="about.lead">Soy profesional de la comunicación con formación en periodismo, publicidad y marketing digital. Me encanta crear conexiones, organizar eventos y conseguir que una comunidad sienta que forma parte de algo. Trabajo en castellano, euskera, inglés y sueco, y estoy abierta a oportunidades internacionales.</p>
+    </div>
+    <div class="about-board" id="board">
+      <figure class="polaroid">
+        <img src="assets/foto.webp" alt="Foto de Iratxe Olaizola sonriendo" width="450" height="446" loading="lazy">
+        <figcaption class="hand" data-i="about.photo">la de verdad</figcaption>
+      </figure>
+      <span class="sticker st-lime" data-i="about.s1">Datos + creatividad</span>
+      <span class="sticker st-violet" data-i="about.s2">Comunidades con empatía</span>
+      <span class="sticker st-coral" data-i="about.s3">Perfil analítico</span>
+      <span class="sticker st-sky" data-i="about.s4">IA aplicada a la comunicación</span>
+      <span class="sticker st-paper" data-i="about.s5">Curiosa del código</span>
+      <span class="sticker st-lime" >ES · EU · EN · SV</span>
+      <p class="hand board-hint" data-i="about.drag">arrastra las pegatinas</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FUZED ===== -->
+<section class="fuzed" id="fuzed">
+  <div class="wrap fuzed-head">
+    <p class="kicker" data-i="fuzed.kicker">Borås, Suecia · 2026</p>
+    <h2 class="fuzed-title"><span>FUZED</span> <span>Borås</span></h2>
+    <div class="fuzed-cols">
+      <div class="fuzed-copy">
+        <p data-i="fuzed.p1">Creé desde cero las redes sociales de FUZED Borås, un centro del Ayuntamiento de Borås que mezcla gaming y actividad física. Fotos propias (con los permisos necesarios), gráficos generados con IA y editados en Procreate, y algunas sesiones con fotógrafo profesional.</p>
+        <p data-i="fuzed.p2">En el verano de 2026 lideré la estrategia de redes de <strong>ung.boras</strong>, donde las stories fueron el formato que mejor funcionó con el público joven. También diseñé la señalética y los carteles del local: horarios, aforo, flyers y comunicación interna.</p>
+        <p data-i="fuzed.p3">El proyecto estrella fue el <strong>AI Game Jam</strong>: una noche de 12 horas en la que jóvenes de 13 a 19 años aprendieron a crear videojuegos con IA. Llevé la campaña completa, conseguí la financiación y el evento se convirtió en un Summer Goal oficial del programa.</p>
+        <div class="chips">
+          <a class="chip" href="https://www.instagram.com/fuzed_boras/" target="_blank" rel="noopener">@fuzed_boras</a>
+          <a class="chip" href="https://www.instagram.com/ung.boras/" target="_blank" rel="noopener">@ung.boras</a>
+          <a class="chip chip-pdf" href="docs/AI-Game-Jam-dossier.pdf" target="_blank" rel="noopener" data-i="fuzed.dossier">Dossier del Game Jam (PDF)</a>
         </div>
-    </section>
+      </div>
+      <div class="stats">
+        <div class="stat"><b><span class="count" data-to="10800" data-sep=".">0</span> kr</b><span data-i="fuzed.st1">de financiación para el AI Game Jam</span></div>
+        <div class="stat"><b><span class="count" data-to="12">0</span> h</b><span data-i="fuzed.st2">de game jam nocturno</span></div>
+        <div class="stat"><b>13–<span class="count" data-to="19">0</span></b><span data-i="fuzed.st3">años: el público al que hablábamos</span></div>
+      </div>
+    </div>
+  </div>
 
-    <section id="projects">
-        <div class="section-inner">
-            <h2>Proyectos</h2>
-            <div class="section-divider"></div>
-            <p class="section-lead">Una selección de trabajos reales — campañas, contenido, gestión de comunidades y diseño gráfico.</p>
+  <div class="hscroll" id="hscroll">
+    <div class="hscroll-sticky">
+    <div class="hscroll-track" id="track">
+      <div class="h-intro">
+        <p class="h-intro-big" data-i="fuzed.galleryTitle">Todo lo que diseñé para el local</p>
+        <p class="hand" data-i="fuzed.galleryHint">haz clic en cualquier pieza para verla entera</p>
+      </div>
+      <!-- las piezas se generan desde main.js -->
+    </div>
+    </div>
+  </div>
+</section>
 
-            <div class="card">
-                <div class="card-accent"><div class="card-icon-wrap">🎮</div><h3>FUZED Borås — Redes sociales & AI Game Jam</h3></div>
-                <p>Creé desde cero las redes sociales de FUZED Borås, un centro que combina gaming con actividad física perteneciente al Ayuntamiento de Borås. Gestioné el Instagram con fotografías propias (con los permisos necesarios), material gráfico generado con IA y editado con Procreate, y también conté con un fotógrafo profesional en algunas sesiones.</p>
-                <p>Durante el verano del 2026 he sido la responsable de liderar la estrategia de redes sociales de <strong>ung.boras</strong>, donde las stories demostraron ser el formato más efectivo con el público objetivo. Creé señales y carteles para el local físico de FUZED: horarios de apertura, indicaciones de aforo, flyers y material de comunicación interna.</p>
-                <p>El proyecto más destacado fue el <strong>Game Jam</strong> — un evento de 12 horas nocturnas para jóvenes de 13 a 19 años donde aprendieron a crear videojuegos con IA. Organicé la campaña completa, recaudé <strong>10.800 kr</strong> en financiación y el evento se convirtió en un Summer Goal oficial del programa.</p>
-                <div class="tag-row">
-                    <span class="tag">Instagram</span><span class="tag">Canva</span><span class="tag">Procreate</span>
-                    <span class="tag">IA generativa</span><span class="tag">Gestión de comunidad</span><span class="tag">Diseño gráfico</span>
-                </div>
-                <div class="links-row">
-                    <a href="https://www.instagram.com/fuzed_boras/" target="_blank" class="link-chip">📸 @fuzed_boras</a>
-                    <a href="https://www.instagram.com/ung.boras/" target="_blank" class="link-chip">📸 @ung.boras</a>
-                </div>
-                <div class="gallery">
-                    <div class="gallery-item"><img src="imagenes/AI GAME JAM - poster.png" alt="AI Game Jam poster" /></div>
-                    <div class="gallery-item"><img src="imagenes/Pride Veckan - Avatars.png" alt="FUZED visual" /></div>
-                </div>
-                <div class="links-row" style="margin-top:12px">
-                    <a href="imagenes/A4 - Openning times and poster.pdf" target="_blank" class="link-chip">📄 Horarios & poster</a>
-                    <a href="imagenes/A4 - Signals for FUZED.pdf" target="_blank" class="link-chip">📄 Señales FUZED</a>
-                    <a href="imagenes/A4 - SPORTS.pdf" target="_blank" class="link-chip">📄 Sports</a>
-                    <a href="imagenes/AI based Game Jam - Sommar activity.pdf" target="_blank" class="link-chip">📄 Game Jam dossier</a>
-                    <a href="imagenes/Poster to promote FUZED around .pdf" target="_blank" class="link-chip">📄 Poster promocional</a>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="card-accent"><div class="card-icon-wrap">🏃</div><h3>Edsbergs fritidsgård — Tablas de ejercicio con IA</h3></div>
-                <p>Para este centro juvenil diseñé desde cero en Procreate una serie de avatares personalizados que luego animé y edité con ayuda de inteligencia artificial. El resultado fue un conjunto de tablas de ejercicio físico atractivas y accesibles para jóvenes, con versiones adaptadas para diferentes niveles y necesidades (incluidas versiones en silla de ruedas).</p>
-                <div class="tag-row">
-                    <span class="tag">Procreate</span><span class="tag">IA generativa</span><span class="tag">Diseño inclusivo</span>
-                </div>
-                <div class="links-row">
-                    <a href="imagenes/edsbergs fritidsgard - A4 - SPORTS.pdf" target="_blank" class="link-chip">📄 Ver tablas de ejercicio</a>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="card-accent"><div class="card-icon-wrap">📱</div><h3>Curso Community Manager — Euskalduna & Scaffers</h3></div>
-                <p>Dos proyectos estratégicos desarrollados durante el curso de Community Manager en Lanbide: una campaña para el Palacio Euskalduna de Bilbao y otra para la marca de moda Scaffers. Estrategia de contenidos, calendarios editoriales, análisis de audiencia y propuestas creativas.</p>
-                <div class="links-row">
-                    <a href="pdfs/Trabajo sobre scuffers.pdf" target="_blank" class="link-chip">📄 Ver proyecto Scaffers</a>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="card-accent"><div class="card-icon-wrap">✨</div><h3>Centro Estética Thais — Freelance</h3></div>
-                <p>Un comercio local de Getxo me contrató de forma temporal y freelance para crear y gestionar sus redes sociales desde cero. Desarrollé la identidad visual en Instagram, creé el contenido y lo programé siguiendo las indicaciones de la clienta.</p>
-                <div class="links-row">
-                    <a href="https://www.instagram.com/centroesteticathais/" target="_blank" class="link-chip">📸 Ver Instagram</a>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="card-accent"><div class="card-icon-wrap">🏢</div><h3>Global Data Media Tech — Community Manager (7 meses)</h3></div>
-                <p>Durante 7 meses trabajé como community manager en esta agencia, gestionando principalmente las cuentas de <strong>Metro Bilbao</strong> y <strong>Euskalduna Bilbao</strong>. Creación de contenido, programación, análisis de métricas y coordinación con los clientes.</p>
-                <div class="notice">🔒 Por acuerdo de confidencialidad no puedo mostrar el trabajo realizado durante este período.</div>
-            </div>
-
+<!-- ===== Más proyectos ===== -->
+<section class="projects" id="proyectos">
+  <div class="wrap">
+    <h2 class="h2" data-i="proj.title">Más proyectos</h2>
+    <p class="lead" data-i="proj.lead">Campañas, contenido, gestión de comunidades y diseño. Cada uno con una comunidad distinta detrás.</p>
+  </div>
+  <div class="wrap stack">
+    <article class="pcard pc-sky">
+      <div class="pcard-body">
+        <p class="pcard-meta" data-i="proj.ed.meta">Centro juvenil · Procreate + IA</p>
+        <h3 data-i="proj.ed.title">Edsbergs fritidsgård: tablas de ejercicio</h3>
+        <p data-i="proj.ed.p">Dibujé desde cero en Procreate una serie de avatares y después los animé y retoqué con IA. El resultado: tablas de ejercicio atractivas y accesibles para jóvenes, con versiones adaptadas a distintos niveles, incluidas versiones en silla de ruedas.</p>
+        <div class="chips">
+          <button class="chip" type="button" data-open="edsbergs" data-i="proj.ed.btn">Ver las 10 tablas</button>
         </div>
-    </section>
+      </div>
+      <button class="pcard-visual" type="button" data-open="edsbergs" aria-label="Ver las tablas de ejercicio">
+        <img src="assets/work/edsbergs-01.webp" alt="" loading="lazy"><img src="assets/work/edsbergs-09.webp" alt="" loading="lazy"><img src="assets/work/edsbergs-05.webp" alt="" loading="lazy">
+      </button>
+    </article>
 
-    <section id="university">
-        <div class="section-inner">
-            <h2>Formación</h2>
-            <div class="section-divider"></div>
-            <p class="section-lead">Doble grado universitario, máster, doctorado, programación y formación continua en digital.</p>
-
-            <div class="card" id="card-ai">
-                <div class="card-accent"><div class="card-icon-wrap">🔬</div><h3>Doctorado en curso — IA & Comunicación (UPV/EHU)</h3></div>
-                <p>Actualmente cursando el doctorado a tiempo parcial, con línea de investigación centrada en inteligencia artificial aplicada a la comunicación. Una extensión natural del TFM y un compromiso a largo plazo con la investigación académica en este campo.</p>
-                <div class="tag-row"><span class="tag">Investigación</span><span class="tag">IA</span><span class="tag">Comunicación</span></div>
-            </div>
-
-            <div class="card">
-                <div class="card-accent"><div class="card-icon-wrap">🎓</div><h3>Máster en Comunicación Social — UPV/EHU</h3></div>
-                <p>Durante el máster profundicé en la comunicación como fenómeno social y adquirí bases sólidas en investigación académica. Analicé redes sociales, televisión digital y políticas de comunicación. Asistí a seminarios y jornadas de investigación en comunicación social.</p>
-                <p>Mi <strong>TFM</strong>: <em>La inteligencia artificial en la educación superior: Retos y oportunidades para los grados de Periodismo y Publicidad y Relaciones Públicas de la UPV/EHU.</em></p>
-                <div class="tag-row"><span class="tag">Investigación</span><span class="tag">Redes sociales</span><span class="tag">Políticas de comunicación</span></div>
-                <div class="links-row">
-                    <a href="https://www.ehu.eus/es/web/master/master-comunicacion-social" target="_blank" class="link-chip">→ Ver máster</a>
-                    <a href="pdfs/TFM%20Iratxe%20Olaizola%20-%20La%20inteligencia%20artificial%20en%20la%20educación%20superior_%20Retos%20y%20oportunidades%20para%20los%20grados%20de%20Periodismo%20y%20Publicidad%20y%20Relaciones%20Públicas%20de%20la%20UPV_EHU.pdf" class="link-chip" download>📄 Descargar TFM</a>
-                    <a href="pdfs/TFM%20-%20Presentación%20-%20La%20inteligencia%20artificial%20en%20la%20educación%20superior%20Retos%20y%20oportunidades%20para%20los%20grados%20de%20Periodismo%20y%20Publicidad%20y%20Relacioneúblicas%20de%20la%20UPVEHU.pdf" class="link-chip" download>📄 Descargar presentación TFM</a>
-                </div>
-            </div>
-
-            <div class="degree-wrapper">
-                <div class="card" id="card-journalism">
-                    <div class="card-accent"><div class="card-icon-wrap">📰</div><h3>Periodismo — UPV/EHU</h3></div>
-                    <p>Formación en ética periodística, investigación, contraste de fuentes y producción de contenido en múltiples formatos.</p>
-                    <p><strong>Geure Geurean (EiTB):</strong> Colaboré desde 2017, primero mensual, luego semanal, y finalmente presenté el programa completo en el curso 2019-2020.</p>
-                    <p><strong>Getxotik mundura: ondas de solidaridad</strong> — Presentadora del programa en Radio.</p>
-                    <p><strong>Artículos publicados en Deia:</strong></p>
-                    <div class="links-row">
-                        <a href="https://www.ivoox.com/en/podcast-geure-geurean_sq_f1385732_1.html" target="_blank" class="link-chip">🎙 Geure Geurean</a>
-                        <a href="https://www.ivoox.com/en/podcast-getxotik-mundura-ondas-solidaridad_sq_f11073203_1.html" target="_blank" class="link-chip">🎙 Getxotik mundura</a>
-                        <a href="https://www.deia.eus/bizkaia/2020/06/17/once-vuelve-normalidad-sido-duro-4698571.amp.html" target="_blank" class="link-chip">📰 ONCE post-pandemia</a>
-                        <a href="https://www.deia.eus/cultura/2020/07/29/pianista-antonio-oyarzabal-prepara-debut-4689133.amp.html" target="_blank" class="link-chip">📰 Aurrera Fest!</a>
-                        <a href="https://www.deia.eus/cultura/2020/07/30/eskarabillera-liburua-aurkeztu-du-aldundiak-4688723.amp.html" target="_blank" class="link-chip">📰 Eskarabillera</a>
-                        <a href="https://www.deia.eus/bizkaia/2020/07/31/43-3-grados-bizkaia-fuego-4688525.amp.html" target="_blank" class="link-chip">📰 43,3°C en Bizkaia</a>
-                        <a href="pdfs/tfg-periodismo.pdf" target="_blank" class="link-chip">📄 Ver TFG Periodismo</a>
-                    </div>
-                </div>
-
-                <div class="card" id="card-advertising">
-                    <div class="card-accent"><div class="card-icon-wrap">💡</div><h3>Publicidad y RRPP — UPV/EHU</h3></div>
-                    <p>Branding, storytelling, comunicación digital y diseño de campañas para públicos y plataformas diversas.</p>
-                    <p><strong>Prácticas en Irudigital</strong> — Agencia de Marketing Digital: creación de contenido, programación y planificación editorial para varias marcas cliente.</p>
-                    <p><strong>Prácticas en Cadena SER</strong> — Creación de comunicaciones con Mailchimp, uso de Canva y Adobe InDesign.</p>
-                    <div class="links-row">
-                        <a href="https://www.irudigital.com/" target="_blank" class="link-chip">→ Irudigital</a>
-                        <a href="pdfs/tfg-publicidad.pdf" target="_blank" class="link-chip">📄 Ver TFG Publicidad</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="card" id="card-code">
-                <div class="card-accent"><div class="card-icon-wrap">💻</div><h3>42 Urduliz — Programación en C (sep. 2023 – mar. 2025)</h3></div>
-                <p>Durante casi dos años estudié en 42 Urduliz, escuela de programación de metodología peer-to-peer. Me centré principalmente en lenguaje C, completando varios proyectos que puedes explorar en mi GitHub. Sigo aprendiendo programación por mi cuenta porque es un área que genuinamente me apasiona.</p>
-                <div class="links-row">
-                    <a href="https://github.com/irolaizo" target="_blank" class="link-chip">💻 GitHub</a>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="card-accent"><div class="card-icon-wrap">📋</div><h3>Formación continua</h3></div>
-                <p><strong>IA para creación de contenidos y community managers — UPV/EHU (marzo 2026):</strong> Proyecto final basado en la organización del AI Game Jam en FUZED Borås, un evento real con financiación captada de 10.800 kr.</p>
-                <p><strong>Curso Community Manager — Lanbide (febrero 2025):</strong> Gestión de redes sociales, marketing de contenidos, analítica web, Hootsuite, Canva y Google Analytics.</p>
-                <p><strong>Svenska (sueco) — Kurs C:</strong> Actualmente estudiando sueco. Aunque mi situación cambie, quiero mantener viva la posibilidad de volver a Suecia.</p>
-                <div class="tag-row">
-                    <span class="tag">Hootsuite</span><span class="tag">Google Analytics</span><span class="tag">Canva</span>
-                    <span class="tag">IA generativa</span><span class="tag">Svenska</span>
-                </div>
-            </div>
-
+    <article class="pcard pc-lime">
+      <div class="pcard-body">
+        <p class="pcard-meta" data-i="proj.cm.meta">Curso de Community Manager · Lanbide</p>
+        <h3 data-i="proj.cm.title">Euskalduna y Scuffers</h3>
+        <p data-i="proj.cm.p">Dos estrategias completas: una campaña para el Palacio Euskalduna de Bilbao y otra para la marca de moda Scuffers. Estrategia de contenidos, calendario editorial, DAFO, KPIs, análisis de audiencia y propuestas creativas.</p>
+        <div class="chips">
+          <button class="chip" type="button" data-open="scuffers" data-i="proj.cm.btn">Ver el proyecto Scuffers</button>
+          <a class="chip chip-pdf" href="docs/proyecto-scuffers.pdf" target="_blank" rel="noopener">PDF</a>
         </div>
-    </section>
+      </div>
+      <button class="pcard-visual" type="button" data-open="scuffers" aria-label="Ver el proyecto Scuffers">
+        <img src="assets/work/scuffers-01.webp" alt="" loading="lazy"><img src="assets/work/scuffers-02.webp" alt="" loading="lazy"><img src="assets/work/scuffers-03.webp" alt="" loading="lazy">
+      </button>
+    </article>
 
-    <section id="contact">
-        <div class="section-inner">
-            <h2>Contacto</h2>
-            <div class="section-divider"></div>
-            <p class="section-lead">¿Tienes un proyecto, una propuesta o simplemente quieres hablar? Escríbeme.</p>
-            <p>✉️ <a href="mailto:iratxeolaizolavargas@gmail.com">iratxeolaizolavargas@gmail.com</a></p>
-            <div class="social-links">
-                <a href="https://linkedin.com/in/iratxe-olaizola" target="_blank" class="link-chip">LinkedIn</a>
-                <a href="https://instagram.com/iratxeolaizola" target="_blank" class="link-chip">Instagram</a>
-                <a href="https://github.com/irolaizo" target="_blank" class="link-chip">GitHub</a>
-            </div>
+    <article class="pcard pc-coral">
+      <div class="pcard-body">
+        <p class="pcard-meta" data-i="proj.th.meta">Freelance · Getxo</p>
+        <h3>Centro Estética Thais</h3>
+        <p data-i="proj.th.p">Un comercio local me contrató como freelance para crear y gestionar sus redes desde cero. Desarrollé la identidad visual de Instagram, creé el contenido y lo programé siguiendo las indicaciones de la clienta.</p>
+        <div class="chips"><a class="chip" href="https://www.instagram.com/centroesteticathais/" target="_blank" rel="noopener">@centroesteticathais</a></div>
+      </div>
+      <div class="pcard-visual phone" aria-hidden="true">
+        <div class="phone-top">@centroesteticathais</div>
+        <div class="phone-grid"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+        <div class="phone-hearts"></div>
+      </div>
+    </article>
+
+    <article class="pcard pc-ink">
+      <div class="pcard-body">
+        <p class="pcard-meta" data-i="proj.gd.meta">Agencia · 7 meses</p>
+        <h3>Global Data Media Tech</h3>
+        <p data-i="proj.gd.p">Community manager de las cuentas de <strong>Metro Bilbao</strong> y <strong>Euskalduna Bilbao</strong>: creación de contenido, programación, análisis de métricas y coordinación con los clientes.</p>
+        <p class="note" data-i="proj.gd.note">Por acuerdo de confidencialidad no puedo enseñar este trabajo.</p>
+      </div>
+      <div class="pcard-visual redacted" aria-hidden="true">
+        <p><i style="--w:80%"></i><i style="--w:60%"></i><i style="--w:92%"></i><i style="--w:45%"></i><i style="--w:70%"></i><i style="--w:85%"></i></p>
+        <span class="stamp" data-i="proj.gd.stamp">Confidencial</span>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- ===== Investigación ===== -->
+<section class="research" id="investigacion">
+  <div class="wrap">
+    <h2 class="h2" data-i="res.title">Investigación</h2>
+    <p class="lead" data-i="res.lead">Un TFM, dos TFG y un doctorado en marcha. Puedes leerlos todos aquí mismo.</p>
+
+    <article class="tfm">
+      <div class="tfm-head">
+        <p class="kicker" data-i="res.tfm.kicker">TFM · Máster en Comunicación Social · UPV/EHU · 2025</p>
+        <h3 class="tfm-title">La inteligencia artificial en la educación superior: retos y oportunidades para los grados de Periodismo y Publicidad y Relaciones Públicas de la UPV/EHU</h3>
+        <p class="tfm-sub" data-i="res.tfm.sub">Dirigido por Blanca Miguélez Juan. Encuestas a 226 estudiantes y 26 docentes, y 7 entrevistas en profundidad.</p>
+        <div class="chips">
+          <a class="btn btn-ink" href="docs/TFM-Iratxe-Olaizola.pdf" target="_blank" rel="noopener" data-pdf data-i="res.tfm.read">Leer el TFM</a>
+          <button class="btn btn-ghost" type="button" data-open="tfm" data-i="res.tfm.slides">Ver la presentación</button>
+          <a class="chip chip-pdf" href="docs/TFM-Iratxe-Olaizola.pdf" download data-pdf data-i="res.download">Descargar PDF</a>
+          <a class="chip chip-pdf" href="docs/TFM-presentacion.pdf" download data-pdf data-i="res.tfm.dlSlides">Descargar presentación</a>
         </div>
-    </section>
+      </div>
+      <div class="bars">
+        <div class="bar" style="--v:97"><b><span class="count" data-to="97">0</span>%</b><span data-i="res.b1">del alumnado cree que la IA será muy relevante en su futuro laboral</span><i></i></div>
+        <div class="bar" style="--v:93.5"><b><span class="count" data-to="93.5" data-dec="1">0</span>%</b><span data-i="res.b2">del alumnado dice que necesita formación en IA</span><i></i></div>
+        <div class="bar" style="--v:100"><b><span class="count" data-to="100">0</span>%</b><span data-i="res.b3">del profesorado cree que el alumnado debería formarse en IA</span><i></i></div>
+        <div class="bar" style="--v:85"><b><span class="count" data-to="85">0</span>%</b><span data-i="res.b4">del profesorado ve la IA poco o nada integrada en los planes de estudio</span><i></i></div>
+      </div>
+    </article>
 
-    <section id="cv">
-        <div class="section-inner">
-            <h2>Descargar CV</h2>
-            <div class="button-container">
-                <a href="pdfs/cv-castellano.pdf" class="button" download>📄 Castellano</a>
-            </div>
+    <div class="books">
+      <article class="book tilt">
+        <div class="book-cover"><img src="assets/work/tfgperiodismo-01.webp" alt="Portada del TFG de Periodismo" loading="lazy"></div>
+        <div class="book-body">
+          <p class="kicker" data-i="res.tfg1.kicker">TFG · Periodismo · 2022 · en euskera</p>
+          <h3>60. hamarkadako desarrollismoa NO-DOen bitartez</h3>
+          <p data-i="res.tfg1.p">El desarrollismo de los años 60 a través del NO-DO: cómo la propaganda informativa del franquismo contó el nacimiento del turismo de masas, contrastado con los recuerdos de nuestras familias.</p>
+          <div class="chips">
+            <a class="chip" href="docs/TFG-periodismo.pdf" target="_blank" rel="noopener" data-pdf data-i="res.read">Leer PDF</a>
+            <a class="chip chip-pdf" href="docs/TFG-periodismo.pdf" download data-pdf data-i="res.download">Descargar PDF</a>
+          </div>
         </div>
-    </section>
+      </article>
+      <article class="book tilt">
+        <div class="book-cover"><img src="assets/work/tfgpublicidad-01.webp" alt="Portada del TFG de Publicidad" loading="lazy"></div>
+        <div class="book-body">
+          <p class="kicker" data-i="res.tfg2.kicker">TFG · Publicidad y RRPP · 2025 · en euskera</p>
+          <h3>Euskalkien eta herri-hizkeren erabilera tokiko hedabideetan</h3>
+          <p data-i="res.tfg2.p">El uso de los dialectos del euskera en los medios locales de Tokikom: más de 1.200 páginas de prensa analizadas en 10 medios, más encuestas a periodistas. El batua domina, pero los dialectos dan cercanía e identidad.</p>
+          <div class="chips">
+            <a class="chip" href="docs/TFG-publicidad.pdf" target="_blank" rel="noopener" data-pdf data-i="res.read">Leer PDF</a>
+            <a class="chip chip-pdf" href="docs/TFG-publicidad.pdf" download data-pdf data-i="res.download">Descargar PDF</a>
+          </div>
+        </div>
+      </article>
+      <article class="book book-phd">
+        <div class="phd-spark" aria-hidden="true"></div>
+        <div class="book-body">
+          <p class="kicker" data-i="res.phd.kicker">Doctorado · UPV/EHU · en curso</p>
+          <h3 data-i="res.phd.title">IA y comunicación</h3>
+          <p data-i="res.phd.p">Doctorado a tiempo parcial que continúa la línea del TFM: cómo la inteligencia artificial transforma la comunicación.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
 
+<!-- ===== Trayectoria ===== -->
+<section class="path" id="trayectoria">
+  <div class="wrap">
+    <h2 class="h2" data-i="path.title">Trayectoria</h2>
+    <p class="lead" data-i="path.lead">Del micrófono de la radio a un centro de gaming en Suecia.</p>
+  </div>
+  <div class="wrap timeline">
+    <svg class="tl-line" aria-hidden="true" preserveAspectRatio="none" viewBox="0 0 20 1000"><path d="M10 0 C 20 120, 0 240, 10 360 S 20 600, 10 720 S 0 900, 10 1000"/></svg>
+    <ol>
+      <li><time>2017</time><div><h3>Geure Geurean · EiTB</h3><p data-i="path.t1">Empiezo como colaboradora mensual. En 2018-19 paso a semanal y en 2019-20 presento el programa completo.</p><a class="chip" href="https://www.ivoox.com/en/podcast-geure-geurean_sq_f1385732_1.html" target="_blank" rel="noopener" data-i="path.listen">Escuchar</a></div></li>
+      <li><time>2020</time><div><h3 data-i="path.t2h">Artículos en Deia</h3><p data-i="path.t2">Prácticas de redacción en prensa: de la vuelta de la ONCE tras la pandemia a la ola de calor en Bizkaia. Y presento <em>Getxotik mundura: ondas de solidaridad</em> en la radio.</p>
+        <div class="clips">
+          <a class="clip" href="https://www.deia.eus/bizkaia/2020/06/17/once-vuelve-normalidad-sido-duro-4698571.amp.html" target="_blank" rel="noopener" data-i="path.c1">La ONCE tras la pandemia</a>
+          <a class="clip" href="https://www.deia.eus/cultura/2020/07/29/pianista-antonio-oyarzabal-prepara-debut-4689133.amp.html" target="_blank" rel="noopener">Aurrera Fest!</a>
+          <a class="clip" href="https://www.deia.eus/cultura/2020/07/30/eskarabillera-liburua-aurkeztu-du-aldundiak-4688723.amp.html" target="_blank" rel="noopener">Eskarabillera</a>
+          <a class="clip" href="https://www.deia.eus/bizkaia/2020/07/31/43-3-grados-bizkaia-fuego-4688525.amp.html" target="_blank" rel="noopener" data-i="path.c4">43,3 °C en Bizkaia</a>
+          <a class="clip clip-radio" href="https://www.ivoox.com/en/podcast-getxotik-mundura-ondas-solidaridad_sq_f11073203_1.html" target="_blank" rel="noopener">Getxotik mundura</a>
+        </div></div></li>
+      <li><time>2022</time><div><h3 data-i="path.t3h">Grado en Periodismo · UPV/EHU</h3><p data-i="path.t3">Ética periodística, investigación, contraste de fuentes y producción en varios formatos. TFG sobre el NO-DO.</p></div></li>
+      <li><time>2023–25</time><div><h3 data-i="path.t4h">42 Urduliz · programación en C</h3><p data-i="path.t4">Casi dos años en una escuela de programación peer-to-peer. Sigo programando por mi cuenta porque me apasiona.</p></div></li>
+      <li><time>2025</time><div><h3 data-i="path.t5h">Publicidad y RRPP · UPV/EHU</h3><p data-i="path.t5">Branding, storytelling y campañas. Prácticas en Irudigital (contenido y planificación para marcas) y en Cadena SER (Mailchimp, Canva, InDesign). Curso de Community Manager en Lanbide.</p><a class="chip" href="https://www.irudigital.com/" target="_blank" rel="noopener">Irudigital</a></div></li>
+      <li><time>2025</time><div><h3 data-i="path.t6h">Máster en Comunicación Social · UPV/EHU</h3><p data-i="path.t6">Redes sociales, televisión digital y políticas de comunicación. TFM sobre IA en la universidad.</p><a class="chip" href="https://www.ehu.eus/es/web/master/master-comunicacion-social" target="_blank" rel="noopener" data-i="path.master">Ver el máster</a></div></li>
+      <li><time>2026</time><div><h3 data-i="path.t7h">FUZED Borås y ung.boras</h3><p data-i="path.t7">Redes sociales, diseño para el local y el AI Game Jam. Ese mismo año, curso de IA para creación de contenidos en la UPV/EHU, con el Game Jam como proyecto final.</p></div></li>
+      <li class="now"><time data-i="path.now">Ahora</time><div><h3 data-i="path.t8h">Doctorado y sueco</h3><p data-i="path.t8">Doctorado en IA y comunicación a tiempo parcial y sueco nivel Kurs C, para mantener abierta la puerta a volver a Suecia.</p></div></li>
+    </ol>
+    <p class="tl-year" aria-hidden="true"><span>2017</span></p>
+  </div>
+</section>
+
+<!-- ===== Código ===== -->
+<section class="code" id="codigo">
+  <div class="wrap code-grid">
+    <div>
+      <h2 class="h2" data-i="code.title">También programo</h2>
+      <p class="lead" data-i="code.lead">En 42 Urduliz aprendí C a base de proyectos y revisiones entre compañeros. Están todos en mi GitHub.</p>
+      <a class="btn btn-ink magnetic" href="https://github.com/irolaizo" target="_blank" rel="noopener">github.com/irolaizo</a>
+    </div>
+    <div class="term" id="term" aria-label="Terminal con mis proyectos de programación">
+      <div class="term-bar"><i></i><i></i><i></i><span>iratxe@42urduliz: ~</span></div>
+      <pre class="term-body"><code id="termOut"></code><span class="caret"></span></pre>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Contacto ===== -->
+<section class="contact" id="contacto">
+  <div class="wrap">
+    <h2 class="contact-big"><span data-split data-i="contact.big">¿Hablamos?</span></h2>
+    <p class="lead" data-i="contact.lead">¿Tienes un proyecto, una propuesta o simplemente quieres saludar? Escríbeme.</p>
+    <div class="mail">
+      <a href="mailto:iratxeolaizolavargas@gmail.com" class="mail-link">iratxeolaizolavargas@gmail.com</a>
+      <button type="button" class="btn btn-lime" id="copyMail" data-i="contact.copy">Copiar email</button>
+    </div>
+    <div class="chips social">
+      <a class="chip" href="https://linkedin.com/in/iratxe-olaizola" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="chip" href="https://instagram.com/iratxeolaizola" target="_blank" rel="noopener">Instagram</a>
+      <a class="chip" href="https://github.com/irolaizo" target="_blank" rel="noopener">GitHub</a>
+    </div>
+    <div class="cv">
+      <p class="hand" data-i="contact.cv">descarga mi CV</p>
+      <div class="chips">
+        <a class="chip chip-pdf" href="docs/CV-Iratxe-Olaizola-es.pdf" download data-pdf>Castellano</a>
+        <a class="chip chip-pdf" href="docs/CV-Iratxe-Olaizola-eu.pdf" download data-pdf>Euskara</a>
+        <a class="chip chip-pdf" href="docs/CV-Iratxe-Olaizola-en.pdf" download data-pdf>English</a>
+        <a class="chip chip-pdf" href="docs/CV-Iratxe-Olaizola-sv.pdf" download data-pdf>Svenska</a>
+      </div>
+    </div>
+  </div>
+</section>
 </main>
 
-<footer>
-    <p>&copy; 2025 Iratxe Olaizola · Hecho con 💻 y cariño</p>
+<footer class="foot">
+  <p data-i="foot">© 2026 Iratxe Olaizola. Dibujado y animado a mano, con un poco de ayuda de la IA.</p>
 </footer>
-<script src="script.js"></script>
+
+<!-- Compañera flotante -->
+<div class="buddy" id="buddy" aria-hidden="true">
+  <div class="bubble buddy-bubble hide"><span class="bubble-text"></span></div>
+  <div class="buddy-face" id="buddyAvatar"></div>
+</div>
+
+<!-- Visor de piezas -->
+<div class="lightbox" id="lightbox" hidden role="dialog" aria-modal="true" aria-labelledby="lbTitle">
+  <div class="lb-top">
+    <p id="lbTitle" class="lb-title"></p>
+    <p class="lb-count" id="lbCount"></p>
+    <button type="button" class="lb-close" aria-label="Cerrar">×</button>
+  </div>
+  <div class="lb-stage">
+    <button type="button" class="lb-nav lb-prev" aria-label="Anterior">‹</button>
+    <img id="lbImg" alt="">
+    <button type="button" class="lb-nav lb-next" aria-label="Siguiente">›</button>
+  </div>
+  <div class="lb-strip" id="lbStrip"></div>
+</div>
+
+<script src="js/avatar.js"></script>
+<script src="js/i18n.js"></script>
+<script src="js/main.js"></script>
 </body>
 </html>
