@@ -69,7 +69,7 @@
       <path d="M364 470 C360 412 322 374 260 358 L230 350 L210 424 L222 470Z" fill="url(#${p}-hound)" stroke="${INK}" stroke-width="3" stroke-linejoin="round"/>
       <path d="M170 350 L156 392 L184 404" fill="none" stroke="${INK}" stroke-width="3" stroke-linejoin="round"/>
       <path d="M230 350 L244 392 L216 404" fill="none" stroke="${INK}" stroke-width="3" stroke-linejoin="round"/>
-      <circle cx="200" cy="452" r="4" fill="#E4FF1A" stroke="${INK}" stroke-width="2"/>
+      <circle cx="200" cy="452" r="4" fill="#FF8FB8" stroke="${INK}" stroke-width="2"/>
     </g>
 
     <!-- cabeza -->
@@ -82,7 +82,7 @@
       </g>
       <ellipse cx="108" cy="236" rx="12" ry="18" fill="${SKIN_SH}"/>
       <ellipse cx="292" cy="236" rx="12" ry="18" fill="${SKIN_SH}"/>
-      <circle cx="292" cy="256" r="4" fill="#E4FF1A" stroke="${INK}" stroke-width="1.5"/>
+      <circle cx="292" cy="256" r="4" fill="#FF8FB8" stroke="${INK}" stroke-width="1.5"/>
       <path d="M200 112 C256 112 292 152 292 212 C292 268 254 318 200 320 C146 318 108 268 108 212 C108 152 144 112 200 112Z" fill="url(#${p}-face)"/>
 
       <g class="face">

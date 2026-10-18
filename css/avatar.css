@@ -1,5 +1,5 @@
 /* ---------- Avatar: partes visibles según el ánimo ---------- */
-.avatar-svg { width: 100%; height: auto; display: block; overflow: visible; color: var(--ink, #1E1446); }
+.avatar-svg { width: 100%; height: auto; display: block; overflow: visible; color: var(--ink, #3A1424); }
 .avatar-svg .eye-happy, .avatar-svg .eye-closed, .avatar-svg .eye-dizzy, .avatar-svg .eye-heart,
 .avatar-svg .mouth > g, .avatar-svg .mouth > path,
 .avatar-svg .fx-zzz, .avatar-svg .fx-sweat { display: none; }

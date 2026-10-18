@@ -171,7 +171,7 @@
     for (let i = 0; i < 8; i++) {
       const h = document.createElement('span');
       h.className = 'heart';
-      h.style.cssText = `position:fixed;left:${r.left + r.width / 2}px;top:${r.top + r.height * .45}px;z-index:250;animation:none;background:${pick(['#FF5C4D', '#E4FF1A', '#6A3BFF', '#FF9C94'])}`;
+      h.style.cssText = `position:fixed;left:${r.left + r.width / 2}px;top:${r.top + r.height * .45}px;z-index:250;animation:none;background:${pick(['#FF6F61', '#FFB3CF', '#D63A78', '#FFD3DF'])}`;
       document.body.appendChild(h);
       h.animate([{ transform: 'scale(.4)', opacity: 1 }, { transform: `translate(${rand(-170, 170)}px, ${rand(-230, -60)}px) rotate(${rand(-90, 90)}deg) scale(${rand(.9, 1.7)})`, opacity: 0 }], { duration: rand(900, 1400), easing: 'cubic-bezier(.2,.8,.3,1)' }).onfinish = () => h.remove();
     }
