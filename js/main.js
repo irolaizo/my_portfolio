@@ -220,7 +220,7 @@
     const line = L().sec[id];
     if (line && !heroVisible && !reduce) { buddy.react(pick(['excited', 'wink', 'happy']), 1600); buddySay(line, 3200); }
   }), { rootMargin: '-45% 0px -50% 0px' });
-  $$('main section[id]').forEach(s => secObs.observe(s));
+  $$('main section[id], #fuzed').forEach(s => secObs.observe(s));
 
   const buddyBox = $('#buddy');
   new IntersectionObserver(([e]) => { heroVisible = e.isIntersecting; buddyBox.classList.toggle('show', !heroVisible); }, { threshold: .15 }).observe($('.hero-stage'));
@@ -237,6 +237,15 @@
     b.addEventListener('click', () => openLB(set));
     track.appendChild(b);
   });
+
+  // arrastrar la galería con el ratón y con la rueda
+  const strip0 = $('#hscroll .hscroll-sticky');
+  let drag = null, moved = false;
+  strip0.addEventListener('pointerdown', e => { if (e.pointerType !== 'mouse') return; drag = { x: e.clientX, l: strip0.scrollLeft }; moved = false; });
+  addEventListener('pointermove', e => { if (!drag) return; const dx = e.clientX - drag.x; if (Math.abs(dx) > 4) moved = true; strip0.scrollLeft = drag.l - dx; });
+  addEventListener('pointerup', () => { drag = null; });
+  strip0.addEventListener('click', e => { if (moved) { e.stopPropagation(); e.preventDefault(); moved = false; } }, true);
+  strip0.addEventListener('wheel', e => { if (Math.abs(e.deltaY) > Math.abs(e.deltaX) && e.shiftKey) { strip0.scrollLeft += e.deltaY; e.preventDefault(); } }, { passive: false });
 
   /* ---------------- Visor ---------------- */
   const lb = $('#lightbox'), lbImg = $('#lbImg'), strip = $('#lbStrip');
@@ -393,7 +402,7 @@
   let hsDist = 0, hsPinned = false;
 
   function measure() {
-    hsPinned = !reduce && innerWidth > 800;
+    hsPinned = false;
     hs.classList.toggle('native', !hsPinned);
     if (hsPinned) { hsDist = Math.max(0, track.scrollWidth - innerWidth); hs.style.height = (hsDist + innerHeight) + 'px'; }
     else { hs.style.height = ''; track.style.transform = ''; }
