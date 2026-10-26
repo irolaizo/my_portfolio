@@ -102,7 +102,7 @@ window.I18N = {
     'path.now': 'Orain', 'path.t8h': 'Doktoretza', 'path.t8': 'IA eta komunikazioari buruzko doktoretza UPV/EHUn, lanaldi partzialean egiten dudana.',
     'code.title': 'Kode pixka bat', 'code.lead': '42 Urdulizen C-ren oinarriak ikasi nituen. Ez nuen common corea amaitu, beraz oinarrizko ezagutzak ditut, baina lan egiten dudan teknologia nola dabilen ulertzen laguntzen didate.',
     'contact.big': 'Hitz egingo dugu?', 'contact.lead': 'Lana bilatzen ari naiz komunikazioan, community managementean eta eduki sorkuntzan, berehala hasteko prest. Lanpostu, proiektu edo proposamen bat duzu? Idatzi iezadazu.', 'contact.copy': 'Emaila kopiatu', 'contact.cv': 'deskargatu nire CVa',
-    foot: '© 2026 Iratxe Olaizola. Eskuz marraztua eta animatua, IAren laguntza pixka batekin.',
+    foot: '© 2026 Iratxe Olaizola. Diseinua, edukiak eta zuzendaritza: Iratxe Olaizola. Kodea, avatar animatua, lanen laburpenak eta itzulpenak IAren laguntzaz (Claude) egin ziren, eta nik berrikusi ditut.<br><span class="foot-small">Cookierik eta analitikarik gabe: webguneak aukeratzen duzun hizkuntza bakarrik gordetzen du zure nabigatzailean. Letra-tipoak webgune honetatik bertatik zerbitzatzen dira.</span>',
     rot: ['kazetaria', 'publizista', 'IA ikertzailea', 'Procreate diseinatzailea', 'eduki sortzailea', 'game jam antolatzailea'],
     view: 'ikusi', copied: 'Kopiatuta!', copy: 'Emaila kopiatu',
     lines: {
@@ -184,7 +184,7 @@ window.I18N = {
     'path.now': 'Now', 'path.t8h': 'PhD', 'path.t8': 'A PhD in AI and communication at UPV/EHU, which I do part-time.',
     'code.title': 'A little bit of code', 'code.lead': 'At 42 Urduliz I learned the basics of C. I didn’t finish the common core, so my knowledge is basic, but it helps me understand the technology I work with.',
     'contact.big': 'Let’s talk?', 'contact.lead': 'I’m looking for a job in communication, community management and content creation, and I can start right away. Got a role, a project or a proposal? Write to me.', 'contact.copy': 'Copy email', 'contact.cv': 'download my CV',
-    foot: '© 2026 Iratxe Olaizola. Drawn and animated by hand, with a little help from AI.',
+    foot: '© 2026 Iratxe Olaizola. Design, content and direction: Iratxe Olaizola. The code, the animated avatar, the summaries of my work and the translations were made with the help of AI (Claude), and I have reviewed them.<br><span class="foot-small">No cookies or analytics: the site only stores your chosen language in your browser. Fonts are served from this site.</span>',
     rot: ['journalist', 'advertiser', 'AI researcher', 'Procreate designer', 'content creator', 'game jam organiser'],
     view: 'view', copied: 'Copied!', copy: 'Copy email',
     lines: {
@@ -266,7 +266,7 @@ window.I18N = {
     'path.now': 'Nu', 'path.t8h': 'Doktorand', 'path.t8': 'Doktorandstudier i AI och kommunikation vid UPV/EHU, på deltid.',
     'code.title': 'Lite kod', 'code.lead': 'På 42 Urduliz lärde jag mig grunderna i C. Jag slutförde inte common core, så mina kunskaper är grundläggande, men de hjälper mig att förstå tekniken jag arbetar med.',
     'contact.big': 'Ska vi prata?', 'contact.lead': 'Jag söker jobb inom kommunikation, community management och innehållsskapande och kan börja direkt. Har du en tjänst, ett projekt eller ett förslag? Skriv till mig.', 'contact.copy': 'Kopiera mejl', 'contact.cv': 'ladda ner mitt CV',
-    foot: '© 2026 Iratxe Olaizola. Ritad och animerad för hand, med lite hjälp av AI.',
+    foot: '© 2026 Iratxe Olaizola. Design, innehåll och regi: Iratxe Olaizola. Koden, den animerade avataren, sammanfattningarna av mina arbeten och översättningarna gjordes med hjälp av AI (Claude), och jag har granskat dem.<br><span class="foot-small">Inga kakor eller analysverktyg: webbplatsen sparar bara ditt valda språk i din webbläsare. Typsnitten levereras från den här webbplatsen.</span>',
     rot: ['journalist', 'reklamare', 'AI-forskare', 'Procreate-designer', 'innehållsskapare', 'game jam-arrangör'],
     view: 'se', copied: 'Kopierat!', copy: 'Kopiera mejl',
     lines: {

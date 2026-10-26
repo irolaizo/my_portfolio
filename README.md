@@ -11,3 +11,5 @@ Web publicada en https://iratxeolaizolavargas.com (GitHub Pages).
 - `assets/work/`: páginas de los trabajos en .webp · `docs/`: TFM, TFG, CV y otros PDF
 
 Idioma con `?lang=eu`, `?lang=en` o `?lang=sv`. Versión anterior (una sola página): rama `copia-v1-web-unica`.
+
+Fuentes (Bricolage Grotesque, Instrument Sans y Caveat) servidas desde `assets/fonts/`, con licencia SIL Open Font License (ver `assets/fonts/OFL-*.txt`). La web no usa cookies ni analítica; solo guarda el idioma elegido en el navegador (localStorage).

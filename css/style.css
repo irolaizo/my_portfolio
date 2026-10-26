@@ -4,6 +4,12 @@
    de sus monstruos) + pegatinas y bordes de tinta, con una caricatura
    de Iratxe como anfitriona que mira y reacciona.
    ========================================================= */
+/* Fuentes servidas desde la propia web (sin Google Fonts). Licencia SIL OFL: assets/fonts/OFL-*.txt */
+@font-face { font-family: "Bricolage Grotesque"; src: url("../assets/fonts/bricolage-grotesque.woff") format("woff"); font-weight: 200 800; font-stretch: 75% 100%; font-display: swap; }
+@font-face { font-family: "Instrument Sans"; src: url("../assets/fonts/instrument-sans.woff") format("woff"); font-weight: 400 700; font-stretch: 75% 100%; font-style: normal; font-display: swap; }
+@font-face { font-family: "Instrument Sans"; src: url("../assets/fonts/instrument-sans-italic.woff") format("woff"); font-weight: 400 700; font-stretch: 75% 100%; font-style: italic; font-display: swap; }
+@font-face { font-family: "Caveat"; src: url("../assets/fonts/caveat.woff") format("woff"); font-weight: 400 700; font-display: swap; }
+.foot-small { display: inline-block; margin-top: .35rem; font-size: .85em; opacity: .85; }
 :root {
   --bg: #FFF4F7;      /* papel rosado */
   --card: #FFFFFF;
@@ -786,3 +792,5 @@ body.has-cursor .cursor { display: block; }
 @media (max-width: 980px) { .certs-3 { grid-template-columns: 1fr 1fr; } }
 @media (max-width: 640px) { .certs-3 { grid-template-columns: 1fr; } }
 .acad .contact-big { font-size: clamp(2.6rem, 12.5vw, 11rem); }
+/* que la compañera flotante no tape el pie en móvil */
+@media (max-width: 640px) { body:not([data-page="home"]) .foot { padding-bottom: calc(120px + env(safe-area-inset-bottom, 0px)); } }
