@@ -123,14 +123,14 @@ body.has-cursor .cursor { display: block; }
 .nav-logo { font-family: var(--f-display); font-weight: 800; font-size: 1.4rem; text-decoration: none; letter-spacing: -.03em; }
 .nav-logo span { color: var(--coral); }
 .nav-links { display: flex; gap: .2rem; margin-left: auto; }
-.nav-links a { text-decoration: none; font-weight: 600; font-size: .95rem; padding: .45em .85em; border-radius: 999px; transition: background .2s, color .2s; }
+.nav-links a { white-space: nowrap; text-decoration: none; font-weight: 600; font-size: .95rem; padding: .45em .85em; border-radius: 999px; transition: background .2s, color .2s; }
 .nav-links a:hover, .nav-links a.active { background: var(--ink); color: var(--bg); }
 .lang { display: flex; border: 2px solid var(--line); border-radius: 999px; padding: 2px; }
 .lang button { border: 0; background: none; font-weight: 700; font-size: .8rem; padding: .35em .6em; border-radius: 999px; cursor: pointer; }
 .lang button[aria-pressed="true"] { background: var(--lime); color: var(--deep); }
 .nav-burger { display: none; }
 
-@media (max-width: 920px) {
+@media (max-width: 1120px) {
   .nav { padding: 6px 6px 6px 16px; gap: .5rem; }
   .lang { margin-left: auto; }
   .nav-burger {
@@ -603,7 +603,7 @@ body.has-cursor .cursor { display: block; }
 .nav-links a.nav-switch:hover { background: var(--ink); color: var(--bg); }
 .pro { --switch: #5FD790; }
 .acad { --switch: #FFB3CF; }
-@media (max-width: 920px) { .nav-links a.nav-switch { margin: .4rem 0 0; text-align: center; } }
+@media (max-width: 1120px) { .nav-links a.nav-switch { margin: .4rem 0 0; text-align: center; } }
 
 /* puerta a la otra página */
 .swap-wrap { padding: 0 0 20px; }
