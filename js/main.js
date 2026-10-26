@@ -524,6 +524,7 @@
     onEnter('.timeline li', li => [...li.children].forEach((c, i) => anim(c, [{ translate: '50px 0', opacity: 0 }, { translate: '0 0', opacity: 1 }], { duration: 800, delay: i * 80 })), .3);
     onEnter('.clips', el => $$('.clip', el).forEach((c, i) => anim(c, [{ translate: '0 30px', rotate: `${rand(-20, 20)}deg`, opacity: 0 }, { translate: '0 0', rotate: '0deg', opacity: 1 }], { duration: 700, delay: i * 70, easing: E.back })), .3);
     onEnter('.thread', el => el.classList.add('in'), .3);
+    onEnter('.degrees', el => $$('.degree', el).forEach((d, i) => anim(d, [{ translate: '0 80px', rotate: `${[-5, 4, -3][i % 3]}deg`, opacity: 0 }, { translate: '0 0', rotate: '0deg', opacity: 1 }], { duration: 900, delay: i * 120, easing: E.back })), .2);
     onEnter('.press', el => $$('.paper', el).forEach((c, i) => anim(c, [{ translate: '0 40px', rotate: `${rand(-25, 25)}deg`, opacity: 0 }, { translate: '0 0', rotate: '0deg', opacity: 1 }], { duration: 700, delay: i * 60, easing: E.back })), .3);
     onEnter('.piece', el => anim($('.piece-img', el), [{ scale: '.6', opacity: 0 }, { scale: '1', opacity: 1 }], { duration: 700, easing: E.back }), .2);
   }

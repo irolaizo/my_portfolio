@@ -515,3 +515,52 @@ window.I18N = {
     }
   });
 })(window.I18N);
+
+/* ---------- Titulaciones y mención en Dirección en Comunicación (CV académico) ---------- */
+(function (I) {
+  Object.assign(I.eu, {
+    'a.deg.lead': 'Kazetaritzan eta Publizitatean eta Harreman Publikoetan graduatua naiz, biak Komunikazioaren Arloko Zuzendaritza aipamenarekin, eta Gizarte Komunikazioko Masterra dut. Dena UPV/EHUn, non orain doktoretza egiten ari naizen.',
+    'a.deg.grado': 'Gradua', 'a.deg.master': 'Unibertsitate masterra', 'a.deg.men': 'Komunikazioaren Arloko Zuzendaritza aipamena',
+    'a.deg1.t': 'Kazetaritza', 'a.deg1.p': 'Praktikak Deian eta Gaztesare ikerketa taldean. GrALa NO-DOaren propagandari buruz.',
+    'a.deg2.t': 'Publizitatea eta Harreman Publikoak', 'a.deg2.p': 'Erasmus+ Høgskolen i Østfold-en (Norvegia), 2022–23: komunikazio korporatiboa, nazioarteko marketina eta komunikazio profesionala. GrALa euskalkiei buruz tokiko hedabideetan.',
+    'a.deg3.t': 'Gizarte Komunikazioa', 'a.deg3.m': '60 ECTS · ikerketara bideratua',
+    'a.deg3.p': 'Metodologia kualitatiboa, teknika estatistikoak eta audientzien azterketa, analisi kualitatiborako softwarea, agenda eta framinga, soziosemiotika eta ziberkazetaritza. MALa IAri buruz unibertsitatean.',
+    'a.men.k': 'Bi graduetan', 'a.men.p': 'Hautazko irakasgaien ibilbide bat, enpresen, erakundeen eta instituzioen komunikazioa zuzendu eta kudeatzera bideratua: prentsa bulegoak, bozeramailetza, harreman publikoak eta komunikazio instituzionala.',
+    'a.men.o1': 'Komunikazio Publikoaren Zuzendaritza', 'a.men.o2': 'Komunikazio Bulegoak', 'a.men.o3': 'Bozeramaileen Prestakuntza', 'a.men.o4': 'Harreman Publikoen Teknikak',
+    'a.men.o5': 'Komunikazioaren Kudeaketa Nazioarteko Erakundeetan', 'a.men.o6': 'Komunikazioa Euskaraz: Hedabideetarako Hizkuntza Estrategiak',
+    'a.res.worksT': 'Nire ikerketa lanak',
+    'a.path.t1m': 'Komunikazioaren Arloko Zuzendaritza aipamenarekin. Kazetaritza etika, ikerketa, iturrien egiaztapena eta formatu anitzeko ekoizpena. GrALa NO-DOari buruz, Aintzane Rincónek zuzendua.',
+    'a.path.t4m': 'Komunikazioaren Arloko Zuzendaritza aipamenarekin. Brandinga, storytellinga eta kanpainak, Erasmus+ batekin Høgskolen i Østfold-en (Norvegia). GrALa euskalkiei buruz tokiko hedabideetan.',
+    'a.path.t5m': 'Ikerketara bideratutako 60 ECTSko unibertsitate masterra: metodo kualitatibo eta kuantitatiboak, audientziak eta sare sozialak. MALa IAri buruz unibertsitatean, 2025eko uztailean defendatua.'
+  });
+  Object.assign(I.en, {
+    'a.deg.lead': 'I hold a BA in Journalism and a BA in Advertising and Public Relations, both with a mention in Communication Management, and an MA in Social Communication. All at the UPV/EHU, where I’m now doing my PhD.',
+    'a.deg.grado': 'Bachelor’s degree', 'a.deg.master': 'University master’s degree', 'a.deg.men': 'Mention in Communication Management',
+    'a.deg1.t': 'Journalism', 'a.deg1.p': 'Internships at Deia and with the Gaztesare research group. Bachelor’s thesis on NO-DO propaganda.',
+    'a.deg2.t': 'Advertising and Public Relations', 'a.deg2.p': 'Erasmus+ at Høgskolen i Østfold (Norway), 2022–23: corporate communication, international marketing and professional communication. Bachelor’s thesis on Basque dialects in local media.',
+    'a.deg3.t': 'Social Communication', 'a.deg3.m': '60 ECTS · research-oriented',
+    'a.deg3.p': 'Qualitative methodology, statistical techniques and audience research, qualitative analysis software, agenda-setting and framing, sociosemiotics and online journalism. Master’s thesis on AI at university.',
+    'a.men.k': 'In both degrees', 'a.men.p': 'A pathway of elective courses focused on leading and managing communication for companies, institutions and organisations: press offices, spokespersonship, public relations and institutional communication.',
+    'a.men.o1': 'Management of Public Communications', 'a.men.o2': 'Press Office', 'a.men.o3': 'Training Spokespersons', 'a.men.o4': 'Public Relations Techniques',
+    'a.men.o5': 'Communication Management at International Organisations', 'a.men.o6': 'Communication in Basque: Linguistic Strategies for the Media',
+    'a.res.worksT': 'My research work',
+    'a.path.t1m': 'With a mention in Communication Management. Journalistic ethics, research, fact-checking and multi-format production. Thesis on the NO-DO, supervised by Aintzane Rincón.',
+    'a.path.t4m': 'With a mention in Communication Management. Branding, storytelling and campaigns, with an Erasmus+ at Høgskolen i Østfold (Norway). Thesis on Basque dialects in local media.',
+    'a.path.t5m': 'A 60-ECTS research-oriented master’s: qualitative and quantitative methods, audiences and social media. Thesis on AI at university, defended in July 2025.'
+  });
+  Object.assign(I.sv, {
+    'a.deg.lead': 'Jag har en kandidatexamen i journalistik och en i reklam och PR, båda med inriktning mot kommunikationsledning, och en master i social kommunikation. Allt vid UPV/EHU, där jag nu är doktorand.',
+    'a.deg.grado': 'Kandidatexamen', 'a.deg.master': 'Masterexamen', 'a.deg.men': 'Inriktning: kommunikationsledning',
+    'a.deg1.t': 'Journalistik', 'a.deg1.p': 'Praktik på Deia och i forskargruppen Gaztesare. Kandidatuppsats om NO-DO-propagandan.',
+    'a.deg2.t': 'Reklam och PR', 'a.deg2.p': 'Erasmus+ vid Høgskolen i Østfold (Norge), 2022–23: företagskommunikation, internationell marknadsföring och professionell kommunikation. Kandidatuppsats om baskiska dialekter i lokala medier.',
+    'a.deg3.t': 'Social kommunikation', 'a.deg3.m': '60 ECTS · forskningsinriktad',
+    'a.deg3.p': 'Kvalitativ metod, statistiska tekniker och publikstudier, programvara för kvalitativ analys, agenda-setting och framing, sociosemiotik och onlinejournalistik. Masteruppsats om AI på universitetet.',
+    'a.men.k': 'I båda examina', 'a.men.p': 'Ett paket valbara kurser om att leda och styra kommunikationen i företag, institutioner och organisationer: pressavdelningar, talespersonsroll, PR och institutionell kommunikation.',
+    'a.men.o1': 'Ledning av offentlig kommunikation', 'a.men.o2': 'Pressavdelningar', 'a.men.o3': 'Utbildning av talespersoner', 'a.men.o4': 'PR-tekniker',
+    'a.men.o5': 'Kommunikationsledning i internationella organisationer', 'a.men.o6': 'Kommunikation på baskiska: språkstrategier för medierna',
+    'a.res.worksT': 'Mina forskningsarbeten',
+    'a.path.t1m': 'Med inriktning mot kommunikationsledning. Journalistisk etik, research, källgranskning och produktion i flera format. Uppsats om NO-DO, handledd av Aintzane Rincón.',
+    'a.path.t4m': 'Med inriktning mot kommunikationsledning. Varumärkesbyggande, storytelling och kampanjer, med Erasmus+ vid Høgskolen i Østfold (Norge). Uppsats om baskiska dialekter i lokala medier.',
+    'a.path.t5m': 'En forskningsinriktad master på 60 ECTS: kvalitativa och kvantitativa metoder, publiker och sociala medier. Uppsats om AI på universitetet, försvarad i juli 2025.'
+  });
+})(window.I18N);
