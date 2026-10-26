@@ -292,3 +292,226 @@ window.I18N = {
     }
   }
 };
+
+/* =========================================================
+   Textos de la portada y de los dos CV (profesional y académico).
+   El castellano de las páginas sigue viviendo en el HTML; aquí van
+   las traducciones y las frases del avatar que no están en el HTML.
+   ========================================================= */
+(function (I) {
+  const add = (l, o) => Object.assign(I[l], o);
+
+  /* ---------- castellano: solo frases del avatar ---------- */
+  I.es.lines.pdf = ['¡Ábrelo, ábrelo!', 'Ahí está todo bien explicado', 'Hecho con mucho cariño'];
+  add('es', {
+    arot: ['la IA en la comunicación', 'la IA en las aulas', 'los dialectos en los medios', 'la propaganda del NO-DO'],
+    alines: {
+      greet: '¡Kaixo! Pasa a ver mi investigación.',
+      toss: ['¡Birrete al aire!', '¡Cum laude!', '¡Viva la investigación!'],
+      pdf: ['Investigación recién salida del horno', 'Léelo, que me costó lo mío', 'Muchas horas de biblioteca ahí dentro'],
+      sec: { 'sobre-mi': 'Arrastra las pegatinas, de verdad', investigacion: 'Aquí está toda mi investigación', formacion: 'Nunca dejo de aprender', trayectoria: 'De Leioa al doctorado', contacto: '¿Colaboramos? Escríbeme' }
+    },
+    hlines: {
+      greet: '¡Kaixo! ¿Por dónde empezamos?', pro: '¡Mi lado profesional!', acad: '¡Con toga y birrete!',
+      click: ['¡Jajaja!', '¡Otra vez!', '¡Eso ha sido un clic de 10!'], toss: ['¡Birrete al aire!', '¡Cum laude!', '¡Viva la investigación!'], dizzy: 'Todo me da vueltas…'
+    }
+  });
+
+  /* ---------- euskara ---------- */
+  I.eu.lines.pdf = ['Ireki, ireki!', 'Dena ondo azalduta dago', 'Maitasun handiz egina'];
+  add('eu', {
+    'nav.toAcad': 'CV akademikoa', 'nav.toPro': 'CV profesionala',
+    'swap.acadK': 'Nire ikerketak interesatzen zaizu?', 'swap.acadT': 'Nire CV akademikoa', 'swap.acadP': 'Doktoretza, MALa, bi GrAL beren datuekin azalduta eta prestakuntza osagarria.',
+    'swap.proK': 'Nire esperientzia profesionala bilatzen duzu?', 'swap.proT': 'Nire CV profesionala', 'swap.proP': 'Sare sozialak, diseinua, FUZED Borås, Icehotel eta nire proiektu guztiak.',
+    'p.path.irh': 'Irudigital · agentzia', 'p.path.ir': 'Praktikak sare sozialetan eta SEOn: agentziaren markentzako edukia eta plangintza.',
+    'p.path.serh': 'Cadena SER · Bilbo', 'p.path.ser': 'Marketin praktikak: sustapen materialak, email marketina Mailchimp-ekin, prentsa oharrak eta ekitaldietan laguntza.',
+    'p.path.thh': 'Centro Estética Thais · freelance', 'p.path.th': 'Markaren Instagrama hutsetik abiarazi nuen: identitate bisuala, argazki eta bideo edukia, eta programazioa.',
+    'p.path.gd': 'Agentziako community managerra: Metro Bilbao eta Euskalduna Jauregiaren sareak, metrikak eta bezeroentzako txostenak.',
+    'p.path.fz': 'Europako Elkartasun Gorputzeko boluntariotza: sare sozialak, lokalerako diseinua eta AI Game Jama, babesleen 10.800 SEKekin.',
+    'p.path.nowh': 'Nire hurrengo erronka', 'p.path.now': 'Lana bilatzen ari naiz komunikazioan, sare sozialetan eta edukietan. Berehala hasteko prest, Euskadin edo kanpoan.',
+    'a.nav.research': 'Ikerketa', 'a.nav.training': 'Prestakuntza',
+    'a.hero.badge': 'Doktoretza abian · IA eta komunikazioa · EHU', 'a.hero.role': 'Ikergaia:',
+    'a.hero.lead': 'Kazetaria eta publizista naiz formazioz, eta doktoregaia EHUn. Adimen artifizialak komunikatzeko eta irakasteko modua nola aldatzen duen aztertzen dut.',
+    'a.hero.cta1': 'Nire ikerketa ikusi', 'a.orb.phd': 'Doktoretza', 'a.hero.hint': 'mugitu sagua… eta egin klik txanoa airera botatzeko',
+    'a.about.lead': 'Hedabideak nola aldatzen diren eta gutaz zer kontatzen duten ulertzea interesatzen zait. NO-DOaren propaganda aztertzen hasi nintzen, tokiko hedabideetako euskararekin jarraitu nuen, eta orain adimen artifiziala ikertzen dut unibertsitatean eta komunikazioan. Inkestekin, elkarrizketekin eta diskurtsoaren analisiarekin lan egiten dut, euskaraz eta gaztelaniaz.',
+    'a.about.s1': 'Metodologia mistoa', 'a.about.s2': 'Diskurtsoaren analisia', 'a.about.s3': 'Inkestak eta elkarrizketak', 'a.about.s4': 'IA eta hezkuntza', 'a.about.s5': 'Euskarazko hedabideak', 'a.about.s6': '1 MAL · 2 GrAL',
+    'a.res.lead': 'Doktoretza bat martxan, MAL bat eta bi GrAL. Lau lan, oinarrian galdera bera dutenak: nola aldatzen diren hedabideak eta mundua kontatzeko modua.',
+    'a.phd.kicker': 'Komunikazioko doktoretza · EHU · abian · lanaldi partzialean',
+    'a.phd.p': 'Nire tesiak MALaren ildoari jarraitzen dio: adimen artifizialak komunikazioa eta unibertsitatean hura irakasteko modua nola eraldatzen dituen. MALak lehen datuak eman zizkidan; doktoretzarekin sakonago joan nahi dut.',
+    'a.thr1': 'Propaganda albistegietan', 'a.thr2': 'Tokiko hedabideetako euskara', 'a.thr3': 'IA unibertsitatean', 'a.thr4h': 'Tesia', 'a.thr4': 'IA eta komunikazioa',
+    'a.tfm.p': 'Ikasgeletan daudenei galdetu nien: zertarako erabiltzen dute IA, zerk kezkatzen ditu eta zer prestakuntza behar dute? Emaitza argia da: ikasleek eta irakasleek IA ikasi nahi dute, baina ikasketa planek ez dute oraindik jasotzen.',
+    'a.tfg1.tr': 'Frankismoaren propaganda eta masa turismoaren jaiotza',
+    'a.tfg1.p': '152 NO-DO ikusi nituen eta 30 aukeratu nituen sakon aztertzeko: 1959tik 1970era arteko uda bakoitzekoak, turismoa iristen ari zen garaian. Minutu bakoitza sailkatu nuen, erregimenaz edo turismoaz eta garapenaz ari zen kontuan hartuta, eta nire familiaren oroitzapenekin alderatu nuen.',
+    'a.concl': 'Ondorioa',
+    'a.tfg1.concl': 'Frankismoak desarrollismoa behar zuen ekonomia aurrera ateratzeko, baina ekarri zituen aldaketak (turismoa, ohitura berriak, gazteak unibertsitatean) ezin izan zituen geldiarazi.',
+    'a.tfg1.sub': 'Zuzendaria: Aintzane Rincón Diez. Gizarte eta Komunikazio Zientzien Fakultatea, UPV/EHU.',
+    'a.tfg.read': 'GrALa irakurri', 'a.tfg1.la': 'Erregimenaren albisteak', 'a.tfg1.lb': 'Turismoa eta garapena',
+    'a.tfg1.note': 'Udako NO-DO bakoitzaren minutuen ehunekoa, 1959tik 1970era. Pasatu sagua edo ukitu urte bat.',
+    'a.tfg1.s1': 'NO-DO ikusita', 'a.tfg1.s2': 'sakon aztertuta', 'a.tfg1.s3': 'uda horretatik aurrera, turismoak irabazten du beti',
+    'a.tfg2.tr': 'Batua eta euskalkiak Tokikomen hedabideetan',
+    'a.tfg2.p': 'Tokikomeko 10 tokiko aldizkariren 50 ale aztertu nituen, 2023ko urtarriletik maiatzera argitaratutako 1.200 orrialde inguru, eta haien kazetari eta zuzendariei inkesta egin nien: 26 hedabideetatik 13k erantzun zuten.',
+    'a.tfg2.concl': 'Prentsa idatzian batua da nagusi, baina euskalkiak gertutasuna eta identitatea ematen ditu, batez ere elkarrizketetan. Estilo-liburuetan lekua ematea proposatzen dut.',
+    'a.tfg2.sub': 'Zuzendaria: Jesus Mari Makazaga Eizagirre. Gizarte eta Komunikazio Zientzien Fakultatea, UPV/EHU.',
+    'a.tfg2.press': 'Aztertutako 10 aldizkariak',
+    'a.tfg2.b1': 'erantzun zuten hedabideek euskalkia erabiltzen dute, noizean behin bada ere', 'a.tfg2.b2': 'ez dute euskalkia beren estilo-liburuan jasotzen',
+    'a.tfg2.b3': 'paperean erabiltzen dute batez ere; digitalean, %15ek bakarrik', 'a.tfg2.b4': 'mendebaldeko bizkaiera erabiltzen dute, gehien agertzen den euskalkia',
+    'a.cert.lead': 'Nire ikerketa eta komunikazioko lana osatzen dituzten ikastaroak.', 'a.c3.kicker': '42 Urduliz · peer-to-peer eskola · 2023–2025',
+    'a.path.title': 'Ibilbide akademikoa', 'a.path.lead': 'Leioako ikasgeletatik doktoretzara.',
+    'a.path.t1': 'Kazetaritza etika, ikerketa, iturrien egiaztapena eta formatu anitzeko ekoizpena. GrALa NO-DOari buruz, Aintzane Rincónek zuzendua.',
+    'a.path.seeTfg': 'GrALa ikusi', 'a.path.t2': 'C programazioa peer-to-peer eskola batean, karrerarekin batera.',
+    'a.path.t3h': 'Community managerra · Lanbide', 'a.path.t3': '100 orduko ikastaroa kudeaketa tresnei, analitikari eta txostenei buruz. Azken proiektua: Scuffersen sare sozialen estrategia.',
+    'a.path.t4': 'Brandinga, storytellinga eta kanpainak, Erasmus+ egonaldi batekin Norvegian. GrALa euskalkiei buruz tokiko hedabideetan.',
+    'a.path.t5': 'Sare sozialak, telebista digitala eta komunikazio politikak. MALa IAri buruz unibertsitatean, 2025eko uztailean defendatua.',
+    'a.path.seeTfm': 'MALa ikusi', 'a.path.t6h': 'IA mikrokredentziala · UPV/EHU',
+    'a.path.t6': 'IA edukiak sortzeko eta community managerrentzat (1,5 ECTS). Azken proiektua: FUZED Boråseko AI Game Jama.',
+    'a.path.t7': 'Komunikazioko doktoretza EHUn, lanaldi partzialean, IA eta komunikazioari buruz.', 'a.path.seePhd': 'Doktoretza ikusi',
+    'a.contact.big': 'Elkarlanean?', 'a.contact.lead': 'Ikerketa proiektu bat, kongresu bat edo elkarlan bat? Idatzi iezadazu eta hitz egingo dugu.',
+    'h.lead': 'Komunikazioa, edukia eta adimen artifizialari buruzko ikerketa. Nondik sartu nahi duzu?',
+    'h.pro.k': 'CV profesionala', 'h.pro.t': 'Esperientzia eta proiektuak', 'h.pro.p': 'Sare sozialak, edukia, diseinua eta ekitaldiak: FUZED Boråsetik Icehotelera.',
+    'h.acad.k': 'CV akademikoa', 'h.acad.t': 'Ikerketa eta prestakuntza', 'h.acad.p': 'IA eta komunikazioari buruzko doktoretza, MALa, bi GrAL eta prestakuntza osagarria.',
+    'h.go': 'Sartu',
+    arot: ['IA komunikazioan', 'IA ikasgeletan', 'euskalkiak hedabideetan', 'NO-DOaren propaganda'],
+    alines: {
+      greet: 'Kaixo! Sartu eta ikusi nire ikerketa.',
+      toss: ['Txanoa airera!', 'Cum laude!', 'Gora ikerketa!'],
+      pdf: ['Ikerketa labetik atera berria', 'Irakurri, kostatu zitzaidan eta', 'Liburutegiko ordu asko hor barruan'],
+      sec: { 'sobre-mi': 'Arrastatu pegatinak, benetan', investigacion: 'Hemen dago nire ikerketa guztia', formacion: 'Beti ikasten jarraitzen dut', trayectoria: 'Leioatik doktoretzara', contacto: 'Elkarlanean? Idatzi' }
+    },
+    hlines: {
+      greet: 'Kaixo! Nondik hasiko gara?', pro: 'Nire alde profesionala!', acad: 'Toga eta txanoarekin!',
+      click: ['Jajaja!', 'Berriro!', 'Hamarreko kliska!'], toss: ['Txanoa airera!', 'Cum laude!', 'Gora ikerketa!'], dizzy: 'Dena biraka dabil…'
+    }
+  });
+
+  /* ---------- English ---------- */
+  I.en.lines.pdf = ['Go on, open it!', 'It’s all explained in there', 'Made with lots of love'];
+  add('en', {
+    'nav.toAcad': 'Academic CV', 'nav.toPro': 'Professional CV',
+    'swap.acadK': 'Interested in my research?', 'swap.acadT': 'My academic CV', 'swap.acadP': 'PhD, master’s thesis, two bachelor’s theses explained with their data, and further training.',
+    'swap.proK': 'Looking for my work experience?', 'swap.proT': 'My professional CV', 'swap.proP': 'Social media, design, FUZED Borås, Icehotel and all my projects.',
+    'p.path.irh': 'Irudigital · agency', 'p.path.ir': 'Internship in social media and SEO: content and planning for the agency’s brands.',
+    'p.path.serh': 'Cadena SER · Bilbao', 'p.path.ser': 'Marketing internship: promotional materials, email marketing with Mailchimp, press releases and event support.',
+    'p.path.thh': 'Centro Estética Thais · freelance', 'p.path.th': 'I launched the brand’s Instagram from scratch: visual identity, photo and video content, and scheduling.',
+    'p.path.gd': 'Agency community manager: social media for Metro Bilbao and Euskalduna Jauregia, metrics and client reports.',
+    'p.path.fz': 'European Solidarity Corps volunteering: social media, design for the venue and the AI Game Jam, with SEK 10,800 from sponsors.',
+    'p.path.nowh': 'My next challenge', 'p.path.now': 'I’m looking for a job in communication, social media and content. Available now, in the Basque Country or abroad.',
+    'a.nav.research': 'Research', 'a.nav.training': 'Training',
+    'a.hero.badge': 'PhD in progress · AI and communication · EHU', 'a.hero.role': 'I research',
+    'a.hero.lead': 'Trained as a journalist and advertiser, now a PhD candidate at the EHU. I study how artificial intelligence is changing the way we communicate and teach.',
+    'a.hero.cta1': 'See my research', 'a.orb.phd': 'PhD', 'a.hero.hint': 'move your mouse… and click to toss my cap',
+    'a.about.lead': 'I want to understand how the media change and what they say about us. I started with Franco-era NO-DO propaganda, moved on to Basque in local media, and now I research artificial intelligence at university and in communication. I work with surveys, interviews and discourse analysis, in Basque and Spanish.',
+    'a.about.s1': 'Mixed methods', 'a.about.s2': 'Discourse analysis', 'a.about.s3': 'Surveys and interviews', 'a.about.s4': 'AI and education', 'a.about.s5': 'Basque-language media', 'a.about.s6': '1 MA · 2 BA theses',
+    'a.res.lead': 'A PhD in progress, a master’s thesis and two bachelor’s theses. Four projects with one question underneath: how the media, and the way we tell the world, are changing.',
+    'a.phd.kicker': 'PhD in Communication · EHU · in progress · part-time',
+    'a.phd.p': 'My thesis follows on from my master’s: how artificial intelligence is transforming communication and the way it is taught at university. The master’s thesis gave me the first data; the PhD is about going deeper.',
+    'a.thr1': 'Propaganda in newsreels', 'a.thr2': 'Basque in local media', 'a.thr3': 'AI at university', 'a.thr4h': 'Thesis', 'a.thr4': 'AI and communication',
+    'a.tfm.p': 'I asked the people in the classroom: how do they use AI, what worries them and what training do they need? The answer is clear: students and lecturers want to learn AI, but the curriculum doesn’t include it yet.',
+    'a.tfg1.tr': '1960s developmentalism through the NO-DO newsreels',
+    'a.tfg1.p': 'I watched 152 NO-DO newsreels and chose 30 for in-depth analysis: those from every summer between 1959 and 1970, just as tourism was arriving. I classified every minute as news about the regime or about tourism and development, and compared it with my family’s memories.',
+    'a.concl': 'Conclusion',
+    'a.tfg1.concl': 'Franco’s regime needed developmentalism to rescue the economy, but the changes it brought (tourism, new customs, young people at university) became impossible to stop.',
+    'a.tfg1.sub': 'Supervised by Aintzane Rincón Diez. Faculty of Social and Communication Sciences, UPV/EHU.',
+    'a.tfg.read': 'Read the thesis', 'a.tfg1.la': 'Regime news', 'a.tfg1.lb': 'Tourism and development',
+    'a.tfg1.note': 'Share of minutes in each summer NO-DO, 1959 to 1970. Hover over or tap a year.',
+    'a.tfg1.s1': 'newsreels watched', 'a.tfg1.s2': 'analysed in depth', 'a.tfg1.s3': 'from that summer on, tourism always wins',
+    'a.tfg2.tr': 'Dialects and local speech in local media',
+    'a.tfg2.p': 'I analysed 50 issues of 10 local magazines from the Tokikom network, around 1,200 pages published between January and May 2023, and surveyed their journalists and editors: 13 of the 26 outlets replied.',
+    'a.tfg2.concl': 'Standard Basque dominates the written press, but dialects bring closeness and identity, especially in interviews. I propose giving them a place in style guides.',
+    'a.tfg2.sub': 'Supervised by Jesus Mari Makazaga Eizagirre. Faculty of Social and Communication Sciences, UPV/EHU.',
+    'a.tfg2.press': 'The 10 magazines analysed',
+    'a.tfg2.b1': 'of the outlets that replied use dialect, even if only now and then', 'a.tfg2.b2': 'don’t include it in their style guide',
+    'a.tfg2.b3': 'use it mostly in print; online, only 15%', 'a.tfg2.b4': 'use Western Biscayan, the most common dialect',
+    'a.cert.lead': 'Courses that complement my research and my work in communication.', 'a.c3.kicker': '42 Urduliz · peer-to-peer school · 2023–2025',
+    'a.path.title': 'Academic journey', 'a.path.lead': 'From lecture halls in Leioa to a PhD.',
+    'a.path.t1': 'Journalistic ethics, research, fact-checking and multi-format production. Thesis on the NO-DO, supervised by Aintzane Rincón.',
+    'a.path.seeTfg': 'See the thesis', 'a.path.t2': 'C programming at a peer-to-peer school, alongside my degree.',
+    'a.path.t3h': 'Community manager · Lanbide', 'a.path.t3': '100-hour course on management tools, analytics and reporting. Final project: the social media strategy for Scuffers.',
+    'a.path.t4': 'Branding, storytelling and campaigns, with an Erasmus+ exchange in Norway. Thesis on Basque dialects in local media.',
+    'a.path.t5': 'Social media, digital TV and communication policy. Thesis on AI at university, defended in July 2025.',
+    'a.path.seeTfm': 'See the thesis', 'a.path.t6h': 'AI micro-credential · UPV/EHU',
+    'a.path.t6': 'AI for content creation and community managers (1.5 ECTS). Final project: the AI Game Jam at FUZED Borås.',
+    'a.path.t7': 'PhD in Communication at the EHU, part-time, on AI and communication.', 'a.path.seePhd': 'See the PhD',
+    'a.contact.big': 'Collaborate?', 'a.contact.lead': 'A research project, a conference or a collaboration? Write to me and let’s talk.',
+    'h.lead': 'Communication, content and research on artificial intelligence. Where would you like to start?',
+    'h.pro.k': 'Professional CV', 'h.pro.t': 'Experience and projects', 'h.pro.p': 'Social media, content, design and events: from FUZED Borås to Icehotel.',
+    'h.acad.k': 'Academic CV', 'h.acad.t': 'Research and training', 'h.acad.p': 'PhD in AI and communication, a master’s thesis, two bachelor’s theses and further training.',
+    'h.go': 'Enter',
+    arot: ['AI in communication', 'AI in the classroom', 'dialects in the media', 'NO-DO propaganda'],
+    alines: {
+      greet: 'Kaixo! Come and see my research.',
+      toss: ['Caps in the air!', 'Cum laude!', 'Hooray for research!'],
+      pdf: ['Research fresh out of the oven', 'Read it, it took me ages', 'Lots of library hours in there'],
+      sec: { 'sobre-mi': 'Drag the stickers, really', investigacion: 'All my research is here', formacion: 'I never stop learning', trayectoria: 'From Leioa to a PhD', contacto: 'Collaborate? Write to me' }
+    },
+    hlines: {
+      greet: 'Kaixo! Where shall we start?', pro: 'My professional side!', acad: 'Cap and gown and all!',
+      click: ['Hahaha!', 'Again!', 'That was a 10/10 click!'], toss: ['Caps in the air!', 'Cum laude!', 'Hooray for research!'], dizzy: 'Everything is spinning…'
+    }
+  });
+
+  /* ---------- svenska ---------- */
+  I.sv.lines.pdf = ['Öppna den!', 'Allt står förklarat där', 'Gjord med mycket kärlek'];
+  add('sv', {
+    'nav.toAcad': 'Akademiskt CV', 'nav.toPro': 'Yrkes-CV',
+    'swap.acadK': 'Intresserad av min forskning?', 'swap.acadT': 'Mitt akademiska CV', 'swap.acadP': 'Doktorandstudier, masteruppsats, två kandidatuppsatser förklarade med sina data och kompletterande utbildning.',
+    'swap.proK': 'Letar du efter min yrkeserfarenhet?', 'swap.proT': 'Mitt yrkes-CV', 'swap.proP': 'Sociala medier, design, FUZED Borås, Icehotel och alla mina projekt.',
+    'p.path.irh': 'Irudigital · byrå', 'p.path.ir': 'Praktik inom sociala medier och SEO: innehåll och planering för byråns varumärken.',
+    'p.path.serh': 'Cadena SER · Bilbao', 'p.path.ser': 'Praktik inom marknadsföring: reklammaterial, e-postmarknadsföring med Mailchimp, pressmeddelanden och stöd vid evenemang.',
+    'p.path.thh': 'Centro Estética Thais · frilans', 'p.path.th': 'Jag lanserade varumärkets Instagram från grunden: visuell identitet, foto- och videoinnehåll och schemaläggning.',
+    'p.path.gd': 'Community manager på byrå: sociala medier för Metro Bilbao och Euskalduna Jauregia, analys och kundrapporter.',
+    'p.path.fz': 'Volontärarbete med Europeiska solidaritetskåren: sociala medier, design för lokalen och AI Game Jam, med 10 800 kr från sponsorer.',
+    'p.path.nowh': 'Min nästa utmaning', 'p.path.now': 'Jag söker jobb inom kommunikation, sociala medier och innehåll. Kan börja direkt, i Baskien eller utomlands.',
+    'a.nav.research': 'Forskning', 'a.nav.training': 'Utbildning',
+    'a.hero.badge': 'Doktorand · AI och kommunikation · EHU', 'a.hero.role': 'Jag forskar om',
+    'a.hero.lead': 'Utbildad journalist och reklamare, och doktorand vid EHU. Jag studerar hur artificiell intelligens förändrar sättet vi kommunicerar och undervisar på.',
+    'a.hero.cta1': 'Se min forskning', 'a.orb.phd': 'Doktorand', 'a.hero.hint': 'rör på musen… och klicka för att kasta hatten',
+    'a.about.lead': 'Jag vill förstå hur medierna förändras och vad de berättar om oss. Jag började med NO-DO-propagandan under Franco, fortsatte med baskiskan i lokala medier och forskar nu om artificiell intelligens på universitetet och i kommunikation. Jag arbetar med enkäter, intervjuer och diskursanalys, på baskiska och spanska.',
+    'a.about.s1': 'Mixade metoder', 'a.about.s2': 'Diskursanalys', 'a.about.s3': 'Enkäter och intervjuer', 'a.about.s4': 'AI och utbildning', 'a.about.s5': 'Baskiska medier', 'a.about.s6': '1 master · 2 kandidat',
+    'a.res.lead': 'Doktorandstudier på gång, en masteruppsats och två kandidatuppsatser. Fyra arbeten med samma grundfråga: hur medierna och sättet att berätta om världen förändras.',
+    'a.phd.kicker': 'Doktorandstudier i kommunikation · EHU · pågående · deltid',
+    'a.phd.p': 'Min avhandling fortsätter spåret från masteruppsatsen: hur artificiell intelligens förändrar kommunikationen och hur den undervisas på universitetet. Masteruppsatsen gav mig de första data; doktorandstudierna handlar om att gå djupare.',
+    'a.thr1': 'Propaganda i journalfilmerna', 'a.thr2': 'Baskiskan i lokala medier', 'a.thr3': 'AI på universitetet', 'a.thr4h': 'Avhandling', 'a.thr4': 'AI och kommunikation',
+    'a.tfm.p': 'Jag frågade dem som finns i klassrummen: hur använder de AI, vad oroar dem och vilken utbildning behöver de? Svaret är tydligt: både studenter och lärare vill lära sig AI, men kursplanerna tar ännu inte upp det.',
+    'a.tfg1.tr': '1960-talets utvecklingspolitik genom NO-DO-journalfilmerna',
+    'a.tfg1.p': 'Jag såg 152 NO-DO-journalfilmer och valde ut 30 för djupanalys: de från varje sommar mellan 1959 och 1970, precis när turismen kom. Jag klassade varje minut som nyheter om regimen eller om turism och utveckling, och jämförde med min familjs minnen.',
+    'a.concl': 'Slutsats',
+    'a.tfg1.concl': 'Francoregimen behövde utvecklingspolitiken för att rädda ekonomin, men förändringarna den förde med sig (turism, nya seder, unga på universitetet) gick inte att stoppa.',
+    'a.tfg1.sub': 'Handledare: Aintzane Rincón Diez. Fakulteten för samhälls- och kommunikationsvetenskap, UPV/EHU.',
+    'a.tfg.read': 'Läs uppsatsen', 'a.tfg1.la': 'Regimens nyheter', 'a.tfg1.lb': 'Turism och utveckling',
+    'a.tfg1.note': 'Andel minuter i varje sommar-NO-DO, 1959–1970. Håll musen över eller tryck på ett år.',
+    'a.tfg1.s1': 'journalfilmer sedda', 'a.tfg1.s2': 'djupanalyserade', 'a.tfg1.s3': 'från den sommaren vinner turismen alltid',
+    'a.tfg2.tr': 'Dialekter och lokalt talspråk i lokala medier',
+    'a.tfg2.p': 'Jag analyserade 50 nummer av 10 lokaltidningar i nätverket Tokikom, cirka 1 200 sidor publicerade mellan januari och maj 2023, och gjorde en enkät med deras journalister och redaktörer: 13 av de 26 medierna svarade.',
+    'a.tfg2.concl': 'I den skrivna pressen dominerar standardbaskiskan, men dialekterna ger närhet och identitet, särskilt i intervjuer. Jag föreslår att de får plats i stilguiderna.',
+    'a.tfg2.sub': 'Handledare: Jesus Mari Makazaga Eizagirre. Fakulteten för samhälls- och kommunikationsvetenskap, UPV/EHU.',
+    'a.tfg2.press': 'De 10 tidningarna i studien',
+    'a.tfg2.b1': 'av medierna som svarade använder dialekt, om så bara ibland', 'a.tfg2.b2': 'har inte med den i sin stilguide',
+    'a.tfg2.b3': 'använder den mest i print; digitalt bara 15 %', 'a.tfg2.b4': 'använder västbiscayiska, den vanligaste dialekten',
+    'a.cert.lead': 'Kurser som kompletterar min forskning och mitt arbete inom kommunikation.', 'a.c3.kicker': '42 Urduliz · peer-to-peer-skola · 2023–2025',
+    'a.path.title': 'Akademisk väg', 'a.path.lead': 'Från föreläsningssalarna i Leioa till doktorandstudier.',
+    'a.path.t1': 'Journalistisk etik, research, källgranskning och produktion i flera format. Uppsats om NO-DO, handledd av Aintzane Rincón.',
+    'a.path.seeTfg': 'Se uppsatsen', 'a.path.t2': 'C-programmering på en peer-to-peer-skola, parallellt med studierna.',
+    'a.path.t3h': 'Community manager · Lanbide', 'a.path.t3': 'Kurs på 100 timmar om verktyg, analys och rapporter. Slutprojekt: strategin för sociala medier för Scuffers.',
+    'a.path.t4': 'Varumärkesbyggande, storytelling och kampanjer, med ett Erasmus+-utbyte i Norge. Uppsats om baskiska dialekter i lokala medier.',
+    'a.path.t5': 'Sociala medier, digital-tv och kommunikationspolitik. Uppsats om AI på universitetet, försvarad i juli 2025.',
+    'a.path.seeTfm': 'Se uppsatsen', 'a.path.t6h': 'Mikromeritering i AI · UPV/EHU',
+    'a.path.t6': 'AI för innehållsskapande och community managers (1,5 ECTS). Slutprojekt: AI Game Jam på FUZED Borås.',
+    'a.path.t7': 'Doktorandstudier i kommunikation vid EHU, på deltid, om AI och kommunikation.', 'a.path.seePhd': 'Se doktorandstudierna',
+    'a.contact.big': 'Samarbete?', 'a.contact.lead': 'Ett forskningsprojekt, en konferens eller ett samarbete? Skriv till mig så pratar vi.',
+    'h.lead': 'Kommunikation, innehåll och forskning om artificiell intelligens. Var vill du börja?',
+    'h.pro.k': 'Yrkes-CV', 'h.pro.t': 'Erfarenhet och projekt', 'h.pro.p': 'Sociala medier, innehåll, design och evenemang: från FUZED Borås till Icehotel.',
+    'h.acad.k': 'Akademiskt CV', 'h.acad.t': 'Forskning och utbildning', 'h.acad.p': 'Doktorandstudier i AI och kommunikation, masteruppsats, två kandidatuppsatser och kompletterande utbildning.',
+    'h.go': 'Gå in',
+    arot: ['AI i kommunikation', 'AI i klassrummet', 'dialekter i medierna', 'NO-DO-propagandan'],
+    alines: {
+      greet: 'Kaixo! Kom och se min forskning.',
+      toss: ['Hatten i luften!', 'Cum laude!', 'Leve forskningen!'],
+      pdf: ['Färsk forskning', 'Läs den, den tog tid', 'Många timmar på biblioteket'],
+      sec: { 'sobre-mi': 'Dra i klistermärkena, på riktigt', investigacion: 'Här är all min forskning', formacion: 'Jag slutar aldrig lära mig', trayectoria: 'Från Leioa till doktorandstudier', contacto: 'Samarbete? Skriv till mig' }
+    },
+    hlines: {
+      greet: 'Kaixo! Var börjar vi?', pro: 'Min yrkessida!', acad: 'Med hatt och kappa!',
+      click: ['Hahaha!', 'Igen!', 'Ett klick värt tio poäng!'], toss: ['Hatten i luften!', 'Cum laude!', 'Leve forskningen!'], dizzy: 'Allt snurrar…'
+    }
+  });
+})(window.I18N);

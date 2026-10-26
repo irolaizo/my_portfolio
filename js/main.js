@@ -10,6 +10,9 @@
   const rand = (a, b) => a + Math.random() * (b - a);
   const clamp = (v, a, b) => Math.max(a, Math.min(b, v));
   const store = { get(k) { try { return localStorage.getItem(k); } catch (e) { return null; } }, set(k, v) { try { localStorage.setItem(k, v); } catch (e) {} } };
+  const PAGE = document.body.dataset.page || 'pro';      // 'pro' (rosa) o 'acad' (EHU)
+  const ROOT = document.body.dataset.root || '';         // ruta a la raíz desde la página
+  const ACAD = PAGE === 'acad';
 
   /* Curvas de animación */
   const supportsLinear = window.CSS && CSS.supports('animation-timing-function', 'linear(0, 1)');
@@ -35,7 +38,7 @@
     ['gamenight', 'gamenight-01'], ['sports', 'sports-01'], ['tables', 'tables-01'], ['oppettider', 'oppettider-01'],
     ['skattjakt', 'skattjakt-01'], ['pinkavatar', 'pinkavatar-01'], ['tetris', 'tetris-01'], ['welcome', 'promo-01'], ['regler', 'regler-01']
   ];
-  const img = k => `assets/work/${k}.webp`;
+  const img = k => `${ROOT}assets/work/${k}.webp`;
 
   /* ---------------- Idiomas ---------------- */
   const D = window.I18N;
@@ -58,14 +61,22 @@
     p.innerHTML = p.textContent.split(/(\s+)/).map(w => /^\s+$/.test(w) ? w : `<span class="w">${w}</span>`).join('');
   }
 
+  // textos que cambian según la página (rotador y frases del avatar)
+  const P = l => {
+    const d = D[l], base = d.lines, o = ACAD ? (d.alines || {}) : {};
+    return { rot: (ACAD && d.arot) || d.rot, lines: Object.assign({}, D.es.lines, base, o, { sec: Object.assign({}, D.es.lines.sec, base.sec, o.sec) }) };
+  };
+
   function applyLang(l) {
     if (!D[l]) l = 'es';
     lang = l;
     document.documentElement.lang = l;
     textEls.forEach(el => { const v = D[l][el.dataset.i] ?? D.es[el.dataset.i]; if (v != null) el.innerHTML = v; });
     $$('[data-split]').forEach(el => { if (el.closest('.hero-name') && el.querySelector('.ch')) return; splitChars(el); });
-    if (!reduce) splitWords($('.scrub'));
+    if (!reduce && $('.scrub')) splitWords($('.scrub'));
     $$('.lang button').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.lang === l)));
+    $$('[data-keep-lang]').forEach(a => { const u = a.getAttribute('href').split('?')[0].split('#'); a.href = u[0] + (l !== 'es' ? '?lang=' + l : '') + (u[1] ? '#' + u[1] : ''); });
+    if (window.NodoChart) window.NodoChart.lang(l);
     $$('.piece').forEach(p => { const g = D[l].g[p.dataset.set] || D.es.g[p.dataset.set]; $('.piece-cap span', p).textContent = g[0]; $('.piece-cap em', p).textContent = g[1]; });
     const cl = $('.cursor-label'); if (cl) cl.textContent = D[l].view;
     rotIndex = -1; nextWord(true);
@@ -77,7 +88,7 @@
   const rotEl = $('.rot-word');
   let rotIndex = 0, rotTimer;
   function nextWord(instant) {
-    const words = D[lang].rot;
+    const words = P(lang).rot;
     rotIndex = (rotIndex + 1) % words.length;
     clearTimeout(rotTimer);
     if (instant || reduce) rotEl.textContent = words[rotIndex];
@@ -105,11 +116,14 @@
 
   /* ---------------- Avatares ---------------- */
   const heroEl = $('#heroAvatar');
-  const hero = new Avatar(heroEl);
-  const buddy = new Avatar($('#buddyAvatar'));
+  const outfit = ACAD ? 'grad' : 'casual';
+  const hero = new Avatar(heroEl, { outfit });
+  const buddy = new Avatar($('#buddyAvatar'), { outfit });
+  // avatares pequeños de las tarjetas que llevan a la otra página
+  const minis = $$('[data-mini]').map(el => new Avatar(el, { outfit: el.dataset.mini }));
   const say = makeSpeaker($('.bubble', heroEl));
   const buddySay = makeSpeaker($('.buddy-bubble'));
-  const L = () => D[lang].lines;
+  const L = () => P(lang).lines;
   let heroVisible = true;
   const both = (m, ms) => { hero.react(m, ms); buddy.react(m, ms); };
   const talk = (txt, ms) => heroVisible ? say(txt, ms) : buddySay(txt, ms);
@@ -120,7 +134,7 @@
 
   function onPoint(x, y) {
     mouse.x = x; mouse.y = y;
-    hero.lookAt(x, y); buddy.lookAt(x, y);
+    hero.lookAt(x, y); buddy.lookAt(x, y); minis.forEach(m => m.lookAt(x, y));
     lastMove = performance.now();
     if (sleeping) { sleeping = false; both('curious', 1400); talk(L().wake, 2000); }
     const dir = Math.sign(x - lastX);
@@ -157,6 +171,8 @@
   function poke(av, speak) {
     const now = performance.now(); clicks.push(now); clicks = clicks.filter(t => now - t < 1400);
     if (clicks.length >= 5) { clicks = []; av.react('dizzy', 2600); speak(L().dizzy, 2400); return; }
+    // con toga: el birrete sale volando
+    if (av.toss && av.toss()) { av.react('excited', 1400); speak(pick(L().toss || L().click), 1800); burst(av.el); return; }
     av.react(pick(['happy', 'wink', 'love', 'happy']), 1500); speak(pick(L().click), 1800);
     burst(av.el);
   }
@@ -171,7 +187,7 @@
     for (let i = 0; i < 8; i++) {
       const h = document.createElement('span');
       h.className = 'heart';
-      h.style.cssText = `position:fixed;left:${r.left + r.width / 2}px;top:${r.top + r.height * .45}px;z-index:250;animation:none;background:${pick(['#FF6F61', '#FFB3CF', '#D63A78', '#FFD3DF'])}`;
+      h.style.cssText = `position:fixed;left:${r.left + r.width / 2}px;top:${r.top + r.height * .45}px;z-index:250;animation:none;background:${pick(ACAD ? ['#5FD790', '#7E8EFE', '#FE8B66', '#E4F568', '#C6ACF5'] : ['#FF6F61', '#FFB3CF', '#D63A78', '#FFD3DF'])}`;
       document.body.appendChild(h);
       h.animate([{ transform: 'scale(.4)', opacity: 1 }, { transform: `translate(${rand(-170, 170)}px, ${rand(-230, -60)}px) rotate(${rand(-90, 90)}deg) scale(${rand(.9, 1.7)})`, opacity: 0 }], { duration: rand(900, 1400), easing: 'cubic-bezier(.2,.8,.3,1)' }).onfinish = () => h.remove();
     }
@@ -183,6 +199,7 @@
     if (e.pointerType !== 'mouse') return;
     const a = e.target.closest('a, button, .piece');
     if (!a || a.closest('#heroAvatar, #buddy, .lightbox, .lang')) return;
+    if (a.closest('.swap')) { const m = minis.find(m => a.contains(m.el)); if (m) m.react('happy', 1400); }
     const now = performance.now();
     if (a.hasAttribute('data-pdf')) { both('love', 1800); if (now - lastLinkTalk > 2500) { talk(pick(L().pdf), 2200); lastLinkTalk = now; } return; }
     both(Math.random() < .5 ? 'excited' : 'curious', 1200);
@@ -196,7 +213,7 @@
     document.body.classList.add('has-cursor');
     addEventListener('pointermove', e => { dot.style.transform = `translate(${e.clientX}px, ${e.clientY}px) translate(-50%, -50%)`; }, { passive: true });
     document.addEventListener('pointerover', e => {
-      const v = e.target.closest('.piece, .pcard-visual:not(.phone):not(.redacted), .book-cover');
+      const v = e.target.closest('.piece, .pcard-visual:not(.phone):not(.redacted), .book-cover:not(.term-cover), .tfg-cover');
       const l = e.target.closest('a, button, .sticker, #heroAvatar, .buddy-face');
       cursor.classList.toggle('is-view', !!v); cursor.classList.toggle('is-link', !v && !!l);
     });
@@ -229,7 +246,7 @@
 
   /* ---------------- Galería horizontal (FUZED) ---------------- */
   const track = $('#track'), hs = $('#hscroll');
-  TRACK.forEach(([set, cover], i) => {
+  if (track) TRACK.forEach(([set, cover], i) => {
     const b = document.createElement('button');
     b.type = 'button'; b.className = 'piece' + (SETS[set].length > 1 ? ' piece-stack' : ''); b.dataset.set = set;
     b.style.setProperty('--rot', [-3, 2.5, -1.5, 3, -2.5, 1.5][i % 6] + 'deg');
@@ -241,11 +258,13 @@
   // arrastrar la galería con el ratón y con la rueda
   const strip0 = $('#hscroll .hscroll-sticky');
   let drag = null, moved = false;
+  if (strip0) {
   strip0.addEventListener('pointerdown', e => { if (e.pointerType !== 'mouse') return; drag = { x: e.clientX, l: strip0.scrollLeft }; moved = false; });
   addEventListener('pointermove', e => { if (!drag) return; const dx = e.clientX - drag.x; if (Math.abs(dx) > 4) moved = true; strip0.scrollLeft = drag.l - dx; });
   addEventListener('pointerup', () => { drag = null; });
   strip0.addEventListener('click', e => { if (moved) { e.stopPropagation(); e.preventDefault(); moved = false; } }, true);
   strip0.addEventListener('wheel', e => { if (Math.abs(e.deltaY) > Math.abs(e.deltaX) && e.shiftKey) { strip0.scrollLeft += e.deltaY; e.preventDefault(); } }, { passive: false });
+  }
 
   /* ---------------- Visor ---------------- */
   const lb = $('#lightbox'), lbImg = $('#lbImg'), strip = $('#lbStrip');
@@ -287,7 +306,7 @@
   $$('[data-open]').forEach(b => b.addEventListener('click', () => openLB(b.dataset.open)));
 
   /* ---------------- Pegatinas arrastrables ---------------- */
-  const board = $('#board');
+  const board = $('#board') || document.createElement('div');
   const spots = [[0, 4, -8], [52, -2, 6], [0, 64, 5], [50, 90, -4], [64, 42, 10], [0, 34, -4], [64, 20, 7]];
   $$('.sticker', board).forEach((s, i) => {
     const [x, y, r] = spots[i % spots.length];
@@ -342,6 +361,7 @@
 
   /* ---------------- Terminal ---------------- */
   const out = $('#termOut');
+  if (out) {
   const termScript = () => ({
     es: 'Conocimientos básicos de C\ny muchas ganas de seguir aprendiendo.', eu: 'C-ren oinarrizko ezagutzak\neta ikasten jarraitzeko gogo handia.',
     en: 'Basic knowledge of C\nand lots of curiosity to keep learning.', sv: 'Grundläggande kunskaper i C\noch massor av nyfikenhet.'
@@ -365,10 +385,11 @@
     }
   }
   new IntersectionObserver(([e]) => { if (e.isIntersecting) typeTerm(); }, { threshold: .3 }).observe($('#term'));
+  }
 
   /* ---------------- Copiar email ---------------- */
   const copyBtn = $('#copyMail');
-  copyBtn.addEventListener('click', async () => {
+  if (copyBtn) copyBtn.addEventListener('click', async () => {
     const mail = 'iratxeolaizolavargas@gmail.com';
     try { await navigator.clipboard.writeText(mail); }
     catch (e) { const r = document.createRange(); r.selectNodeContents($('.mail-link')); const s = getSelection(); s.removeAllRanges(); s.addRange(r); }
@@ -378,7 +399,7 @@
 
   /* ---------------- Contacto: letras que siguen al ratón ---------------- */
   const big = $('.contact-big');
-  if (finePointer && !reduce) {
+  if (big && finePointer && !reduce) {
     big.addEventListener('pointermove', e => $$('.ch', big).forEach(ch => {
       const r = ch.getBoundingClientRect(); const d = e.clientX - (r.left + r.width / 2); const k = Math.max(0, 1 - Math.abs(d) / 260);
       ch.style.transition = 'transform .35s cubic-bezier(.2,.8,.3,1)'; ch.style.transform = `translateY(${-k * 40}px) rotate(${d * .02 * k}deg)`;
@@ -389,13 +410,13 @@
   /* ================= Motor de scroll ================= */
   const prog = $('.progress span');
   const marquee = $('.marquee-track');
-  marquee.innerHTML += marquee.innerHTML;
+  if (marquee) marquee.innerHTML += marquee.innerHTML;
   const shapes = $$('.shape');
   const stage = $('.hero-stage');
   const cards = $$('.pcard');
   const tlPath = $('.tl-line path');
-  const tlLen = tlPath.getTotalLength();
-  tlPath.style.strokeDasharray = tlLen; tlPath.style.strokeDashoffset = reduce ? 0 : tlLen;
+  const tlLen = tlPath ? tlPath.getTotalLength() : 0;
+  if (tlPath) { tlPath.style.strokeDasharray = tlLen; tlPath.style.strokeDashoffset = reduce ? 0 : tlLen; }
   const tlItems = $$('.timeline li');
   const tlYear = $('.tl-year span');
   const pieces = () => $$('.piece');
@@ -403,9 +424,7 @@
 
   function measure() {
     hsPinned = false;
-    hs.classList.toggle('native', !hsPinned);
-    if (hsPinned) { hsDist = Math.max(0, track.scrollWidth - innerWidth); hs.style.height = (hsDist + innerHeight) + 'px'; }
-    else { hs.style.height = ''; track.style.transform = ''; }
+    if (hs) { hs.classList.toggle('native', true); hs.style.height = ''; track.style.transform = ''; }
     // que ninguna pegatina se salga del tablero
     const bw = board.clientWidth;
     $$('.sticker', board).forEach(s => { if (s.offsetLeft + s.offsetWidth > bw) s.style.left = Math.max(0, bw - s.offsetWidth - 4) + 'px'; });
@@ -439,9 +458,11 @@
       // cinta: acelera con el scroll y cambia de sentido
       if (dy) mDir = dy > 0 ? 1 : -1;
       const speed = (0.6 + Math.min(10, Math.abs(smoothVel) / 220)) * mDir;
-      const half = marquee.scrollWidth / 2;
-      mOff = ((mOff + speed * dt / 16) % half + half) % half;
-      marquee.style.transform = `translateX(${-mOff}px)`;
+      if (marquee) {
+        const half = marquee.scrollWidth / 2;
+        mOff = ((mOff + speed * dt / 16) % half + half) % half;
+        marquee.style.transform = `translateX(${-mOff}px)`;
+      }
 
       // hero: formas y escenario
       sMouse.x += ((mouse.x / innerWidth - .5) - sMouse.x) * .06; sMouse.y += ((mouse.y / innerHeight - .5) - sMouse.y) * .06;
@@ -468,15 +489,18 @@
       else cards.forEach(c => { c.style.transform = ''; c.style.filter = ''; });
 
       // texto que se ilumina
-      const sc = $('.scrub'); const ws = $$('.w', sc);
+      const sc = $('.scrub'); const ws = sc ? $$('.w', sc) : [];
       if (ws.length) { const p = progress(sc, .85, .25); const n = p * ws.length * 1.1; ws.forEach((w, i) => w.style.opacity = clamp(.18 + (n - i) * .82, .18, 1)); }
 
       // línea de la trayectoria
-      const tl = $('.timeline'); const tp = progress(tl, .7, .6 - tl.offsetHeight / innerHeight);
+      const tl = $('.timeline');
+      if (tl) {
+      const tp = progress(tl, .7, .6 - tl.offsetHeight / innerHeight);
       tlPath.style.strokeDashoffset = tlLen * (1 - tp);
       let yr = tlItems[0].querySelector('time').textContent;
       tlItems.forEach(li => { const on = li.getBoundingClientRect().top < innerHeight * .65; li.style.setProperty('--s', on ? 1.6 : 1); if (on) yr = li.querySelector('time').textContent; });
       if (yr !== tlYear.textContent) { tlYear.textContent = yr; tlYear.parentNode.classList.toggle('long', yr.length > 4); anim(tlYear, [{ transform: 'translateY(60%) rotate(8deg)', opacity: 0 }, { transform: 'none', opacity: 1 }], { duration: 600, easing: E.back, fill: 'none' }); }
+      }
 
       if (Math.abs(smoothVel) > 4500 && t - fastTalk > 6000) { fastTalk = t; both('dizzy', 1500); talk(L().fast, 1800); }
     }
@@ -495,10 +519,12 @@
       $$('.sticker').forEach((s, i) => anim(s, [{ scale: '0', rotate: `${rand(-60, 60)}deg` }, { scale: '1', rotate: '0deg' }], { duration: 800, delay: 200 + i * 90, easing: E.back }));
     }, .3);
     onEnter('.stats', el => $$('.stat', el).forEach((s, i) => anim(s, [{ translate: '0 60px', rotate: '6deg', opacity: 0 }, { translate: '0 0', rotate: '0deg', opacity: 1 }], { duration: 900, delay: i * 120, easing: E.back })), .3);
-    onEnter('.tfm', el => anim(el, [{ translate: '0 80px', rotate: '1.5deg', opacity: 0 }, { translate: '0 0', rotate: '0deg', opacity: 1 }], { duration: 1000 }), .15);
-    onEnter('.books', el => $$('.book', el).forEach((b, i) => anim(b, [{ translate: '0 100px', rotate: `${[-4, 3, -2][i]}deg`, opacity: 0 }, { translate: '0 0', rotate: '0deg', opacity: 1 }], { duration: 1000, delay: i * 120, easing: E.back })), .15);
+    onEnter('.tfm, .phd, .swap', el => anim(el, [{ translate: '0 80px', rotate: '1.5deg', opacity: 0 }, { translate: '0 0', rotate: '0deg', opacity: 1 }], { duration: 1000 }), .15);
+    onEnter('.books', el => $$('.book', el).forEach((b, i) => anim(b, [{ translate: '0 100px', rotate: `${[-4, 3, -2][i % 3]}deg`, opacity: 0 }, { translate: '0 0', rotate: '0deg', opacity: 1 }], { duration: 1000, delay: i * 120, easing: E.back })), .15);
     onEnter('.timeline li', li => [...li.children].forEach((c, i) => anim(c, [{ translate: '50px 0', opacity: 0 }, { translate: '0 0', opacity: 1 }], { duration: 800, delay: i * 80 })), .3);
     onEnter('.clips', el => $$('.clip', el).forEach((c, i) => anim(c, [{ translate: '0 30px', rotate: `${rand(-20, 20)}deg`, opacity: 0 }, { translate: '0 0', rotate: '0deg', opacity: 1 }], { duration: 700, delay: i * 70, easing: E.back })), .3);
+    onEnter('.thread', el => el.classList.add('in'), .3);
+    onEnter('.press', el => $$('.paper', el).forEach((c, i) => anim(c, [{ translate: '0 40px', rotate: `${rand(-25, 25)}deg`, opacity: 0 }, { translate: '0 0', rotate: '0deg', opacity: 1 }], { duration: 700, delay: i * 60, easing: E.back })), .3);
     onEnter('.piece', el => anim($('.piece-img', el), [{ scale: '.6', opacity: 0 }, { scale: '1', opacity: 1 }], { duration: 700, easing: E.back }), .2);
   }
 
@@ -521,4 +547,5 @@
     anim(nav, [{ translate: '0 -150%' }, { translate: '0 0' }], { duration: 800, delay: 200 });
   }
   setTimeout(() => { say(L().greet, 3200); hero.react('happy', 1400); }, reduce ? 0 : 1300);
+  if (reduce) $$('.thread').forEach(t => t.classList.add('in'));
 })();

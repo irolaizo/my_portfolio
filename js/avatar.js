@@ -5,6 +5,7 @@
 (function () {
   const SKIN = '#F7D5C0', SKIN_SH = '#EDB9A0', HAIR = '#3A2018', HAIR_HI = '#6A3E2C', HAIR_DK = '#26130E';
   const IRIS = '#5B3423', INK = '#2A1610';
+  const GOWN = '#1E1C21', GOWN_HI = '#3B3840', GRAD = '#5FD790', TASSEL = '#B8BDC4'; // toga, brillo, verde Uniberdea (EHU) y borla gris (Ciencias de la Información)
   let uid = 0;
 
   function eye(id, cx, cy) {
@@ -64,12 +65,25 @@
     <!-- cuerpo -->
     <g class="body">
       <path d="M172 300 h56 v56 q-28 18 -56 0z" fill="${SKIN_SH}"/>
-      <path d="M150 352 Q200 384 250 352 L262 470 H138Z" fill="#17131a"/>
-      <path d="M36 470 C40 412 78 374 140 358 L170 350 L190 424 L178 470Z" fill="url(#${p}-hound)" stroke="${INK}" stroke-width="3" stroke-linejoin="round"/>
-      <path d="M364 470 C360 412 322 374 260 358 L230 350 L210 424 L222 470Z" fill="url(#${p}-hound)" stroke="${INK}" stroke-width="3" stroke-linejoin="round"/>
-      <path d="M170 350 L156 392 L184 404" fill="none" stroke="${INK}" stroke-width="3" stroke-linejoin="round"/>
-      <path d="M230 350 L244 392 L216 404" fill="none" stroke="${INK}" stroke-width="3" stroke-linejoin="round"/>
-      <circle cx="200" cy="452" r="4" fill="#FF8FB8" stroke="${INK}" stroke-width="2"/>
+      <g class="fit-casual">
+        <path d="M150 352 Q200 384 250 352 L262 470 H138Z" fill="#17131a"/>
+        <path d="M36 470 C40 412 78 374 140 358 L170 350 L190 424 L178 470Z" fill="url(#${p}-hound)" stroke="${INK}" stroke-width="3" stroke-linejoin="round"/>
+        <path d="M364 470 C360 412 322 374 260 358 L230 350 L210 424 L222 470Z" fill="url(#${p}-hound)" stroke="${INK}" stroke-width="3" stroke-linejoin="round"/>
+        <path d="M170 350 L156 392 L184 404" fill="none" stroke="${INK}" stroke-width="3" stroke-linejoin="round"/>
+        <path d="M230 350 L244 392 L216 404" fill="none" stroke="${INK}" stroke-width="3" stroke-linejoin="round"/>
+        <circle cx="200" cy="452" r="4" fill="#FF8FB8" stroke="${INK}" stroke-width="2"/>
+      </g>
+      <!-- toga de graduación -->
+      <g class="fit-grad">
+        <path d="M30 470 C34 408 78 372 146 354 Q200 386 254 354 C322 372 366 408 370 470Z" fill="${GOWN}" stroke="${INK}" stroke-width="3" stroke-linejoin="round"/>
+        <path d="M162 352 Q200 380 238 352 L214 412 Q200 424 186 412Z" fill="#fff" stroke="${INK}" stroke-width="2.5" stroke-linejoin="round"/>
+        <g fill="none" stroke="${GOWN_HI}" stroke-width="3" stroke-linecap="round">
+          <path d="M86 408 C92 430 96 450 94 470"/><path d="M110 396 C118 422 120 446 118 470"/>
+          <path d="M314 408 C308 430 304 450 306 470"/><path d="M290 396 C282 422 280 446 282 470"/>
+        </g>
+        <path d="M146 354 C162 384 172 424 170 470 L138 470 C142 426 136 390 124 364Z" fill="var(--grad, ${GRAD})" stroke="${INK}" stroke-width="3" stroke-linejoin="round"/>
+        <path d="M254 354 C238 384 228 424 230 470 L262 470 C258 426 264 390 276 364Z" fill="var(--grad, ${GRAD})" stroke="${INK}" stroke-width="3" stroke-linejoin="round"/>
+      </g>
     </g>
 
     <!-- cabeza -->
@@ -133,6 +147,23 @@
         <path d="M122 190 C116 214 120 236 112 262" fill="none" stroke="${HAIR_HI}" stroke-width="3.5" stroke-linecap="round" opacity=".8"/>
         <path d="M246 112 C272 124 288 150 292 178" fill="none" stroke="${HAIR_HI}" stroke-width="3.5" stroke-linecap="round" opacity=".8"/>
       </g>
+
+      <!-- birrete -->
+      <g class="cap">
+        <path d="M124 84 L276 84 L280 112 Q200 132 120 112Z" fill="${GOWN}" stroke="${INK}" stroke-width="3" stroke-linejoin="round"/>
+        <path d="M128 104 Q200 120 272 104" fill="none" stroke="${GOWN_HI}" stroke-width="3" stroke-linecap="round"/>
+        <path d="M52 70 L204 96 L350 66 L350 73 L204 104 L52 77Z" fill="#0c0b0d" stroke="${INK}" stroke-width="3" stroke-linejoin="round"/>
+        <path d="M52 70 L196 32 L350 66 L204 96Z" fill="${GOWN}" stroke="${INK}" stroke-width="3" stroke-linejoin="round"/>
+        <path d="M92 66 L196 40 L306 64" fill="none" stroke="${GOWN_HI}" stroke-width="3" stroke-linecap="round" opacity=".8"/>
+        <path d="M200 64 Q262 70 318 80" fill="none" stroke="var(--tassel, ${TASSEL})" stroke-width="4" stroke-linecap="round"/>
+        <g class="tassel">
+          <path d="M318 80 L318 132" stroke="var(--tassel, ${TASSEL})" stroke-width="4" stroke-linecap="round"/>
+          <circle cx="318" cy="134" r="6.5" fill="var(--tassel, ${TASSEL})" stroke="${INK}" stroke-width="2.5"/>
+          <path d="M309 139 L327 139 L332 188 Q318 196 304 188Z" fill="var(--tassel, ${TASSEL})" stroke="${INK}" stroke-width="2.5" stroke-linejoin="round"/>
+          <path d="M313 146 L311 186 M318 146 L318 189 M323 146 L325 186" stroke="${INK}" stroke-width="1.6" stroke-linecap="round" opacity=".45"/>
+        </g>
+        <ellipse cx="200" cy="64" rx="9" ry="5" fill="var(--tassel, ${TASSEL})" stroke="${INK}" stroke-width="2.5"/>
+      </g>
     </g>
   </g>
 
@@ -159,6 +190,11 @@
       this.irises = [...this.svg.querySelectorAll('.iris')];
       this.eyes = [...this.svg.querySelectorAll('.eye')];
       this.brows = [...this.svg.querySelectorAll('.brow')];
+      this.cap = this.svg.querySelector('.cap');
+      this.tassel = this.svg.querySelector('.tassel');
+      this.outfit = opts.outfit || 'casual';
+      this.svg.dataset.outfit = this.outfit;
+      this.svg.dataset.cap = this.outfit === 'grad' ? 'on' : 'off';
       this.target = { x: 0, y: 0 };
       this.cur = { x: 0, y: 0 };
       this.vel = { x: 0, y: 0 };
@@ -206,6 +242,8 @@
       this.hairFront.setAttribute('transform', `translate(${c.x * 4} ${c.y * 2}) rotate(${this.sway * 0.25} 228 92)`);
       this.hairSide.setAttribute('transform', `rotate(${this.sway * 0.4} 200 200)`);
       this.hairBack.setAttribute('transform', `translate(${hx * 0.35 - c.x * 4} ${hy * 0.3}) rotate(${this.sway * 0.3 + rot * 0.4} 200 120)`);
+      // la borla cuelga: compensa el giro de la cabeza y se balancea con inercia
+      if (this.svg.dataset.cap === 'on') this.tassel.setAttribute('transform', `rotate(${-rot * 0.9 + this.sway * 1.1} 318 80)`);
 
       const et = this.eyeTargets || [t, t];
       this.irises.forEach((ir, i) => {
@@ -253,6 +291,44 @@
       this.setFace(mood);
       this.el.classList.remove('pop'); void this.el.offsetWidth; this.el.classList.add('pop');
       this.reactT = setTimeout(() => this.setFace(then), ms);
+    }
+
+    // 'casual' (ropa de diario) o 'grad' (toga y birrete)
+    setOutfit(o) {
+      if (this.outfit === o) return;
+      this.outfit = o;
+      const d = this.svg.dataset;
+      if (this.capAnim) { this.capAnim.onfinish = null; this.capAnim.cancel(); this.capAnim = null; this.flying = false; }
+      d.outfit = o;
+      if (o === 'grad') {
+        d.cap = 'on';
+        if (!reduce && this.cap.animate) {
+          this.capAnim = this.cap.animate([{ transform: 'translate(-14px, -130px) rotate(-18deg)', opacity: 0 }, { opacity: 1, offset: .35 }, { transform: 'none', opacity: 1 }],
+            { duration: 700, easing: 'cubic-bezier(.34,1.56,.64,1)' });
+          this.swayV += 6;
+        }
+      } else if (reduce || !this.cap.animate) d.cap = 'off';
+      else {
+        // el birrete sale volando antes de desaparecer
+        this.capAnim = this.cap.animate([{ transform: 'none', opacity: 1 }, { transform: 'translate(40px, -150px) rotate(28deg)', opacity: 0 }],
+          { duration: 420, easing: 'cubic-bezier(.5,0,.75,0)', fill: 'forwards' });
+        this.capAnim.onfinish = () => { d.cap = 'off'; this.capAnim.cancel(); this.capAnim = null; };
+      }
+    }
+
+    // lanzar el birrete al aire (solo con toga)
+    toss() {
+      if (this.outfit !== 'grad' || this.flying || reduce || !this.cap.animate) return false;
+      this.flying = true;
+      this.capAnim = this.cap.animate([
+        { transform: 'none' },
+        { transform: 'translate(-6px, -150px) rotate(-200deg)', offset: .45, easing: 'cubic-bezier(.3,0,.7,1)' },
+        { transform: 'translate(-4px, -160px) rotate(-250deg)', offset: .55, easing: 'cubic-bezier(.4,0,.9,.6)' },
+        { transform: 'translate(0, 6px) rotate(-360deg)', offset: .88 },
+        { transform: 'none' }
+      ], { duration: 1300, easing: 'linear' });
+      this.capAnim.onfinish = () => { this.flying = false; this.capAnim = null; this.swayV += 8; };
+      return true;
     }
 
     nod() {

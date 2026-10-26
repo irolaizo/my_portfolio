@@ -4,6 +4,12 @@
 .avatar-svg .mouth > g, .avatar-svg .mouth > path,
 .avatar-svg .fx-zzz, .avatar-svg .fx-sweat { display: none; }
 
+/* traje: ropa de diario o toga y birrete */
+.avatar-svg:not([data-outfit="grad"]) .fit-grad,
+.avatar-svg[data-outfit="grad"] .fit-casual,
+.avatar-svg:not([data-cap="on"]) .cap { display: none; }
+.avatar-svg .cap { transform-box: view-box; transform-origin: 200px 80px; }
+
 .avatar-svg:not([data-eyes="open"]) .eye-open { display: none; }
 .avatar-svg[data-eyes="wink"] .eye-L .eye-open { display: inline; }
 .avatar-svg[data-eyes="happy"] .eye-happy,

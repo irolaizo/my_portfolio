@@ -1,0 +1,94 @@
+/* =========================================================
+   Portada: dos puertas, rosa (profesional) y verde EHU (académico).
+   El fondo se parte en dos y se inclina hacia la puerta elegida.
+   ========================================================= */
+@property --split { syntax: "<percentage>"; inherits: true; initial-value: 50%; }
+:root.home {
+  --bg: #FBF7F5; --card: #FFFFFF; --ink: #24161C; --muted: #6E5A62; --line: #24161C; --deep: #24161C;
+  --pinkbg: #FFEAF1; --greenbg: #E3F6E9; --violet: #B8296A; --lime: #FFB3CF;
+}
+@media (prefers-color-scheme: dark) {
+  :root.home:not([data-theme="light"]) { --bg: #1A1417; --card: #272024; --ink: #F7EEF1; --muted: #C9B6BE; --line: #F7EEF1; --pinkbg: #2B1620; --greenbg: #13251A; --violet: #FF8FB8; color-scheme: dark; }
+}
+:root.home[data-theme="dark"] { --bg: #1A1417; --card: #272024; --ink: #F7EEF1; --muted: #C9B6BE; --line: #F7EEF1; --pinkbg: #2B1620; --greenbg: #13251A; --violet: #FF8FB8; color-scheme: dark; }
+
+.home body {
+  min-height: 100vh; min-height: 100svh; display: flex; flex-direction: column;
+  background: linear-gradient(90deg, var(--pinkbg) 0 var(--split), var(--greenbg) var(--split) 100%);
+  transition: --split .9s cubic-bezier(.3,1.2,.4,1);
+}
+.home body.on-casual { --split: 60%; }
+.home body.on-grad { --split: 40%; }
+
+.hnav {
+  display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+  padding: calc(14px + env(safe-area-inset-top, 0px)) var(--gut-r) 0 var(--gut); max-width: 1320px; width: 100%; margin: 0 auto;
+}
+.hnav .nav-logo { color: var(--ink); }
+.hnav .lang { background: color-mix(in srgb, var(--card) 80%, transparent); }
+
+.home-main { flex: 1; width: 100%; max-width: 1320px; margin: 0 auto; padding: 2vh var(--gut-r) 30px var(--gut); display: flex; flex-direction: column; align-items: center; }
+.home-intro { text-align: center; display: grid; justify-items: center; }
+.home-intro .hero-hi { transform: rotate(-3deg); transform-origin: center; }
+.home-name {
+  font-family: var(--f-display); font-weight: 800; font-variation-settings: "wdth" 75, "opsz" 96;
+  font-size: clamp(3.2rem, 9vw, 7.6rem); line-height: .86; letter-spacing: -.045em; margin: .08em 0 .18em;
+}
+.home-name span:last-child { color: transparent; -webkit-text-stroke: 2.5px var(--ink); }
+.home-lead { margin: 0; max-width: 44ch; color: var(--muted); font-size: clamp(1.05rem, 1.5vw, 1.2rem); text-wrap: balance; }
+
+.home-grid {
+  width: 100%; margin-top: clamp(1rem, 3vh, 2.4rem); flex: 1;
+  display: grid; grid-template-columns: minmax(0, 1fr) minmax(240px, 400px) minmax(0, 1fr); gap: clamp(1rem, 2.5vw, 2.2rem); align-items: center;
+}
+.home-stage { position: relative; aspect-ratio: 1 / 1.05; width: 100%; }
+.home-stage .blob { inset: 8% 2% 0; background: linear-gradient(120deg, #FFB3CF 0 50%, #5FD790 50% 100%); transition: background .6s; }
+.on-casual .home-stage .blob { background: linear-gradient(120deg, #FFB3CF 0 100%, #5FD790 100%); }
+.on-grad .home-stage .blob { background: linear-gradient(120deg, #FFB3CF 0 0%, #5FD790 0% 100%); }
+.home-stage .avatar { inset: 4% 4% 0; }
+.home-stage .bubble { top: -4%; right: -10%; }
+
+.door {
+  position: relative; display: grid; gap: .55rem; align-content: start; text-decoration: none; min-height: 300px;
+  padding: clamp(1.3rem, 2.6vw, 2.2rem); border: 3px solid #111; border-radius: 32px; color: #111;
+  box-shadow: 7px 7px 0 #111; transition: transform .45s var(--spring), box-shadow .25s;
+}
+.door-pro { background: #FFB3CF; border-color: #3A1424; color: #3A1424; box-shadow: 7px 7px 0 #3A1424; transform: rotate(-2deg); }
+.door-acad { background: #5FD790; transform: rotate(2deg); }
+.door:hover, .door:focus-visible { transform: translateY(-8px) rotate(0deg) scale(1.02); }
+.door-pro:hover, .door-pro:focus-visible { box-shadow: 12px 12px 0 #3A1424; }
+.door-acad:hover, .door-acad:focus-visible { box-shadow: 12px 12px 0 #111; }
+.door-k { font-family: var(--f-hand); font-weight: 700; font-size: 1.7rem; line-height: 1; }
+.door-t { font-family: var(--f-display); font-weight: 800; font-variation-settings: "wdth" 82; font-size: clamp(2rem, 3.6vw, 3.2rem); line-height: .92; letter-spacing: -.035em; text-wrap: balance; }
+.door-p { font-weight: 500; line-height: 1.4; }
+.door-go {
+  margin-top: auto; justify-self: start; display: inline-flex; align-items: center; gap: .6em; padding: .7em 1.2em;
+  border-radius: 999px; background: currentColor; font-weight: 700;
+}
+.door-go > span:first-child { color: #fff; }
+.door-acad .door-go > span:first-child { color: #5FD790; }
+.door-pro .door-go > span:first-child { color: #FFB3CF; }
+.door-arrow { font-family: var(--f-display); font-weight: 800; font-size: 1.3rem; line-height: 1; transition: transform .4s var(--spring); }
+.door-pro .door-arrow { color: #FFB3CF; } .door-acad .door-arrow { color: #5FD790; }
+.door:hover .door-arrow { transform: translateX(8px); }
+/* decoraciones de cada puerta */
+.door::after { content: ""; position: absolute; width: 74px; height: 74px; top: -22px; right: 22px; border: 3px solid currentColor; border-color: inherit; }
+.door-pro::after { border-radius: 50%; background: #FF6F61; }
+.door-acad::after { background: #E4F568; clip-path: polygon(50% 0, 61% 39%, 100% 50%, 61% 61%, 50% 100%, 39% 61%, 0 50%, 39% 39%); border: 0; width: 82px; height: 82px; animation: spin 9s linear infinite; }
+
+.home-job { margin: clamp(1.4rem, 4vh, 2.6rem) 0 0; }
+.home-foot { display: grid; gap: .3rem; background: color-mix(in srgb, var(--bg) 70%, transparent); }
+.home-foot p { margin: 0; }
+.home-foot a { font-weight: 600; }
+
+@media (max-width: 860px) {
+  .home body { background: var(--bg); }
+  .home-grid { grid-template-columns: 1fr; max-width: 520px; gap: 1.4rem; }
+  .home-stage { order: -1; max-width: 270px; justify-self: center; }
+  .door { min-height: 0; transform: none; }
+  .door-pro { transform: rotate(-1deg); } .door-acad { transform: rotate(1deg); }
+  .door::after { width: 54px; height: 54px; top: -16px; }
+  .door-acad::after { width: 60px; height: 60px; }
+  .home-stage .bubble { right: -18%; }
+}
+@media (prefers-reduced-motion: reduce) { .home body { transition: none; } }
