@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="es" class="acad curso">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Iratxe Olaizola · Curso de IA · Módulo 1</title>
+<meta name="description" content="Apuntes del Módulo 1 del curso de IA: qué es la IA, su historia, Machine Learning, Deep Learning, IA generativa, los 4 ingredientes de un proyecto, agentes y casos de uso. Con test de 20 preguntas.">
+<link rel="canonical" href="https://iratxeolaizolavargas.com/curso-ia/modulo-1.html">
+<meta property="og:title" content="Curso de IA · Módulo 1: Fundamentos de la IA">
+<meta property="og:description" content="Mis apuntes del Módulo 1 con esquemas y un test de 20 preguntas.">
+<meta property="og:image" content="https://iratxeolaizolavargas.com/assets/og-acad.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://iratxeolaizolavargas.com/curso-ia/modulo-1.html">
+<meta property="og:locale" content="es_ES">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#5FD790">
+<link rel="stylesheet" href="../css/style.css?v=20261031">
+<link rel="stylesheet" href="../css/curso-ia.css?v=20261031">
+</head>
+<body data-page="curso">
+
+<a class="skip" href="#intro">Saltar al contenido</a>
+<div class="progress" aria-hidden="true"><span></span></div>
+
+<header class="nav">
+  <a href="../" class="nav-logo" aria-label="Inicio">Iratxe<span>.</span></a>
+  <nav class="nav-links" id="menu" aria-label="Menú del curso">
+    <a href="./">El curso</a>
+    <a href="#intro">Apuntes</a>
+    <a href="#test">Test</a>
+    <a href="./#certificado">Certificado</a>
+    <a href="../cv-academico/#formacion" class="nav-switch">CV académico</a>
+  </nav>
+  <button class="nav-burger" type="button" aria-expanded="false" aria-controls="menu"><span></span><span></span><span class="sr">Menú</span></button>
+</header>
+
+<main>
+<section class="ci-mhero">
+  <div class="hero-shapes" aria-hidden="true"><span class="shape s1"></span><span class="shape s3"></span></div>
+  <div class="wrap" style="position:relative">
+    <p class="ci-crumbs"><a href="./">Curso de IA</a> <span aria-hidden="true">›</span> <span>Módulo 1</span></p>
+    <p class="hand">módulo 1 de 4</p>
+    <h1 class="h2">Fundamentos de la IA</h1>
+    <p class="lead">Conceptos y aplicaciones prácticas. El vocabulario básico para hablar de IA con soltura: qué es, de dónde viene, de qué está hecha y hacia dónde va.</p>
+    <div class="hero-cta">
+      <a href="#test" class="btn btn-lime">Ir al test (20 preguntas)</a>
+    </div>
+  </div>
+</section>
+
+<div class="wrap ci-layout">
+  <aside class="ci-toc" aria-label="Índice del módulo">
+    <p class="hand">índice</p>
+    <a href="#intro">Introducción</a>
+    <a href="#que-es">¿Qué es la IA?</a>
+    <a href="#historia">Historia</a>
+    <a href="#capas">Las capas de la IA</a>
+    <a href="#generativa">PLN y visión</a>
+    <a href="#ingredientes">Los 4 ingredientes</a>
+    <a href="#tipos">Tipos y evolución</a>
+    <a href="#aplicada">IA aplicada</a>
+    <a href="#conclusiones">Conclusiones</a>
+    <a href="#glosario">Glosario</a>
+    <a href="#test" class="ci-toc-test">Test del módulo</a>
+  </aside>
+
+  <div class="ci-article">
+    <div class="ci-toc-mobile">
+      <label class="sr" for="ciTocSel">Ir a la sección</label>
+      <select id="ciTocSel">
+        <option value="intro">1 · Introducción</option>
+        <option value="que-es">2 · ¿Qué es la IA?</option>
+        <option value="historia">3 · Historia</option>
+        <option value="capas">4 · Las capas de la IA</option>
+        <option value="generativa">5 · PLN y visión</option>
+        <option value="ingredientes">6 · Los 4 ingredientes</option>
+        <option value="tipos">7 · Tipos y evolución</option>
+        <option value="aplicada">8 · IA aplicada</option>
+        <option value="conclusiones">9 · Conclusiones</option>
+        <option value="glosario">10 · Glosario</option>
+        <option value="test">Test del módulo</option>
+      </select>
+    </div>
+
+    <!-- 1 · Introducción -->
+    <section id="intro">
+      <p class="ci-num">1 · introducción</p>
+      <h2>De qué va este módulo</h2>
+      <p class="ci-big">Al terminarlo sé qué es la IA hoy y hacia dónde va, con la <b>IA generativa</b> y los <b>agentes autónomos</b>. La idea de fondo: cerrar la brecha entre el mundo técnico y el de negocio.</p>
+      <div class="ci-cards">
+        <div class="ci-card"><span class="ci-chip">Profesor</span><h4>Gabriel Muñoz</h4><p>Ingeniero de IA. Ha sido científico de datos, ingeniero de Machine Learning e ingeniero de preventa.</p></div>
+        <div class="ci-card"><span class="ci-chip">Objetivo</span><h4>Hablar de IA con confianza</h4><p>Tener el conocimiento y el lenguaje técnico para unir el lado técnico y el de negocio.</p></div>
+        <div class="ci-card"><span class="ci-chip">Método</span><h4>Teoría + práctica</h4><p>Cada concepto se conecta con ejemplos y casos de uso reales.</p></div>
+      </div>
+      <h3>Objetivos de aprendizaje</h3>
+      <ol>
+        <li>Entender la definición formal de IA y en qué se diferencia del software tradicional.</li>
+        <li>Conocer los hitos históricos que han llevado a la IA hasta hoy.</li>
+        <li>Identificar los componentes de cualquier solución de IA: datos, modelo, salida y computación.</li>
+        <li>Diferenciar los tipos de IA: estrecha, generativa y general.</li>
+        <li>Explorar el impacto del Procesamiento del Lenguaje Natural y la Visión por Computador.</li>
+        <li>Descubrir el nuevo paradigma de los agentes autónomos.</li>
+      </ol>
+      <div class="ci-note"><span class="hand">¡ojo con los dos "cuatro"!</span>Las <b>4 capacidades</b> de la IA (percepción, aprendizaje, razonamiento y decisión) dicen <i>qué hace</i> un sistema inteligente. Los <b>4 ingredientes</b> de un proyecto (datos, modelo, salida y computación) dicen <i>de qué está hecho</i>.</div>
+    </section>
+
+    <!-- 2 · Qué es -->
+    <section id="que-es">
+      <p class="ci-num">2 · definición</p>
+      <h2>¿Qué es la inteligencia artificial?</h2>
+      <p class="ci-big">Un campo de la informática que busca crear sistemas capaces de <b>imitar el comportamiento humano inteligente</b>: aprender, razonar, percibir y tomar decisiones de forma autónoma para lograr objetivos concretos.</p>
+      <p>Juntar esas cuatro capacidades en una sola solución es muy difícil. Por eso la IA es hoy un tema tan relevante: permite combinarlas para resolver problemas complejos que antes no tenían solución.</p>
+
+      <h3>IA frente al software tradicional</h3>
+      <div class="ci-table"><table>
+        <thead><tr><th></th><th>Software tradicional</th><th>Inteligencia artificial (ML)</th></tr></thead>
+        <tbody>
+          <tr><td>¿Quién escribe las reglas?</td><td>El programador, una a una</td><td>El sistema las descubre en los datos</td></tr>
+          <tr><td>¿Qué necesita?</td><td>Lógica bien definida</td><td>Datos, una técnica que aprenda y un objetivo</td></tr>
+          <tr><td>Ante casos nuevos</td><td>Solo hace lo programado</td><td>Se adapta y mejora con más datos</td></tr>
+          <tr><td>Ejemplo</td><td>Filtro de spam con una lista fija de palabras</td><td>Filtro que aprende viendo miles de correos</td></tr>
+        </tbody>
+      </table></div>
+      <p class="ci-quote">El poder de la tecnología actual está en dar a las máquinas los datos adecuados para que descubran las reglas por sí mismas.<cite>la idea clave del módulo</cite></p>
+
+      <h3>Las 4 capacidades: el "río de luz"</h3>
+      <p>En el curso se explican como un río: la información entra como un caos de partículas y sale convertida en un haz de luz enfocado, una acción concreta. Pulsa cada etapa para verla en detalle.</p>
+      <figure class="ci-fig" style="margin:0">
+        <p class="ci-fig-t">Los datos recorren 4 etapas hasta convertirse en una acción</p>
+        <div class="ci-river" role="group" aria-label="Las 4 capacidades de la IA">
+          <button type="button" class="ci-step" data-n="1" aria-pressed="true" data-detail="Es el punto de partida. Las personas usamos los sentidos; la IA recoge información con hardware (sensores, cámaras, GPS) o con lo que introducen los usuarios. Un coche autónomo recibe un torrente de datos de sus sensores; un modelo de lenguaje, miles de millones de palabras de internet. Aquí los datos todavía son brutos."><i>reunir la luz</i><b>Percepción</b><span>Recoger datos</span></button>
+          <button type="button" class="ci-step" data-n="2" aria-pressed="false" data-detail="El sistema actúa como un detective: busca patrones, conexiones y correlaciones que a una persona se le escaparían. Convierte datos en bruto en conocimiento estructurado: entiende las relaciones entre los hechos, no solo los memoriza."><i>corrientes de luz</i><b>Aprendizaje</b><span>Adquirir conocimiento</span></button>
+          <button type="button" class="ci-step" data-n="3" aria-pressed="false" data-detail="Pasar del «qué» al «por qué»: entender las reglas que hay detrás de los patrones. Es la diferencia entre notar que las nubes oscuras traen lluvia y entender los principios atmosféricos que la causan. Gracias a esto, el sistema puede explicar cómo ha llegado a una conclusión."><i>lógica de cristal</i><b>Razonamiento</b><span>Extraer la lógica</span></button>
+          <button type="button" class="ci-step" data-n="4" aria-pressed="false" data-detail="Todo lo percibido, aprendido y razonado converge en una sola acción para resolver el problema: elegir la mejor acción en un escenario dado. No es una apuesta al azar, sino el resultado del conocimiento acumulado."><i>haz enfocado</i><b>Decisión</b><span>La acción final</span></button>
+        </div>
+        <p class="ci-river-out" id="ciRiverOut" aria-live="polite"></p>
+        <div class="ci-ends"><span>Entrada: datos en bruto y caóticos</span><span>Salida: una acción con propósito</span></div>
+      </figure>
+
+      <h3>La IA ya está en tu día a día</h3>
+      <div class="ci-cards">
+        <div class="ci-card ci-blue"><span class="ci-chip">PLN</span><h4>Asistentes de voz</h4><p>Siri, Alexa o Google Assistant extraen tus palabras, entienden el significado y lo convierten en una acción. Parece magia porque ocurre al instante.</p></div>
+        <div class="ci-card ci-coral"><span class="ci-chip">Recomendación</span><h4>Netflix y Spotify</h4><p>Analizan tu historial, la duración, el tema o los actores para sugerirte lo que mejor encaja contigo.</p></div>
+        <div class="ci-card ci-sun"><span class="ci-chip">Las dos a la vez</span><h4>"Pon esta canción"</h4><p>El altavoz usa PLN para entender la orden y recomendación para elegir la versión correcta.</p></div>
+      </div>
+    </section>
+
+    <!-- 3 · Historia -->
+    <section id="historia">
+      <p class="ci-num">3 · historia</p>
+      <h2>70 años de IA: teoría, invierno, renacimiento y explosión</h2>
+      <p class="ci-big">La teoría nació en los años 50, pero la IA solo despegó cuando hubo <b>datos y potencia de cálculo</b> para aplicarla.</p>
+      <ol class="ci-tl">
+        <li><time>1950s</time><h4>El nacimiento</h4><p>Alan Turing propone el Test de Turing. En 1956, el taller de Dartmouth, liderado por John McCarthy, acuña el término "Inteligencia Artificial". Nacen las bases teóricas que todavía usamos.</p></li>
+        <li><time>1968</time><h4>La ciencia ficción marca el camino</h4><p><i>2001: Una odisea del espacio</i>. La ficción avanza en paralelo a la técnica real y guía la imaginación sobre los siguientes pasos posibles.</p></li>
+        <li class="ci-coral"><time>1980s</time><h4>El invierno de la IA</h4><p>Las expectativas superan a los resultados reales y se congela la inversión de universidades y empresas. Solo algunos laboratorios mantienen el ritmo.</p></li>
+        <li class="ci-green"><time>1997</time><h4>El renacimiento: Deep Blue</h4><p>El ordenador de IBM vence al campeón mundial de ajedrez Garry Kasparov, que protestó porque la máquina se había preparado con sus partidas y con una enorme base de datos.</p></li>
+        <li><time>2010s</time><h4>La explosión del Big Data</h4><p>Big Data, GPU potentes y técnicas maduras. Las empresas extraen valor de sus datos con Machine Learning y resuelven problemas antes imposibles: la "edad dorada".</p></li>
+        <li class="ci-blue"><time>Hoy</time><h4>IA generativa y agentes</h4><p>ChatGPT, Gemini, Midjourney… y los agentes como puente hacia una IA más general.</p></li>
+      </ol>
+      <div class="ci-cards c2">
+        <div class="ci-card"><h4>¿Por qué el ajedrez?</h4><p>Los juegos tienen reglas estrictas, así que son un entorno ideal para medir y comparar la inteligencia humana y la artificial. Su pega: están muy aislados de la realidad.</p></div>
+        <div class="ci-card"><h4>¿Por qué fue clave el Big Data?</h4><p>Primero se acumularon y limpiaron enormes conjuntos de datos; después, el Machine Learning permitió extraer su conocimiento. Esa revolución técnica pasó luego al negocio: conocer al cliente, recomendar productos…</p></div>
+      </div>
+    </section>
+
+    <!-- 4 · Capas -->
+    <section id="capas">
+      <p class="ci-num">4 · conceptos base</p>
+      <h2>Las capas de la IA</h2>
+      <p class="ci-big">Hoy, hablar de IA es casi siempre hablar de <b>Machine Learning</b>: alrededor del 99 % de las soluciones que llamamos IA aprenden de datos.</p>
+      <figure class="ci-fig ci-layers" style="margin:0">
+        <p class="ci-fig-t">Cada capa es un caso particular de la anterior</p>
+        <div class="ci-ly l1"><b>Inteligencia artificial</b><span>El paraguas: sistemas que imitan la inteligencia humana. Incluye también robótica, sistemas expertos…</span>
+          <div class="ci-ly l2"><b>Machine Learning</b><span>Aprende de los datos sin programar las reglas.</span>
+            <div class="ci-ly l3"><b>Deep Learning</b><span>ML con una técnica concreta: redes neuronales de muchas capas.</span>
+              <div class="ci-ly l4"><b>IA generativa</b><span>Redes neuronales cuyo objetivo es generar contenido nuevo (texto, imágenes, código) a partir de lo que pide el usuario: ChatGPT, Gemini, Midjourney.</span></div>
+            </div>
+          </div>
+        </div>
+        <p class="ci-caption">Toda IA generativa es Deep Learning y todo Deep Learning es Machine Learning, pero no al revés.</p>
+      </figure>
+
+      <p class="ci-quote">El campo de estudio que da a los ordenadores la capacidad de aprender sin ser programados explícitamente.<cite>Arthur Samuel, sobre el Machine Learning</cite></p>
+      <p>Toda solución de ML combina tres cosas: <b>un conjunto de datos</b>, <b>una técnica</b> capaz de encontrar patrones en ellos y <b>un objetivo</b>, la pregunta que queremos responder. Nosotros elegimos la técnica, pero las reglas las encuentra ella sola: esa es la "magia".</p>
+
+      <h3>Los 3 tipos de aprendizaje</h3>
+      <div class="ci-cards">
+        <div class="ci-card ci-green"><span class="ci-chip">Supervisado</span><h4>Conocemos la respuesta</h4><p>Hay una variable objetivo y medimos si nos acercamos a ella.</p><p class="ci-ex">Ej.: detectar spam con correos ya etiquetados.</p></div>
+        <div class="ci-card ci-blue"><span class="ci-chip">No supervisado</span><h4>No hay respuesta</h4><p>El sistema agrupa los datos por su parecido.</p><p class="ci-ex">Ej.: agrupar clientes por hábitos de compra.</p></div>
+        <div class="ci-card ci-lilac"><span class="ci-chip">Por refuerzo</span><h4>Prueba y error</h4><p>Recompensas y castigos guían el aprendizaje hacia una meta.</p><p class="ci-ex">Ej.: aprender a jugar sumando puntos al ganar.</p></div>
+      </div>
+
+      <h3>¿Qué cambia en cada capa?</h3>
+      <div class="ci-table"><table>
+        <thead><tr><th>Capa</th><th>Datos</th><th>Técnica</th><th>Objetivo</th></tr></thead>
+        <tbody>
+          <tr><td>Machine Learning</td><td>Aprende de datos</td><td>Muchas posibles</td><td>Resolver un objetivo concreto</td></tr>
+          <tr><td>Deep Learning</td><td>Sobre todo no estructurados y en gran volumen</td><td>Solo redes neuronales</td><td>Resolver un objetivo concreto</td></tr>
+          <tr><td>IA generativa</td><td>Aprende de datos</td><td>Redes neuronales</td><td>Generar contenido nuevo</td></tr>
+        </tbody>
+      </table></div>
+    </section>
+
+    <!-- 5 · Generativa -->
+    <section id="generativa">
+      <p class="ci-num">5 · IA generativa</p>
+      <h2>Dos líneas de trabajo: lenguaje e imagen</h2>
+      <p class="ci-big">Las aplicaciones de la IA generativa se reparten según el tipo de dato, y <b>las dos se apoyan en redes neuronales</b>.</p>
+      <figure class="ci-fig" style="margin:0">
+        <div class="ci-roof">IA generativa: generar información nueva</div>
+        <div class="ci-cards c2">
+          <div class="ci-card"><span class="ci-chip">Texto y voz</span><h4>Procesamiento del Lenguaje Natural (PLN)</h4>
+            <ul><li>La forma más común de interactuar con un ordenador</li><li>Entender, interpretar, extraer, transformar y generar lenguaje</li><li>En distintos idiomas y situaciones</li></ul>
+            <p class="ci-ex">Ej.: ChatGPT, Siri, Alexa</p></div>
+          <div class="ci-card"><span class="ci-chip">Imagen y vídeo</span><h4>Visión por computador</h4>
+            <ul><li>Reconocimiento, incluido el facial</li><li>Clasificación y detección de objetos</li><li>Generar, modificar o adaptar imágenes</li></ul>
+            <p class="ci-ex">Ej.: desbloqueo facial, Midjourney</p></div>
+        </div>
+        <div class="ci-base">Base común: redes neuronales y datos no estructurados</div>
+      </figure>
+      <div class="ci-note ci-lilac"><span class="hand">la frase para recordar</span>La IA generativa va más allá de crear arte o redactar textos: <b>construye un puente entre la comunicación humana y la comprensión de las máquinas</b>.</div>
+    </section>
+
+    <!-- 6 · Ingredientes -->
+    <section id="ingredientes">
+      <p class="ci-num">6 · proyectos</p>
+      <h2>Los 4 ingredientes de un proyecto de IA</h2>
+      <p class="ci-big">Ninguna solución sale de la nada: necesita <b>datos, un modelo, una salida medible y computación</b>. Y están acoplados: elegir uno condiciona a los demás.</p>
+      <figure class="ci-fig" style="margin:0">
+        <p class="ci-fig-t">Empieza por la salida: ella decide los datos y el modelo</p>
+        <div class="ci-ingr">
+          <div class="ci-card"><span class="ci-chip">Datos</span><h4>El combustible</h4><p><b>Estructurados:</b> tablas, Excel, SQL.<br><b>No estructurados:</b> imágenes, PDF, audio, texto libre.</p></div>
+          <div class="ci-card"><span class="ci-chip">Modelo</span><h4>La técnica</h4><p>El algoritmo que aprende de los datos y extrae conocimiento, desde algoritmos sencillos hasta redes neuronales.</p></div>
+          <div class="ci-card ci-coral"><span class="ci-badge">paso 1</span><span class="ci-chip">Salida</span><h4>El objetivo</h4><p>Qué queremos lograr y con qué métrica medimos si la solución es buena: exactitud, precisión, recall…</p></div>
+        </div>
+        <div class="ci-umbrella"><b>Computación · el paraguas</b><p>Servidores, nube y procesadores que lo ejecutan todo, del desarrollo a producción.</p></div>
+        <div class="ci-order" aria-label="Orden recomendado"><span>Define el objetivo</span><em>→</em><span>Entiende tus datos</span><em>→</em><span>Elige la técnica</span><em>→</em><span>Dale computación</span></div>
+      </figure>
+
+      <h3>Datos estructurados y no estructurados</h3>
+      <div class="ci-table"><table>
+        <thead><tr><th></th><th>Estructurados</th><th>No estructurados</th></tr></thead>
+        <tbody>
+          <tr><td>Qué son</td><td>Filas y columnas con variables bien definidas</td><td>Datos en bruto sin organización previa</td></tr>
+          <tr><td>Ejemplos</td><td>Bases de datos SQL, Excel, una base de usuarios con nombre, dirección y país</td><td>PDF y textos, imágenes y vídeos, audio</td></tr>
+          <tr><td>Técnica habitual</td><td>Amplio abanico de técnicas de ML</td><td>Redes neuronales</td></tr>
+        </tbody>
+      </table></div>
+      <p>Además del tipo, hay que evaluar la <b>seguridad</b>, la <b>sensibilidad</b> y el <b>tamaño</b> de los datos, para que la solución sea robusta y encaje con los recursos disponibles.</p>
+
+      <h3>Por qué empezar por la salida</h3>
+      <ol>
+        <li><b>Valida el modelo:</b> sin una métrica clara no sabes si el modelo aprende bien.</li>
+        <li><b>Guía las decisiones:</b> añadir datos o más potencia depende de si te acercas al objetivo.</li>
+        <li><b>Ahorra recursos:</b> evita gastar tiempo y computación en modelos que no resuelven el problema real.</li>
+      </ol>
+    </section>
+
+    <!-- 7 · Tipos -->
+    <section id="tipos">
+      <p class="ci-num">7 · evolución</p>
+      <h2>Hoy estamos en el puente: los agentes</h2>
+      <p class="ci-big">Convivimos con dos tipos de IA, estamos cruzando un puente y en el horizonte aparecen la <b>IA general</b> y la <b>superinteligencia</b>.</p>
+      <figure class="ci-fig" style="margin:0">
+        <div class="ci-evo">
+          <div class="ci-phase p-now">presente</div>
+          <div class="ci-phase bridge">puente</div>
+          <div class="ci-phase future">futuro</div>
+          <div class="ci-card e1"><span class="ci-chip">IA estrecha</span><span class="ci-role">el operario de fábrica</span><p>Una sola tarea, a la perfección. Es el ML tradicional.</p><p class="ci-ex">Filtro de spam, IA de ajedrez</p></div>
+          <div class="ci-card e2"><span class="ci-chip">IA generativa</span><span class="ci-role">el consultor creativo</span><p>Genera lo que le pides; tú sigues al mando y lo aplicas.</p><p class="ci-ex">ChatGPT, Gemini, Midjourney</p></div>
+          <div class="ci-card ci-green e3"><span class="ci-chip">Agentes de IA</span><span class="ci-role">el asistente ejecutivo</span><p>Además de generar, actúa: usa herramientas y ejecuta procesos por ti.</p></div>
+          <div class="ci-card future e4"><span class="ci-chip">IA general</span><span class="ci-role">el empleado multitarea</span><p>Iguala a una persona media en casi cualquier tarea. Hipotética.</p></div>
+          <div class="ci-card future e5"><span class="ci-chip">Superinteligencia</span><span class="ci-role">el "dios" tecnológico</span><p>Supera a toda la humanidad. Ciencia ficción por ahora.</p></div>
+        </div>
+        <p class="ci-caption">Cada paso gana autonomía y generalidad; los dos últimos (en discontinua) todavía son teóricos.</p>
+      </figure>
+
+      <div class="ci-cards c2">
+        <div class="ci-card"><span class="ci-chip">IA generativa</span><p>Le pides "escríbeme un correo de queja al proveedor" y lo redacta perfecto, pero eres tú quien lo copia, lo pega en el correo y lo envía.</p></div>
+        <div class="ci-card ci-green"><span class="ci-chip">Agente</span><p>Le dices "cancela mi reunión de las 17:00 y avisa al equipo". Se conecta a tu calendario, borra el evento, redacta la disculpa y la envía él solo.</p></div>
+      </div>
+      <p>A diferencia de un chatbot, que solo responde, un agente <b>planifica y ejecuta una serie de pasos</b> para lograr un objetivo complejo.</p>
+
+      <figure class="ci-fig" style="margin:0">
+        <p class="ci-fig-t">El agente percibe, piensa y actúa por ti</p>
+        <div class="ci-agent">
+          <div class="ci-agent-who"><div><b>Usuario</b><br><span style="color:var(--muted);font-size:.92rem">hace una petición</span></div><div class="ci-green"><b>Agente de IA</b><br><span style="font-size:.92rem">actúa como intermediario</span></div></div>
+          <div class="ci-agent-arrow" aria-hidden="true">→</div>
+          <div class="ci-agent-loop">
+            <div><b>Percepción</b><span>Fusión multimodal: cámara, texto, audio, sensores</span></div>
+            <div><b>Cognición</b><span>Memoria + base de conocimiento → toma de decisiones</span></div>
+            <div><b>Acción</b><span>Ejecuta tareas con herramientas y monitoriza el resultado</span></div>
+          </div>
+        </div>
+      </figure>
+
+      <h3>IA estrecha frente a IA general</h3>
+      <div class="ci-table"><table>
+        <thead><tr><th></th><th>IA estrecha</th><th>IA general (AGI)</th></tr></thead>
+        <tbody>
+          <tr><td>Cómo aprende</td><td>Entrenada en una tarea concreta</td><td>Entrenada con datos diversos para muchas tareas</td></tr>
+          <tr><td>Alcance</td><td>Una IA por tarea</td><td>Un sistema para casi todo; podría planificar, razonar e incluso crear otras IA</td></tr>
+          <tr><td>Riesgos</td><td>Limitados</td><td>Mucho mayores</td></tr>
+        </tbody>
+      </table></div>
+    </section>
+
+    <!-- 8 · Aplicada -->
+    <section id="aplicada">
+      <p class="ci-num">8 · casos de uso</p>
+      <h2>La misma tecnología, adaptada a cada sector</h2>
+      <p class="ci-big">Lo importante es saber conectar <b>un reto de negocio</b> con el enfoque técnico de IA que lo resuelve.</p>
+      <div class="ci-cards c2">
+        <div class="ci-card ci-blue"><span class="ci-chip">Salud</span><h4>Diagnóstico por imagen</h4><p>Detectar enfermedades en imágenes médicas y apoyar el triaje hospitalario.</p><p class="ci-ex">Datos: imágenes, textos, informes y bases de datos</p></div>
+        <div class="ci-card ci-sun"><span class="ci-chip">Vehículos autónomos</span><h4>Ver y decidir</h4><p>Percepción del entorno, detección de peatones y toma de decisiones en tiempo real.</p><p class="ci-ex">Datos: cámaras y sensores del coche</p></div>
+        <div class="ci-card ci-green"><span class="ci-chip">Finanzas</span><h4>Fraude y trading</h4><p>Detección rápida de fraude en enormes bases de transacciones y trading algorítmico.</p><p class="ci-ex">Ventaja: una velocidad imposible para una persona</p></div>
+        <div class="ci-card ci-coral"><span class="ci-chip">Entretenimiento</span><h4>Recomendar y escuchar</h4><p>Recomendaciones personalizadas (Netflix, Spotify) y asistentes de voz con PLN (Siri, Alexa).</p><p class="ci-ex">Datos: historial y preferencias del usuario</p></div>
+      </div>
+      <h3>Las 3 funciones de la IA</h3>
+      <div class="ci-cards">
+        <div class="ci-card"><span class="ci-chip">Acelerar</span><p>Analiza en segundos lo que a una persona le llevaría días, como revisar miles de transacciones.</p></div>
+        <div class="ci-card"><span class="ci-chip">Automatizar</span><p>Ejecuta sola tareas repetitivas o de reconocimiento: clasificar correos, conducir un vehículo.</p></div>
+        <div class="ci-card"><span class="ci-chip">Apoyar</span><p>Ayuda a redactar, propone ideas de código, atiende a clientes o recomienda.</p></div>
+      </div>
+    </section>
+
+    <!-- 9 · Conclusiones -->
+    <section id="conclusiones">
+      <p class="ci-num">9 · conclusiones</p>
+      <h2>La IA ha llegado para quedarse</h2>
+      <p class="ci-big">Es la evolución natural de una idea de los años 50 que hoy, por fin, tiene <b>datos, técnicas y computación</b> a la vez.</p>
+      <h3>Mi chuleta en 30 segundos</h3>
+      <div class="ci-table"><table>
+        <tbody>
+          <tr><td>Definición</td><td>Rama de la informática que imita el comportamiento humano inteligente</td></tr>
+          <tr><td>4 capacidades</td><td>Percepción → aprendizaje → razonamiento → decisión</td></tr>
+          <tr><td>Historia</td><td>1950s nacimiento · 1968 ciencia ficción · 1980s invierno · 1997 Deep Blue · 2010s Big Data</td></tr>
+          <tr><td>Capas</td><td>IA ⊃ Machine Learning ⊃ Deep Learning ⊃ IA generativa</td></tr>
+          <tr><td>Aprendizaje</td><td>Supervisado, no supervisado y por refuerzo</td></tr>
+          <tr><td>IA generativa</td><td>PLN (texto y voz) y visión por computador (imagen y vídeo)</td></tr>
+          <tr><td>Ingredientes</td><td>Datos, modelo, salida y computación; se empieza por la salida</td></tr>
+          <tr><td>Tipos</td><td>Estrecha y generativa → agentes → general y superinteligencia</td></tr>
+          <tr><td>Funciones</td><td>Acelerar, automatizar y apoyar</td></tr>
+        </tbody>
+      </table></div>
+    </section>
+
+    <!-- 10 · Glosario -->
+    <section id="glosario">
+      <p class="ci-num">10 · glosario</p>
+      <h2>Glosario del módulo</h2>
+      <label class="sr" for="ciGlossQ">Buscar un término</label>
+      <input class="ci-search" id="ciGlossQ" type="search" placeholder="Busca: red neuronal, PLN, agente…" autocomplete="off">
+      <div class="ci-gloss" id="ciGloss"></div>
+      <p id="ciGlossEmpty" hidden style="color:var(--muted)">No hay ningún término con esa palabra.</p>
+    </section>
+
+    <!-- Test -->
+    <section id="test" class="ci-test">
+      <p class="ci-num">test del módulo</p>
+      <h2>¿Lo has entendido?</h2>
+      <p class="ci-big">Las <b>20 preguntas</b> del test del módulo. Elige una respuesta y verás al momento si es correcta y por qué.</p>
+      <div class="ci-quiz" id="ciQuiz"></div>
+    </section>
+
+    <nav class="ci-next" aria-label="Otros módulos">
+      <a href="./"><span class="hand">volver a</span><b>El curso</b></a>
+      <div><span class="hand">siguiente</span><b>Módulo 2 · próximamente</b></div>
+    </nav>
+  </div>
+</div>
+</main>
+
+<footer class="foot">
+  <p>© 2026 Iratxe Olaizola. Apuntes elaborados por mí a partir del material del curso de VASS University. El código y la maquetación se hicieron con ayuda de IA (Claude) y los he revisado yo.<br><span class="foot-small">Sin cookies ni analítica. Las fuentes se sirven desde esta web.</span></p>
+</footer>
+
+<script src="../js/curso-ia.js?v=20261031"></script>
+</body>
+</html>

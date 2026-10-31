@@ -564,3 +564,28 @@ window.I18N = {
     'a.path.t5m': 'En forskningsinriktad master på 60 ECTS: kvalitativa och kvantitativa metoder, publiker och sociala medier. Uppsats om AI på universitetet, försvarad i juli 2025.'
   });
 })(window.I18N);
+
+/* Curso de IA (VASS University · Lanbide): tarjeta y trayectoria del CV académico */
+(function (I) {
+  Object.assign(I.eu, {
+    'ia.c.cover': 'nire apunteak', 'ia.c.mods': '4tik 1. modulua eginda',
+    'ia.c.kicker': 'VASS University · Lanbide · 2026 · egiten ari naiz', 'ia.c.title': 'Adimen Artifizialeko ikastaroa',
+    'ia.c.p': 'AAren oinarriak, Machine Learning, AA sortzailea eta agenteak. Modulu bakoitzeko apunteak, eskemak eta testak (gazteleraz).',
+    'ia.c.btn': 'Nire apunteak ikusi', 'ia.path.h': 'AA ikastaroa · VASS University eta Lanbide',
+    'ia.path.p': 'Lau modulu, AAren oinarrietatik aplikazio praktikora. Egiten ari naiz eta hemen gordetzen ditut nire apunteak.'
+  });
+  Object.assign(I.en, {
+    'ia.c.cover': 'my notes', 'ia.c.mods': 'Module 1 of 4 done',
+    'ia.c.kicker': 'VASS University · Lanbide · 2026 · in progress', 'ia.c.title': 'Artificial Intelligence course',
+    'ia.c.p': 'AI foundations, machine learning, generative AI and agents. My notes, diagrams and tests for each module (in Spanish).',
+    'ia.c.btn': 'See my notes', 'ia.path.h': 'AI course · VASS University and Lanbide',
+    'ia.path.p': 'Four modules, from AI foundations to practical use. I am taking it now and keep my notes here.'
+  });
+  Object.assign(I.sv, {
+    'ia.c.cover': 'mina anteckningar', 'ia.c.mods': 'Modul 1 av 4 klar',
+    'ia.c.kicker': 'VASS University · Lanbide · 2026 · pågår', 'ia.c.title': 'Kurs i artificiell intelligens',
+    'ia.c.p': 'Grunderna i AI, maskininlärning, generativ AI och agenter. Mina anteckningar, scheman och tester för varje modul (på spanska).',
+    'ia.c.btn': 'Se mina anteckningar', 'ia.path.h': 'AI-kurs · VASS University och Lanbide',
+    'ia.path.p': 'Fyra moduler, från grunderna i AI till praktisk användning. Jag går kursen nu och samlar mina anteckningar här.'
+  });
+})(window.I18N);

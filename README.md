@@ -5,6 +5,7 @@ Web publicada en https://iratxeolaizolavargas.com (GitHub Pages).
 - `index.html`: portada con dos puertas (CV profesional y CV académico)
 - `cv-profesional/`: experiencia, proyectos, trayectoria profesional y código (rosa)
 - `cv-academico/`: doctorado, TFM, TFG, formación complementaria y trayectoria académica (colores EHU)
+- `curso-ia/`: apuntes y tests del curso de IA de VASS University (Lanbide), un archivo por módulo (`modulo-1.html`…), solo en castellano · estilos en `css/curso-ia.css`, lógica en `js/curso-ia.js`
 - `js/avatar.js`: la caricatura animada (ropa de diario o toga y birrete)
 - `js/i18n.js`: textos en euskera, inglés y sueco (el castellano está en el HTML)
 - `js/main.js`: animaciones de los dos CV · `js/home.js`: portada · `js/nodo.js`: gráfica del TFG de Periodismo

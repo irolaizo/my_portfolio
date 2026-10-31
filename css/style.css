@@ -789,6 +789,16 @@ body.has-cursor .cursor { display: block; }
 .term-cover code { font: 600 .95rem/1.6 ui-monospace, Menlo, Consolas, monospace; }
 .term-cover code span { color: var(--lime); }
 .term-cover i { display: inline-block; width: .6em; height: 1.05em; background: var(--lime); vertical-align: text-bottom; animation: blinkc 1s steps(1) infinite; }
+/* portada de la tarjeta del curso de IA (sin diploma todavía) */
+.certs .book-cover.ia-cover, .ia-cover { position: relative; display: grid; align-content: space-between; gap: 1rem; padding: 1.1rem 1.2rem; background: var(--sky); color: #111; text-decoration: none; cursor: pointer; }
+.ia-cover .ia-k { font-family: var(--f-hand); font-weight: 700; font-size: 1.5rem; line-height: 1; }
+.ia-cover .ia-t { font-family: var(--f-display); font-weight: 800; font-variation-settings: "wdth" 78; font-size: clamp(2rem, 4vw, 2.8rem); line-height: .9; letter-spacing: -.04em; }
+.ia-cover .ia-mods { display: flex; gap: .4rem; }
+.ia-cover .ia-mods i { flex: 1; height: 12px; border-radius: 99px; border: 2px solid #111; background: rgba(255,255,255,.5); }
+.ia-cover .ia-mods i.on { background: var(--lime); }
+.ia-cover .ia-n { font-weight: 700; font-size: .85rem; }
+.book:hover .ia-cover .ia-t { transform: rotate(-2deg); }
+.ia-cover .ia-t { transition: transform .4s var(--spring); transform-origin: left; }
 @media (max-width: 980px) { .certs-3 { grid-template-columns: 1fr 1fr; } }
 @media (max-width: 640px) { .certs-3 { grid-template-columns: 1fr; } }
 .acad .contact-big { font-size: clamp(2.6rem, 12.5vw, 11rem); }
