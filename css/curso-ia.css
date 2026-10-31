@@ -309,3 +309,12 @@ body[data-page="curso"] .foot { padding-bottom: calc(30px + env(safe-area-inset-
   .curso .hero-shapes .s1, .ci-mhero .hero-shapes .s1 { display: none; }
   .ci-hero .hero-name { font-size: clamp(4.4rem, 22vw, 7rem); }
 }
+
+/* ---------- una sola página: módulos como pestañas ---------- */
+button.ci-mod { font: inherit; text-align: left; cursor: pointer; width: 100%; }
+button.ci-mod:hover { transform: translate(-3px, -3px) rotate(-.8deg); }
+.ci-mod.done[aria-selected="true"] { outline: 3px solid #111; outline-offset: 5px; }
+.ci-notes { padding: 20px 0 0; scroll-margin-top: calc(80px + env(safe-area-inset-top, 0px)); }
+.ci-notes-head .hand { color: var(--violet); transform: rotate(-2deg); transform-origin: left; font-size: clamp(1.6rem, 2.6vw, 2.1rem); }
+.ci-notes-head { padding-bottom: 2.4rem; border-bottom: 3px solid var(--line); margin-bottom: 3rem; }
+.ci-notes .ci-layout { padding-bottom: 110px; }

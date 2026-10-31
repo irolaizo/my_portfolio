@@ -28,35 +28,55 @@
   /* ---------- avatar de la puerta al CV académico ---------- */
   if (window.Avatar) $$('[data-mini]').forEach(el => { try { new Avatar(el, { outfit: el.dataset.mini }); } catch (e) {} });
 
-  /* ---------- índice del módulo ---------- */
-  const tocLinks = $$('.ci-toc a');
-  const sel = $('#ciTocSel');
-  if (sel) sel.addEventListener('change', () => { const t = document.getElementById(sel.value); if (t) t.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth' }); });
-  const secs = $$('.ci-article > section[id]');
-  if (secs.length && 'IntersectionObserver' in window) {
+  /* ---------- pestañas de módulos ---------- */
+  const tabs = $$('.ci-mod[data-mod]'), panes = $$('.ci-pane[data-mod]');
+  const modTitle = $('[data-mod-title]');
+  function showMod(n, scroll) {
+    if (!panes.some(p => p.dataset.mod === String(n))) return;
+    panes.forEach(p => p.hidden = p.dataset.mod !== String(n));
+    tabs.forEach(t => t.setAttribute('aria-selected', t.dataset.mod === String(n) ? 'true' : 'false'));
+    const t = tabs.find(t => t.dataset.mod === String(n));
+    if (modTitle && t) modTitle.textContent = 'Módulo ' + n + ' · ' + $('h3', t).textContent.split(':')[0];
+    if (scroll) $('#apuntes').scrollIntoView({ behavior: reduce ? 'auto' : 'smooth' });
+  }
+  tabs.forEach(t => t.addEventListener('click', () => { showMod(t.dataset.mod, true); history.replaceState(null, '', '#modulo-' + t.dataset.mod); }));
+  const fromHash = () => {
+    const h = location.hash.slice(1), m = h.match(/^(?:modulo-|m)(\d+)/);
+    if (m) { showMod(m[1], false); const el = document.getElementById(h); if (el && !/^modulo-/.test(h)) el.scrollIntoView(); else if (/^modulo-/.test(h)) $('#apuntes').scrollIntoView(); }
+  };
+  if (panes.length) { showMod(panes[0].dataset.mod, false); fromHash(); addEventListener('hashchange', fromHash); }
+
+  /* ---------- índice de cada módulo ---------- */
+  panes.forEach(pane => {
+    const links = $$('.ci-toc a', pane), sel = $('[data-toc-select]', pane);
+    if (sel) sel.addEventListener('change', () => { const t = document.getElementById(sel.value); if (t) t.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth' }); });
+    const secs = $$('.ci-article > section[id]', pane);
+    if (!secs.length || !('IntersectionObserver' in window)) return;
     const io = new IntersectionObserver(es => es.forEach(e => {
       if (!e.isIntersecting) return;
-      tocLinks.forEach(a => a.classList.toggle('on', a.getAttribute('href') === '#' + e.target.id));
+      links.forEach(a => a.classList.toggle('on', a.getAttribute('href') === '#' + e.target.id));
       if (sel) sel.value = e.target.id;
     }), { rootMargin: '-35% 0px -60% 0px' });
-    secs.forEach(s => io.observe(s));
-  }
+    secs.forEach(x => io.observe(x));
+  });
 
   /* ---------- río de luz (4 capacidades) ---------- */
-  const steps = $$('.ci-step'), out = $('#ciRiverOut');
-  if (steps.length && out) {
-    const pick = s => {
-      steps.forEach(x => x.setAttribute('aria-pressed', x === s ? 'true' : 'false'));
+  $$('.ci-river').forEach(river => {
+    const steps = $$('.ci-step', river), out = river.parentElement.querySelector('.ci-river-out');
+    if (!steps.length || !out) return;
+    const pick = st => {
+      steps.forEach(x => x.setAttribute('aria-pressed', x === st ? 'true' : 'false'));
       out.textContent = '';
-      const b = document.createElement('b'); b.textContent = $('b', s).textContent + '. ';
-      out.append(b, document.createTextNode(s.dataset.detail));
+      const b = document.createElement('b'); b.textContent = $('b', st).textContent + '. ';
+      out.append(b, document.createTextNode(st.dataset.detail));
     };
-    steps.forEach(s => s.addEventListener('click', () => pick(s)));
+    steps.forEach(st => st.addEventListener('click', () => pick(st)));
     pick(steps[0]);
-  }
+  });
 
   /* ---------- glosario ---------- */
-  const TERMS = [
+  const GLOSS = {};
+  GLOSS[1] = [
     ['Agente de IA', 'AI agent', 'Sistema autónomo que, además de generar respuestas, usa herramientas y ejecuta procesos para lograr un objetivo.'],
     ['Algoritmo o modelo', 'model', 'La técnica que aprende de los datos y extrae conocimiento.'],
     ['Big Data', '', 'Conjuntos de datos enormes; su explosión hace unos 15 años impulsó el boom actual de la IA.'],
@@ -80,27 +100,29 @@
     ['Variable objetivo', 'target', 'La respuesta correcta que se quiere predecir en el aprendizaje supervisado.'],
     ['Visión por computador', 'Computer Vision', 'IA que procesa y analiza imágenes y vídeos.']
   ];
-  const gl = $('#ciGloss'), gq = $('#ciGlossQ'), ge = $('#ciGlossEmpty');
-  if (gl && gq) {
-    const norm = s => s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '');
+  const norm = x => x.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+  panes.forEach(pane => {
+    const terms = GLOSS[pane.dataset.mod], gl = $('[data-gloss]', pane), gq = $('[data-gloss-q]', pane), ge = $('[data-gloss-empty]', pane);
+    if (!terms || !gl || !gq) return;
     const draw = () => {
       const q = norm(gq.value.trim()); gl.textContent = ''; let n = 0;
-      TERMS.forEach(([t, en, d]) => {
+      terms.forEach(([t, en, d]) => {
         if (q && !norm(t + ' ' + en + ' ' + d).includes(q)) return;
         n++;
         const div = document.createElement('div'); div.className = 'ci-term';
         const b = document.createElement('b'); b.textContent = t; div.appendChild(b);
-        if (en) { const s = document.createElement('small'); s.textContent = en; div.appendChild(s); }
+        if (en) { const sm = document.createElement('small'); sm.textContent = en; div.appendChild(sm); }
         const p = document.createElement('p'); p.textContent = d; div.appendChild(p);
         gl.appendChild(div);
       });
-      ge.hidden = n > 0;
+      if (ge) ge.hidden = n > 0;
     };
     gq.addEventListener('input', draw); draw();
-  }
+  });
 
-  /* ---------- test del módulo 1 ---------- */
-  const Q = [
+  /* ---------- tests (preguntas por módulo) ---------- */
+  const QUIZZES = {};
+  QUIZZES[1] = [
     { q: '¿Cuál podría ser una definición actual de inteligencia artificial?', o: ['Una máquina con sentimientos y consciencia propios.', 'Sistemas capaces de realizar tareas que normalmente requieren inteligencia humana.', 'Software diseñado exclusivamente para jugar a videojuegos.', 'Cualquier programa informático que use una base de datos.'], a: 1,
       e: 'La IA imita el comportamiento humano inteligente: percibir, aprender, razonar y decidir. La consciencia es ciencia ficción, los juegos solo sirven para medir la IA y usar datos no basta: la IA aprende las reglas a partir de ellos.' },
     { q: '¿A quién se considera la persona que definió el Machine Learning?', o: ['Bill Gates', 'Ada Lovelace', 'Arthur Samuel', 'Elon Musk'], a: 2,
@@ -142,8 +164,9 @@
     { q: 'La IA se organiza en distintos niveles según:', o: ['Las técnicas elegidas.', 'El reto que hay que resolver.', 'Los datos disponibles.', 'Todas las respuestas anteriores son correctas.'], a: 3,
       e: 'Datos + técnica + objetivo: elegir redes neuronales te lleva al Deep Learning, querer generar contenido a la IA generativa, y el tipo de dato condiciona la técnica.' }
   ];
-  const quiz = $('#ciQuiz');
-  if (quiz) {
+  $$('[data-quiz]').forEach(quiz => {
+    const mod = quiz.dataset.quiz, Q = QUIZZES[mod];
+    if (!Q) return;
     const L = ['A', 'B', 'C', 'D'];
     let idx = 0, ans = [];
     const el = (t, c, x) => { const e = document.createElement(t); if (c) e.className = c; if (x != null) e.textContent = x; return e; };
@@ -191,7 +214,7 @@
       const row = el('div', 'chips'); row.style.justifyContent = 'center';
       const again = el('button', 'btn btn-ink', 'Repetir el test'); again.type = 'button';
       again.addEventListener('click', () => { idx = 0; ans = []; render(); });
-      const back = el('a', 'btn btn-ghost', 'Repasar los apuntes'); back.href = '#intro';
+      const back = el('a', 'btn btn-ghost', 'Repasar los apuntes'); back.href = '#m' + mod + '-intro';
       row.append(again, back); card.appendChild(row);
       const rev = el('div', 'ci-review');
       rev.appendChild(el('h3', null, 'Repaso de las respuestas'));
@@ -204,7 +227,7 @@
       quiz.append(bar(100), card, rev);
     }
     render();
-  }
+  });
 
   /* ---------- río de luz animado (portada del curso) ---------- */
   const cv = $('#ciRiver');
