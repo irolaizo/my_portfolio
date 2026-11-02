@@ -37,6 +37,8 @@
     tabs.forEach(t => t.setAttribute('aria-selected', t.dataset.mod === String(n) ? 'true' : 'false'));
     const t = tabs.find(t => t.dataset.mod === String(n));
     if (modTitle && t) modTitle.textContent = 'Módulo ' + n + ' · ' + $('h3', t).textContent.split(':')[0];
+    const modLead = $('[data-mod-lead]');
+    if (modLead && t && t.dataset.lead) modLead.textContent = t.dataset.lead;
     if (scroll) $('#apuntes').scrollIntoView({ behavior: reduce ? 'auto' : 'smooth' });
   }
   tabs.forEach(t => t.addEventListener('click', () => { showMod(t.dataset.mod, true); history.replaceState(null, '', '#modulo-' + t.dataset.mod); }));
@@ -74,6 +76,37 @@
     pick(steps[0]);
   });
 
+  /* ---------- prueba de índices y slicing (módulo 2) ---------- */
+  $$('[data-slicer]').forEach(box => {
+    const cells = $$('.ci-idx b', box), vals = ['a', 'b', 'c', 'd', 'e'], n = vals.length;
+    const inp = $('.ci-slice-in', box), out = $('.ci-slice-out', box);
+    const num = t => { t = t.trim(); if (t === '') return null; if (!/^-?\d+$/.test(t)) throw 0; return parseInt(t, 10); };
+    const run = () => {
+      cells.forEach(c => c.classList.remove('on')); out.classList.remove('err');
+      const raw = inp.value.trim();
+      try {
+        if (!raw.includes(':')) {
+          let i = num(raw); if (i === null) throw 0;
+          const j = i < 0 ? i + n : i;
+          if (j < 0 || j >= n) { out.textContent = 'IndexError: no existe esa posición'; out.classList.add('err'); return; }
+          cells.at(j).classList.add('on'); out.textContent = '"' + vals.at(j) + '"'; return;
+        }
+        const parts = raw.split(':'); if (parts.length > 3) throw 0;
+        let [a, b, st] = [num(parts[0]), num(parts[1] || ''), parts.length === 3 ? num(parts[2]) : null];
+        if (st === null) st = 1; if (st === 0) { out.textContent = 'ValueError: el paso no puede ser 0'; out.classList.add('err'); return; }
+        const fix = (v, def, lo, hi) => { if (v === null) return def; if (v < 0) v += n; return Math.min(Math.max(v, lo), hi); };
+        const idx = [];
+        if (st > 0) { a = fix(a, 0, 0, n); b = fix(b, n, 0, n); for (let k = a; k < b; k += st) idx.push(k); }
+        else { a = fix(a, n - 1, -1, n - 1); b = fix(b, -1, -1, n - 1); if (parts[1] && parts[1].trim() !== '' && num(parts[1]) < 0 && num(parts[1]) + n < 0) b = -1; for (let k = a; k > b; k += st) idx.push(k); }
+        idx.forEach(k => cells.at(k).classList.add('on'));
+        out.textContent = '[' + idx.map(k => '"' + vals.at(k) + '"').join(', ') + ']';
+      } catch (e) { out.textContent = 'Escribe un número o un rango, como 1:3'; out.classList.add('err'); }
+    };
+    inp.addEventListener('input', run);
+    $$('[data-ex]', box).forEach(bt => bt.addEventListener('click', () => { inp.value = bt.dataset.ex; run(); }));
+    run();
+  });
+
   /* ---------- glosario ---------- */
   const GLOSS = {};
   GLOSS[1] = [
@@ -99,6 +132,37 @@
     ['Test de Turing', '', 'Prueba propuesta por Alan Turing para evaluar si una máquina se comporta de forma inteligente, como una persona.'],
     ['Variable objetivo', 'target', 'La respuesta correcta que se quiere predecir en el aprendizaje supervisado.'],
     ['Visión por computador', 'Computer Vision', 'IA que procesa y analiza imágenes y vídeos.']
+  ];
+  GLOSS[2] = [
+    ['Alias (as)', '', 'Apodo corto para un módulo al importarlo: import numpy as np.'],
+    ['Bucle infinito', 'infinite loop', 'Bucle cuya condición nunca llega a ser False; cuelga el programa.'],
+    ['Concatenar', '', 'Unir dos textos o dos listas con el operador +.'],
+    ['Diccionario', 'dict', 'Estructura de pares clave: valor entre llaves { }. Se accede por clave.'],
+    ['Docstring', '', 'Texto entre triples comillas que documenta qué hace una función.'],
+    ['Excepción', 'exception', 'Error con nombre propio que detiene el programa: TypeError, KeyError, IndentationError…'],
+    ['f-string', '', 'Texto con una f delante que inserta variables entre llaves: f"Hola {nombre}".'],
+    ['Float', 'float', 'Número con decimales, escrito con punto: 22.5.'],
+    ['Función', 'function', 'Bloque de código reutilizable que se define con def y se llama por su nombre.'],
+    ['global', '', 'Palabra que permite a una función modificar una variable que vive fuera de ella.'],
+    ['Índice', 'index', 'Posición de un elemento en una secuencia. Empieza en 0; desde el final, en -1.'],
+    ['Inferencia de tipos', 'type inference', 'Python decide solo el tipo del resultado: int + float = float.'],
+    ['Inmutable', 'immutable', 'Que no se puede modificar una vez creado, como las tuplas.'],
+    ['Integer', 'int', 'Número entero, positivo o negativo, sin decimales.'],
+    ['KeyError', '', 'Error al pedir con corchetes una clave que no existe en un diccionario.'],
+    ['Librería', 'library', 'Colección de módulos externos que hay que instalar: NumPy, Pandas.'],
+    ['Lista', 'list', 'Secuencia ordenada y modificable entre corchetes [ ].'],
+    ['Método', 'method', 'Función anclada a una variable, llamada con un punto: lista.append(5).'],
+    ['Módulo', 'module', 'Archivo de Python con funciones listas para importar con import.'],
+    ['None', '', 'Objeto especial que significa "vacío". Lo devuelve .get() si la clave no existe.'],
+    ['Parámetro', 'parameter', 'Dato de entrada que recibe una función, como los ingredientes de una receta.'],
+    ['Puntero', 'pointer', 'Segundo nombre para la misma lista en memoria: el "efecto espejo".'],
+    ['range()', '', 'Genera una secuencia de números: range(5) da 0, 1, 2, 3, 4.'],
+    ['Sangría', 'indentation', 'Espacio a la izquierda que marca qué líneas van dentro de un bloque.'],
+    ['Slicing', '', 'Extraer un trozo de una secuencia con [inicio:fin:paso]; el fin no se incluye.'],
+    ['String', 'str', 'Texto entre comillas: una secuencia ordenada de caracteres.'],
+    ['Truthy / falsy', '', 'El 0 se interpreta como False y cualquier otro número como True.'],
+    ['Tupla', 'tuple', 'Secuencia inmutable entre paréntesis ( ).'],
+    ['TypeError', '', 'Error por una operación no permitida, como modificar una tupla.']
   ];
   const norm = x => x.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
   panes.forEach(pane => {
@@ -163,6 +227,48 @@
       e: 'Analizar radiografías o resonancias es procesar imágenes: el terreno de la visión por computador.' },
     { q: 'La IA se organiza en distintos niveles según:', o: ['Las técnicas elegidas.', 'El reto que hay que resolver.', 'Los datos disponibles.', 'Todas las respuestas anteriores son correctas.'], a: 3,
       e: 'Datos + técnica + objetivo: elegir redes neuronales te lleva al Deep Learning, querer generar contenido a la IA generativa, y el tipo de dato condiciona la técnica.' }
+  ];
+  QUIZZES[2] = [
+    { q: '¿Qué característica describe mejor al lenguaje Python?', o: ['Es un lenguaje de bajo nivel y compilado.', 'Es un lenguaje de alto nivel, interpretado y de propósito general.', 'Solo funciona en Windows.', 'Está diseñado exclusivamente para desarrollo web.'], a: 1,
+      e: 'Alto nivel: se escribe con palabras cercanas al lenguaje humano. Interpretado: se ejecuta línea a línea, como en Colab. Propósito general: sirve para casi todo, desde webs hasta IA.' },
+    { q: '¿Cómo se define una variable entera en Python?', o: ['int x = 5', 'variable x := 5', 'x = 5', 'define x as 5'], a: 2,
+      e: 'Nombre, signo = y valor. Python deduce el tipo solo. "int x = 5" es sintaxis de C o Java.' },
+    { q: '¿Qué importancia tiene la sangría (los espacios al principio de la línea) en Python?', o: ['Es opcional y solo sirve para ordenar el código.', 'Solo se usa para los comentarios.', 'Define la estructura y los bloques de código (bucles, funciones, condicionales).', 'Solo hace falta en la primera línea del archivo.'], a: 2,
+      e: 'En Python la sangría no es estética: marca qué líneas van dentro de un bloque. Si falta, aparece un IndentationError.' },
+    { q: '¿Qué símbolo se usa para escribir comentarios de una línea?', o: ['//', '/*', '#', '--'], a: 2,
+      e: 'Todo lo que va detrás de # es una nota que Python ignora. // es comentario en JavaScript (y en Python, la división entera), /* en C y -- en SQL.' },
+    { q: '¿Cuál de estos es un valor de tipo booleano en Python?', o: ['10.5', 'True', 'Real', 'None'], a: 1,
+      e: 'Los booleanos solo tienen dos valores: True y False, con mayúscula y sin comillas. 10.5 es un float y None significa "vacío", pero no es booleano.' },
+    { q: '¿Qué muestra print(type(5.0))?', o: ["<class 'int'>", "<class 'float'>", "<class 'str'>", "<class 'number'>"], a: 1,
+      e: 'El .0 lo convierte en decimal: cualquier número con punto es un float. type(5) daría int y type("5.0") daría str.' },
+    { q: '¿Qué operador se usa para calcular la potencia de un número?', o: ['/', '%', '//', '**'], a: 3,
+      e: '7 ** 2 da 49. / es la división, % el resto de una división y // la división entera.' },
+    { q: '¿Cuál es el resultado de 3 + 2 * 4 en Python?', o: ['20', '11', '14', '9'], a: 1,
+      e: 'La multiplicación va antes que la suma: 3 + 8 = 11. Para obtener 20 harían falta paréntesis: (3 + 2) * 4.' },
+    { q: 'Para ejecutar una acción solo si se cumple una condición, usamos:', o: ['while', 'if', 'for', 'switch'], a: 1,
+      e: 'if evalúa la condición una sola vez. while la repite mientras sea True, for recorre una estructura y switch no existe en Python clásico.' },
+    { q: '¿Cómo se escribe un bucle que recorra exactamente los números del 0 al 4?', o: ['for i in range(5):', 'for i from 0 to 4:', 'while i < 4:', 'for (i=0; i<5; i++)'], a: 0,
+      e: 'range(5) genera 0, 1, 2, 3 y 4: el límite nunca se incluye. "while i < 4" se pararía en el 3 y, sin actualizar i, sería infinito.' },
+    { q: '¿Cómo se comprueba si una variable x es mayor que otra variable y?', o: ['x < y', 'x > y', 'x is equal y', 'x >= y'], a: 1,
+      e: 'x > y pregunta "¿x es mayor que y?". Ojo con >=, que significa "mayor o igual": si valen lo mismo, da True.' },
+    { q: '¿Cuál es la forma correcta de crear una lista en Python?', o: ['my_list = [1, 2, 3]', 'my_list = {1, 2, 3}', 'my_list = (1, 2, 3)', 'my_list = list<1, 2, 3>'], a: 0,
+      e: 'Corchetes para listas, paréntesis para tuplas y llaves para diccionarios (con valores sueltos, las llaves crean un conjunto).' },
+    { q: '¿Qué método añade un elemento al final de una lista existente?', o: ['.add()', '.insert()', '.append()', '.push()'], a: 2,
+      e: '.append() añade al final. .insert() añade en una posición concreta, .add() es de los conjuntos y .push() es de JavaScript.' },
+    { q: '¿Qué significa que una tupla sea "inmutable"?', o: ['Que solo puede contener letras, no números.', 'Que sus elementos no se pueden modificar una vez creada.', 'Que se borra sola después de usarla.', 'Que solo admite un elemento.'], a: 1,
+      e: 'Como un ticket impreso: es definitivo. Intentar cambiar un valor da TypeError. Sí se puede leer, medir con len() y extraer trozos.' },
+    { q: '¿Qué estructura de datos es la mejor para guardar pares clave-valor?', o: ['Lista', 'Tupla', 'Diccionario', 'Conjunto (set)'], a: 2,
+      e: 'El diccionario guarda pares clave: valor, como una agenda de teléfonos. Listas y tuplas se acceden por posición; el conjunto guarda valores sueltos.' },
+    { q: '¿Qué devuelve len([10, 20, 30, 40])?', o: ['10', '4', '40', '100'], a: 1,
+      e: 'len() cuenta cuántos elementos hay, no los suma. Hay 4 elementos, con posiciones de 0 a 3.' },
+    { q: '¿Cómo se define una función en Python?', o: ['function my_function():', 'def my_function():', 'new func my_function():', 'void my_function():'], a: 1,
+      e: 'Con def, el nombre, los paréntesis y dos puntos. "function" es de JavaScript y "void" de C o Java.' },
+    { q: '¿Cómo se importa un módulo externo como NumPy?', o: ['include numpy', 'import numpy', 'get numpy', 'using numpy'], a: 1,
+      e: 'Con import, y casi siempre con alias: import numpy as np. Al ser externo, tiene que estar instalado; si no, ModuleNotFoundError.' },
+    { q: '¿Para qué sirve el módulo math de Python?', o: ['Para calcular operaciones matemáticas de forma autónoma.', 'Para ofrecer una forma de definir operaciones matemáticas.', 'Para ofrecer funciones matemáticas listas para usar.', 'Ninguna de las anteriores es correcta.'], a: 2,
+      e: 'Un módulo es un archivo con funciones ya programadas que solo tienes que importar, como math.sqrt(25). No hace nada por sí solo hasta que llamas a sus funciones.' },
+    { q: '¿Qué función se usa para mostrar mensajes o resultados en pantalla?', o: ['console.log()', 'echo()', 'print()', 'show()'], a: 2,
+      e: 'print() es la función nativa de Python. console.log() es de JavaScript y echo de PHP o la terminal.' }
   ];
   $$('[data-quiz]').forEach(quiz => {
     const mod = quiz.dataset.quiz, Q = QUIZZES[mod];

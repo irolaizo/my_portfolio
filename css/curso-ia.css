@@ -318,3 +318,51 @@ button.ci-mod:hover { transform: translate(-3px, -3px) rotate(-.8deg); }
 .ci-notes-head .hand { color: var(--violet); transform: rotate(-2deg); transform-origin: left; font-size: clamp(1.6rem, 2.6vw, 2.1rem); }
 .ci-notes-head { padding-bottom: 2.4rem; border-bottom: 3px solid var(--line); margin-bottom: 3rem; }
 .ci-notes .ci-layout { padding-bottom: 110px; }
+
+/* =========================================================
+   Módulo 2 · Python: código, índices interactivos y bucles
+   ========================================================= */
+.ci-article code { font: 600 .9em/1.4 ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace; background: color-mix(in srgb, var(--ink) 7%, transparent); padding: .05em .35em; border-radius: 6px; }
+.ci-card[class*="ci-"] code, .ci-note code, .ci-table th code { background: rgba(255,255,255,.55); color: #111; }
+.ci-code {
+  margin: 0; overflow-x: auto; max-width: 100%; border: 3px solid var(--line); border-radius: 22px; padding: 1.1rem 1.3rem;
+  background: #161A18; color: #EEECE9; box-shadow: var(--shadow);
+}
+.ci-code code { background: none; padding: 0; font: 500 .92rem/1.65 ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace; color: inherit; white-space: pre; }
+.ci-code .c { color: #8FD6A8; }
+.ci-note.ci-coral { background: var(--coral); }
+.ci-cards.c4 .ci-card p { font-size: .95rem; }
+
+/* índices de una lista + slicer */
+.ci-slicer { display: grid; gap: 1rem; }
+.ci-idx { display: grid; grid-template-columns: minmax(90px, auto) repeat(5, minmax(0, 1fr)); gap: .45rem .5rem; align-items: center; text-align: center; font: 700 1rem/1.2 ui-monospace, Menlo, Consolas, monospace; }
+.ci-idx .ci-idx-lab { text-align: left; font: 600 .85rem/1.2 var(--f-body); color: var(--muted); }
+.ci-idx b { display: block; padding: .8rem 0; border: 2.5px solid var(--line); border-radius: 14px; background: var(--bg); transition: background .2s, transform .25s var(--spring); }
+.ci-idx b.on { background: var(--lime); color: #111; border-color: #111; transform: translateY(-3px); box-shadow: 3px 3px 0 var(--line); }
+.ci-idx span:not(.ci-idx-lab) { color: var(--muted); font-size: .92rem; }
+.ci-slice-row { display: flex; flex-wrap: wrap; align-items: center; gap: .4rem; font: 700 1.05rem/1 ui-monospace, Menlo, Consolas, monospace; }
+.ci-slice-in { width: 7.5ch; padding: .45em .5em; border: 2.5px solid var(--line); border-radius: 12px; background: var(--card); color: var(--ink); font: inherit; text-align: center; }
+.ci-slice-eq { color: var(--muted); padding: 0 .3rem; }
+.ci-slice-out { padding: .45em .8em; border-radius: 12px; background: var(--sun); color: #111; border: 2.5px solid #111; min-width: 4ch; overflow-wrap: anywhere; }
+.ci-slice-out.err { background: var(--coral); font-family: var(--f-body); font-size: .92rem; }
+.ci-slice-ex .chip { font-family: ui-monospace, Menlo, Consolas, monospace; }
+@media (max-width: 560px) { .ci-idx { grid-template-columns: repeat(5, minmax(0, 1fr)); } .ci-idx .ci-idx-lab { grid-column: 1 / -1; margin-top: .3rem; } }
+
+/* bucle infinito frente a controlado */
+.ci-loops { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
+.ci-loop { border: 3px solid var(--line); border-radius: 22px; padding: 1rem 1.1rem; display: grid; gap: .6rem; align-content: start; background: var(--bg); }
+.ci-loop.bad { border-style: dashed; }
+.ci-loop-h { margin: 0; font-family: var(--f-display); font-weight: 800; font-size: 1.2rem; }
+.ci-loop.bad .ci-loop-h { color: var(--coral); }
+.acad .ci-loop.bad .ci-loop-h { color: #C4502E; }
+:root.acad[data-theme="dark"] .ci-loop.bad .ci-loop-h { color: var(--coral); }
+@media (prefers-color-scheme: dark) { :root.acad:not([data-theme="light"]) .ci-loop.bad .ci-loop-h { color: var(--coral); } }
+.ci-flow { list-style: none; margin: 0; padding: 0; display: grid; gap: 1.1rem; font: 600 .95rem/1.3 ui-monospace, Menlo, Consolas, monospace; }
+.ci-flow li { position: relative; border: 2.5px solid var(--line); border-radius: 14px; padding: .6rem .8rem; background: var(--card); text-align: center; }
+.ci-flow li + li::before { content: "↓"; position: absolute; top: -1.15rem; left: 50%; transform: translateX(-50%); font-size: 1rem; color: var(--muted); }
+.ci-flow li.q { border-radius: 999px; }
+.ci-flow li.key { background: var(--lime); color: #111; border-color: #111; box-shadow: 3px 3px 0 var(--line); }
+.ci-flow li.back { border-style: dashed; font-family: var(--f-body); font-weight: 600; color: var(--muted); }
+.ci-loop.bad li.back { border-color: var(--coral); color: var(--ink); }
+.ci-loop-res { margin: 0; font-size: .95rem; color: var(--muted); }
+@media (max-width: 700px) { .ci-loops { grid-template-columns: minmax(0, 1fr); } }

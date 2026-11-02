@@ -16,9 +16,9 @@
 <meta property="og:locale" content="es_ES">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#5FD790">
-<link rel="stylesheet" href="../css/avatar.css?v=20261031">
-<link rel="stylesheet" href="../css/style.css?v=20261031">
-<link rel="stylesheet" href="../css/curso-ia.css?v=20261031">
+<link rel="stylesheet" href="../css/avatar.css?v=20261102">
+<link rel="stylesheet" href="../css/style.css?v=20261102">
+<link rel="stylesheet" href="../css/curso-ia.css?v=20261102">
 </head>
 <body data-page="curso">
 
@@ -30,7 +30,7 @@
   <nav class="nav-links" id="menu" aria-label="Menú del curso">
     <a href="#modulos">Módulos</a>
     <a href="#apuntes">Apuntes</a>
-    <a href="#m1-test">Test</a>
+    <a href="#m2-test">Último test</a>
     <a href="#certificado">Certificado</a>
     <a href="../cv-academico/#formacion" class="nav-switch">CV académico</a>
   </nav>
@@ -58,8 +58,8 @@
         <li>Hasta diciembre de 2026</li>
       </ul>
       <div class="hero-cta">
-        <a href="#apuntes" class="btn btn-ink">Leer el Módulo 1</a>
-        <a href="#m1-test" class="btn btn-ghost">Hacer el test</a>
+        <a href="#modulos" class="btn btn-ink">Ver los apuntes</a>
+        <a href="#m2-test" class="btn btn-ghost">Test del Módulo 2</a>
       </div>
     </div>
 
@@ -79,20 +79,21 @@
     <h2 class="h2">Los módulos</h2>
     <p class="lead">Elige un módulo para ver sus apuntes, con esquemas, y su test con la explicación de cada respuesta.</p>
     <div class="ci-mods" role="tablist" aria-label="Módulos del curso">
-      <button type="button" class="ci-mod done" role="tab" data-mod="1" aria-selected="true" aria-controls="apuntes">
+      <button type="button" class="ci-mod done" role="tab" data-mod="1" aria-selected="true" aria-controls="apuntes" data-lead="Conceptos y aplicaciones prácticas: qué es la IA, de dónde viene, de qué está hecha y hacia dónde va. Con un test de 20 preguntas al final.">
         <span class="ci-mod-n">01</span>
         <span class="ci-tag">Completado</span>
         <h3>Fundamentos de la IA: conceptos y aplicaciones prácticas</h3>
         <p>Qué es la IA, su historia, las capas del Machine Learning, los 4 ingredientes de un proyecto, los agentes y la IA general.</p>
         <span class="ci-go">Ver apuntes ↓</span>
       </button>
-      <!-- Al terminar un módulo: cambia el <div class="ci-mod locked"> por un <button> como el del módulo 1 (data-mod="2"). -->
-      <div class="ci-mod locked">
+      <button type="button" class="ci-mod done" role="tab" data-mod="2" aria-selected="false" aria-controls="apuntes" data-lead="Lo justo de Python para trabajar con datos: tipos, estructuras, bucles, funciones y módulos. Con un test de 20 preguntas al final.">
         <span class="ci-mod-n">02</span>
-        <span class="ci-tag">Próximamente</span>
-        <h3>Módulo 2</h3>
-        <p>De la teoría a la práctica: cómo trabajar con herramientas de IA generativa.</p>
-      </div>
+        <span class="ci-tag">Completado</span>
+        <h3>Introducción a Python: la base para datos e IA</h3>
+        <p>Variables y tipos, operadores, listas, tuplas y diccionarios, condicionales, bucles, funciones y módulos.</p>
+        <span class="ci-go">Ver apuntes ↓</span>
+      </button>
+      <!-- Al terminar un módulo: cambia el <div class="ci-mod locked"> por un <button> como los anteriores (data-mod="3"). -->
       <div class="ci-mod locked">
         <span class="ci-mod-n">03</span>
         <span class="ci-tag">Próximamente</span>
@@ -114,7 +115,7 @@
   <div class="wrap ci-notes-head">
     <p class="hand">apuntes</p>
     <h2 class="h2" data-mod-title>Módulo 1 · Fundamentos de la IA</h2>
-    <p class="lead">Conceptos y aplicaciones prácticas: qué es la IA, de dónde viene, de qué está hecha y hacia dónde va. Con un test de 20 preguntas al final.</p>
+    <p class="lead" data-mod-lead>Conceptos y aplicaciones prácticas: qué es la IA, de dónde viene, de qué está hecha y hacia dónde va. Con un test de 20 preguntas al final.</p>
   </div>
 
   <!-- MÓDULO 1 -->
@@ -437,8 +438,458 @@
   </div>
 </div>
   </div>
-  <!-- Para añadir un módulo: copia el bloque <div class="ci-pane" data-mod="1">…</div>, cambia el 1 por 2
-       (también en los id m1- → m2-) y añade sus preguntas en js/curso-ia.js (QUIZZES[2]). -->
+
+  <!-- MÓDULO 2 -->
+  <div class="ci-pane" data-mod="2" hidden>
+  <div class="wrap ci-layout">
+  <aside class="ci-toc" aria-label="Índice del módulo 2">
+    <p class="hand">índice · módulo 2</p>
+    <a href="#m2-intro">Introducción</a>
+    <a href="#m2-python">Python y Colab</a>
+    <a href="#m2-tipos">Variables y tipos</a>
+    <a href="#m2-operadores">Operadores</a>
+    <a href="#m2-strings">Strings</a>
+    <a href="#m2-listas">Listas</a>
+    <a href="#m2-tuplas">Tuplas y diccionarios</a>
+    <a href="#m2-control">Control de flujo</a>
+    <a href="#m2-funciones">Funciones y módulos</a>
+    <a href="#m2-conclusiones">Conclusiones</a>
+    <a href="#m2-glosario">Glosario</a>
+    <a href="#m2-test" class="ci-toc-test">Test del módulo</a>
+  </aside>
+
+  <div class="ci-article">
+    <div class="ci-toc-mobile">
+      <label class="sr" for="ciTocSel2">Ir a la sección</label>
+      <select id="ciTocSel2" data-toc-select>
+        <option value="m2-intro">1 · Introducción</option>
+        <option value="m2-python">2 · Python y Colab</option>
+        <option value="m2-tipos">3 · Variables y tipos</option>
+        <option value="m2-operadores">4 · Operadores</option>
+        <option value="m2-strings">5 · Strings</option>
+        <option value="m2-listas">6 · Listas</option>
+        <option value="m2-tuplas">7 · Tuplas y diccionarios</option>
+        <option value="m2-control">8 · Control de flujo</option>
+        <option value="m2-funciones">9 · Funciones y módulos</option>
+        <option value="m2-conclusiones">10 · Conclusiones</option>
+        <option value="m2-glosario">11 · Glosario</option>
+        <option value="m2-test">Test del módulo</option>
+      </select>
+    </div>
+
+    <!-- 1 · Introducción -->
+    <section id="m2-intro">
+      <p class="ci-num">1 · introducción</p>
+      <h2>Lo justo de Python para trabajar con datos</h2>
+      <p class="ci-big">Una sesión <b>práctica</b>: no se aprende Python entero, que es enorme y sirve hasta para webs o drivers de hardware, sino solo lo imprescindible para el <b>análisis de datos y la IA</b>.</p>
+      <figure class="ci-fig" style="margin:0">
+        <p class="ci-fig-t">Cuatro pilares de Python sostienen todo lo que vendrá en IA</p>
+        <div class="ci-roof">Objetivo: la base de Python para análisis de datos e IA</div>
+        <div class="ci-cards c4">
+          <div class="ci-card ci-green"><span class="ci-chip">Pilar 1</span><h4>Variables y tipos</h4><p>int, float, bool y str · <code>type()</code> · operadores</p><p class="ci-ex">En IA: serán las <i>features</i></p></div>
+          <div class="ci-card ci-blue"><span class="ci-chip">Pilar 2</span><h4>Estructuras de datos</h4><p>Listas, tuplas y diccionarios · índices desde 0</p><p class="ci-ex">En IA: la base de los <i>datasets</i></p></div>
+          <div class="ci-card ci-sun"><span class="ci-chip">Pilar 3</span><h4>Control de flujo</h4><p>if / elif / else · bucles while y for · range()</p><p class="ci-ex">En IA: entrenar en bucle</p></div>
+          <div class="ci-card ci-lilac"><span class="ci-chip">Pilar 4</span><h4>Funciones y módulos</h4><p>def, parámetros y return · import · NumPy y Pandas</p><p class="ci-ex">En IA: usar librerías</p></div>
+        </div>
+        <div class="ci-base">Entorno de práctica: cuadernos de Google Colab, celda a celda</div>
+      </figure>
+      <h3>Objetivos de aprendizaje</h3>
+      <ol>
+        <li>Entender los fundamentos de Python que se usan en proyectos de datos e IA.</li>
+        <li>Manejar los tipos de datos: enteros, decimales, valores lógicos y texto.</li>
+        <li>Organizar la información con listas, tuplas y diccionarios.</li>
+        <li>Controlar el flujo del código con condicionales y bucles.</li>
+        <li>Reutilizar código con funciones propias y módulos externos.</li>
+      </ol>
+      <div class="ci-note"><span class="hand">la idea clave</span>La máquina no entiende el mundo como nosotros: hay que "empaquetarle" la información en contenedores lógicos. Saber si un dato es un entero, un decimal, un valor lógico o un texto es el primer paso para traducir la realidad a su idioma.</div>
+    </section>
+
+    <!-- 2 · Python y Colab -->
+    <section id="m2-python">
+      <p class="ci-num">2 · el entorno</p>
+      <h2>Python y Google Colab</h2>
+      <p class="ci-big">Python es un lenguaje <b>de alto nivel, interpretado y de propósito general</b>. Es el estándar en IA por su versatilidad y por sus librerías: NumPy, Pandas, Scikit-Learn, TensorFlow…</p>
+      <div class="ci-table"><table>
+        <thead><tr><th>Elemento</th><th>Qué es</th></tr></thead>
+        <tbody>
+          <tr><td>Cuaderno de Colab (.ipynb)</td><td>Documento que mezcla texto y código ejecutable, en el navegador y sin instalar nada</td></tr>
+          <tr><td>Celda de código</td><td>Bloque de Python que se ejecuta con ▶; el resultado aparece justo debajo</td></tr>
+          <tr><td>Salida</td><td>Si la última línea es una variable u operación, Colab muestra su valor sin <code>print()</code></td></tr>
+          <tr><td>Comentario #</td><td>Nota para personas; Python lo ignora</td></tr>
+        </tbody>
+      </table></div>
+      <h3>Cómo "piensa" Python</h3>
+      <div class="ci-cards c2">
+        <div class="ci-card"><h4>De arriba abajo</h4><p>Ejecuta línea a línea, salvo que un condicional o un bucle cambien el orden.</p></div>
+        <div class="ci-card"><h4>Distingue mayúsculas</h4><p><code>True</code> es válido; <code>true</code> da error.</p></div>
+        <div class="ci-card"><h4>La sangría es estructura</h4><p>Los espacios a la izquierda marcan qué líneas van dentro de un <code>if</code>, un bucle o una función. Si falta: <code>IndentationError</code>.</p></div>
+        <div class="ci-card"><h4>Avisa con excepciones</h4><p>Errores con nombre propio (<code>TypeError</code>, <code>KeyError</code>…). Leer el mensaje es la primera pista para arreglarlo.</p></div>
+      </div>
+    </section>
+
+    <!-- 3 · Variables y tipos -->
+    <section id="m2-tipos">
+      <p class="ci-num">3 · variables y tipos</p>
+      <h2>Los 4 tipos fundamentales</h2>
+      <p class="ci-big">Una <b>variable</b> es un nombre al que asignamos un valor con <code>=</code>. Es como una <b>caja de mudanza con etiqueta</b>: el nombre es la etiqueta y el dato es lo que guardas dentro. Python deduce el tipo solo, por el valor.</p>
+<pre class="ci-code"><code>my_number = 5          <span class="c"># creamos la variable</span>
+print(my_number)       <span class="c"># 5</span>
+print(type(my_number)) <span class="c"># &lt;class 'int'&gt;</span></code></pre>
+      <div class="ci-table"><table>
+        <thead><tr><th>Tipo</th><th>Qué guarda</th><th>Ejemplo</th><th>Uso en Machine Learning</th></tr></thead>
+        <tbody>
+          <tr><td>Integer (int)</td><td>Números enteros, sin decimales</td><td><code>client_age = 35</code></td><td>Contar cosas (número de clics)</td></tr>
+          <tr><td>Float (float)</td><td>Números con decimales</td><td><code>temperature = 22.5</code></td><td>Medidas precisas (peso, ingresos)</td></tr>
+          <tr><td>Boolean (bool)</td><td><code>True</code> o <code>False</code></td><td><code>is_premium = True</code></td><td>Clasificación binaria (¿es spam?)</td></tr>
+          <tr><td>String (str)</td><td>Texto entre comillas</td><td><code>city = "Madrid"</code></td><td>Sentimiento, categorías</td></tr>
+        </tbody>
+      </table></div>
+      <h3>Auditar con type()</h3>
+<pre class="ci-code"><code>type(5)        <span class="c"># int</span>
+type(5.0)      <span class="c"># float  ← el .0 lo convierte en decimal</span>
+type(True)     <span class="c"># bool</span>
+type("5")      <span class="c"># str    ← entre comillas es texto, no número</span>
+type(5 &gt; 3)    <span class="c"># bool   ← una comparación devuelve True o False</span></code></pre>
+      <div class="ci-note ci-lilac"><span class="hand">tres reglas que dan error si se olvidan</span>Decimales con <b>punto</b>, nunca con coma (<code>22.5</code>). <code>True</code> y <code>False</code> siempre con <b>mayúscula</b>. Y <code>"False"</code> con comillas es un texto, no un valor lógico.</div>
+    </section>
+
+    <!-- 4 · Operadores -->
+    <section id="m2-operadores">
+      <p class="ci-num">4 · operadores</p>
+      <h2>Python como calculadora y como motor lógico</h2>
+      <p class="ci-big">Las operaciones con números devuelven números; las comparaciones y los operadores lógicos devuelven siempre <b>True o False</b>.</p>
+      <div class="ci-table"><table>
+        <thead><tr><th>Operador</th><th>Operación</th><th>Ejemplo</th><th>Resultado</th></tr></thead>
+        <tbody>
+          <tr><td><code>+  -  *</code></td><td>Suma, resta, multiplicación</td><td><code>7 * 2</code></td><td>14</td></tr>
+          <tr><td><code>/</code></td><td>División (siempre da float)</td><td><code>10 / 2</code></td><td>5.0</td></tr>
+          <tr><td><code>**</code></td><td>Potencia</td><td><code>7 ** 2</code></td><td>49</td></tr>
+          <tr><td><code>+=</code></td><td>Atajo de <code>x = x + 3</code></td><td><code>x += 3</code></td><td>x aumenta en 3</td></tr>
+        </tbody>
+      </table></div>
+      <div class="ci-cards">
+        <div class="ci-card ci-green"><span class="ci-chip">Regla 1</span><h4>Inferencia de tipos</h4><p>int + float = float. El decimal "cubre" a los enteros y no se pierde información: <code>3 + 3.0</code> → <code>6.0</code>.</p></div>
+        <div class="ci-card ci-blue"><span class="ci-chip">Regla 2</span><h4>La división da float</h4><p>Aunque sea exacta: <code>10 / 2</code> → <code>5.0</code>. En IA la precisión es vital.</p></div>
+        <div class="ci-card ci-sun"><span class="ci-chip">Regla 3</span><h4>El orden importa</h4><p>Paréntesis → potencia → <code>* /</code> → <code>+ -</code>. <code>3 + 2 * 4</code> → <code>11</code>; <code>(3 + 2) * 4</code> → <code>20</code>.</p></div>
+      </div>
+      <h3>Lógica: and, or, not</h3>
+      <div class="ci-table"><table>
+        <thead><tr><th>A</th><th>B</th><th>A and B</th><th>A or B</th></tr></thead>
+        <tbody>
+          <tr><td>True</td><td>True</td><td>True</td><td>True</td></tr>
+          <tr><td>True</td><td>False</td><td>False</td><td>True</td></tr>
+          <tr><td>False</td><td>True</td><td>False</td><td>True</td></tr>
+          <tr><td>False</td><td>False</td><td>False</td><td>False</td></tr>
+        </tbody>
+      </table></div>
+      <p><b>and</b> es estricto (las dos deben ser True), <b>or</b> es flexible (basta una) y <b>not</b> invierte el valor. Ejemplo del curso: <code>(True and False) or True</code> → <code>True</code>.</p>
+      <p><b>Números como lógica:</b> el <code>0</code> se interpreta como <code>False</code> y cualquier otro número como <code>True</code>. Trampa: <code>-20 == True</code> da <code>False</code>, porque internamente <code>True</code> vale 1.</p>
+      <h3>Comparaciones</h3>
+      <div class="ci-table"><table>
+        <thead><tr><th>Operador</th><th>Pregunta</th><th>Ejemplo</th></tr></thead>
+        <tbody>
+          <tr><td><code>==</code></td><td>¿Son iguales? (un solo <code>=</code> asigna, no compara)</td><td><code>5 == 5</code> → True</td></tr>
+          <tr><td><code>!=</code></td><td>¿Son diferentes?</td><td><code>10 != 5</code> → True</td></tr>
+          <tr><td><code>&gt;  &lt;</code></td><td>¿Mayor / menor que?</td><td><code>8 &lt; 2</code> → False</td></tr>
+          <tr><td><code>&gt;=  &lt;=</code></td><td>¿Mayor / menor o igual?</td><td><code>20 &gt;= 20</code> → True</td></tr>
+        </tbody>
+      </table></div>
+      <div class="ci-note"><span class="hand">para qué sirve en IA</span>Para filtrar datasets enteros: "extrae solo los clientes con <code>(edad &gt; 18) and (suscripcion == True)</code>". Es el primer paso para limpiar datos con calidad.</div>
+    </section>
+
+    <!-- 5 · Strings -->
+    <section id="m2-strings">
+      <p class="ci-num">5 · texto</p>
+      <h2>Strings: el texto es una secuencia</h2>
+      <p class="ci-big">Para Python, un texto es una <b>secuencia ordenada de caracteres</b>, letra a letra. Es el primer paso hacia el Procesamiento del Lenguaje Natural.</p>
+      <div class="ci-cards c2">
+        <div class="ci-card"><span class="ci-chip">La regla de las comillas</span><p>Dobles <code>"..."</code> o simples <code>'...'</code>, pero <b>nunca mezcladas</b>: <code>"Machine learning'</code> da error.</p></div>
+        <div class="ci-card"><span class="ci-chip">len()</span><p>Cuenta los caracteres de la secuencia, <b>espacios incluidos</b>.</p></div>
+      </div>
+      <div class="ci-table"><table>
+        <thead><tr><th>Operador</th><th>Con números</th><th>Con texto</th></tr></thead>
+        <tbody>
+          <tr><td><code>+</code></td><td>Suma: <code>2 + 3</code> → 5</td><td><b>Concatena</b>: <code>"Hola" + "Mundo"</code> → "HolaMundo"</td></tr>
+          <tr><td><code>*</code></td><td>Multiplica: <code>2 * 3</code> → 6</td><td><b>Replica</b>: <code>"Hola" * 3</code> → "HolaHolaHola"</td></tr>
+        </tbody>
+      </table></div>
+      <h3>Operar no es guardar</h3>
+<pre class="ci-code"><code>greeting = "Hello"
+greeting + " World"              <span class="c"># muestra 'Hello World'…</span>
+print(greeting)                  <span class="c"># …pero greeting sigue siendo 'Hello'</span>
+greeting = greeting + " World"   <span class="c"># ahora sí se guarda</span>
+
+<span class="c"># comodines con f-string</span>
+category = "Electronics"
+print(f"Producto de la categoría {category}")</code></pre>
+      <div class="ci-note ci-lilac"><span class="hand">conexión con la IA</span>Los modelos de lenguaje como ChatGPT no leen palabras enteras, sino <b>tokens</b>: fragmentos de secuencias. Contar elementos con <code>len()</code> es la misma lógica que se usa para limitar cuánto texto "traga" una red neuronal.</div>
+    </section>
+
+    <!-- 6 · Listas -->
+    <section id="m2-listas">
+      <p class="ci-num">6 · estructuras (I)</p>
+      <h2>Listas: muchos datos bajo un nombre</h2>
+      <p class="ci-big">Una lista es una <b>secuencia ordenada</b> entre <b>corchetes</b> <code>[ ]</code>. Es como una lista de la compra en una pizarra magnética: se puede añadir, quitar y cambiar (es <b>mutable</b>).</p>
+<pre class="ci-code"><code>my_list = [1, 2, 3, 4]        <span class="c"># con datos</span>
+empty = []                    <span class="c"># vacía, para rellenar después</span>
+user = ["Carlos", 35, True]   <span class="c"># se pueden mezclar tipos</span>
+len(my_list)                  <span class="c"># 4</span></code></pre>
+      <p>La regla de oro: <b>Python empieza a contar en 0</b>. También se puede contar desde el final con negativos, empezando en <b>-1</b>. Y con <code>lista[inicio:fin:paso]</code> se extrae un trozo (<i>slicing</i>); el límite final <b>no se incluye</b>.</p>
+      <figure class="ci-fig" style="margin:0">
+        <p class="ci-fig-t">Prueba tú: escribe un índice o un rango</p>
+        <div class="ci-slicer" data-slicer>
+          <div class="ci-idx" role="img" aria-label='letters = ["a", "b", "c", "d", "e"], con índices 0 a 4 y -5 a -1'>
+            <span class="ci-idx-lab">desde el inicio</span><span>0</span><span>1</span><span>2</span><span>3</span><span>4</span>
+            <span class="ci-idx-lab">valor</span><b>"a"</b><b>"b"</b><b>"c"</b><b>"d"</b><b>"e"</b>
+            <span class="ci-idx-lab">desde el final</span><span>-5</span><span>-4</span><span>-3</span><span>-2</span><span>-1</span>
+          </div>
+          <div class="ci-slice-row">
+            <label for="ciSliceIn" class="ci-slice-code">letters[</label>
+            <input id="ciSliceIn" class="ci-slice-in" value="2:" autocomplete="off" spellcheck="false" aria-describedby="ciSliceOut">
+            <span class="ci-slice-code">]</span>
+            <span class="ci-slice-eq">→</span>
+            <output id="ciSliceOut" class="ci-slice-out"></output>
+          </div>
+          <div class="chips ci-slice-ex">
+            <button type="button" class="chip" data-ex="0">0</button>
+            <button type="button" class="chip" data-ex="-1">-1</button>
+            <button type="button" class="chip" data-ex="1:3">1:3</button>
+            <button type="button" class="chip" data-ex=":3">:3</button>
+            <button type="button" class="chip" data-ex="::2">::2</button>
+            <button type="button" class="chip" data-ex="::-1">::-1</button>
+          </div>
+        </div>
+        <p class="ci-caption">Las casillas resaltadas son las que devuelve tu expresión. Funciona igual con texto: <code>"Hello"[1:]</code> → "ello".</p>
+      </figure>
+      <h3>Modificar una lista</h3>
+      <div class="ci-table"><table>
+        <thead><tr><th>Operación</th><th>Qué hace</th><th>Ejemplo</th></tr></thead>
+        <tbody>
+          <tr><td><code>.append(x)</code></td><td>Añade x al final</td><td><code>lista.append(5)</code></td></tr>
+          <tr><td><code>lista[i] = x</code></td><td>Sustituye el valor de la posición i</td><td><code>lista[0] = 99</code></td></tr>
+          <tr><td><code>del lista[i]</code></td><td>Borra la posición i</td><td><code>del lista[2]</code></td></tr>
+          <tr><td><code>+</code> / <code>.extend()</code></td><td>Une dos listas</td><td><code>[1, 2] + [3]</code></td></tr>
+          <tr><td><code>.index(x)</code></td><td>Dice en qué posición está x</td><td><code>lista.index(7)</code></td></tr>
+        </tbody>
+      </table></div>
+      <div class="ci-cards c2">
+        <div class="ci-card"><span class="ci-chip">Función</span><p>General, se llama por su nombre: <code>print()</code>, <code>len()</code>, <code>type()</code>.</p></div>
+        <div class="ci-card"><span class="ci-chip">Método</span><p>Anclado a una variable, se llama con un punto: <code>lista.append()</code>, <code>dic.keys()</code>.</p></div>
+      </div>
+      <h3>La trampa del efecto espejo</h3>
+<pre class="ci-code"><code>list_A = [1, 2, 3]
+list_B = list_A      <span class="c"># ¡no es una copia, es un puntero!</span>
+list_B[0] = 99
+print(list_A)        <span class="c"># [99, 2, 3] ← también ha cambiado</span></code></pre>
+      <div class="ci-note"><span class="hand">¿por qué?</span>En IA los datasets pesan gigas. Si Python duplicara la lista en memoria cada vez que la asignas a otra variable, el ordenador se colapsaría.</div>
+    </section>
+
+    <!-- 7 · Tuplas y diccionarios -->
+    <section id="m2-tuplas">
+      <p class="ci-num">7 · estructuras (II)</p>
+      <h2>Tuplas y diccionarios</h2>
+      <p class="ci-big">Las <b>tuplas</b> son listas blindadas que no se pueden cambiar; los <b>diccionarios</b> organizan los datos por etiquetas en vez de por posiciones.</p>
+      <h3>Tuplas: inmutables</h3>
+<pre class="ci-code"><code>coordinates = (40.4, -3.7)   <span class="c"># paréntesis</span>
+coordinates[0]               <span class="c"># 40.4 ← se leen como una lista</span>
+coordinates[0] = 41.0        <span class="c"># ❌ TypeError: 'tuple' object does not support item assignment</span>
+my_data = 1, 2, 3            <span class="c"># sin paréntesis: Python crea una tupla sola (packing)</span>
+a, b, c = 1, 2, 3            <span class="c"># tres variables independientes</span></code></pre>
+      <p>Es como un <b>ticket impreso</b>: definitivo. En IA sirven para datos que no deben cambiar nunca, como coordenadas fijas o los hiperparámetros de un algoritmo.</p>
+      <h3>Diccionarios: clave → valor</h3>
+<pre class="ci-code"><code>d = {"A": 1, "B": 2}   <span class="c"># llaves y pares clave: valor</span>
+d["A"]                 <span class="c"># 1</span>
+d.keys()               <span class="c"># dict_keys(['A', 'B'])</span>
+d.values()             <span class="c"># dict_values([1, 2])</span>
+d.items()              <span class="c"># dict_items([('A', 1), ('B', 2)])</span>
+"C" in d               <span class="c"># False</span>
+d["C"]                 <span class="c"># ❌ KeyError: la clave no existe</span>
+d.get("C", 23)         <span class="c"># 23 ← valor por defecto, sin error</span>
+d.get("C")             <span class="c"># None ← "vacío", sin romper el programa</span></code></pre>
+      <div class="ci-cards">
+        <div class="ci-card ci-coral"><span class="ci-chip">Nivel básico · peligro</span><p><code>dic["key5"]</code>: si falta la clave, <code>KeyError</code> y el programa se para.</p></div>
+        <div class="ci-card ci-sun"><span class="ci-chip">Nivel intermedio · seguro</span><p><code>if "key5" in dic:</code> y después extraer.</p></div>
+        <div class="ci-card ci-green"><span class="ci-chip">Nivel experto · óptimo</span><p><code>dic.get("key5", 0)</code>: una línea, limpia y sin errores.</p></div>
+      </div>
+      <h3>Las tres estructuras de un vistazo</h3>
+      <div class="ci-table"><table>
+        <thead><tr><th></th><th>Lista</th><th>Tupla</th><th>Diccionario</th></tr></thead>
+        <tbody>
+          <tr><td>Símbolo</td><td><code>[ ]</code></td><td><code>( )</code></td><td><code>{ }</code></td></tr>
+          <tr><td>¿Modificable?</td><td>Sí</td><td>No</td><td>Sí</td></tr>
+          <tr><td>Acceso por</td><td>Posición (desde 0)</td><td>Posición (desde 0)</td><td>Clave</td></tr>
+          <tr><td>Error típico</td><td>Olvidar corchetes o comas</td><td><code>TypeError</code> al cambiarla</td><td><code>KeyError</code> con una clave que no existe</td></tr>
+          <tr><td>Analogía</td><td>Lista de la compra</td><td>Ticket impreso</td><td>Agenda de teléfonos</td></tr>
+        </tbody>
+      </table></div>
+    </section>
+
+    <!-- 8 · Control de flujo -->
+    <section id="m2-control">
+      <p class="ci-num">8 · control de flujo</p>
+      <h2>Decisiones y bucles</h2>
+      <p class="ci-big">El código deja de ser estático: los <b>condicionales</b> deciden qué camino seguir y los <b>bucles</b> repiten tareas sobre muchos datos.</p>
+<pre class="ci-code"><code>x = 5
+if x &gt; 10:
+    print("Mayor que 10")    <span class="c"># 1.º se comprueba esto</span>
+elif x &gt; 3:
+    print("Entre 4 y 10")    <span class="c"># 2.º si lo anterior es False</span>
+else:
+    print("3 o menos")       <span class="c"># 3.º si todo lo anterior es False</span></code></pre>
+      <p>Python entra solo en la <b>primera</b> rama que sea <code>True</code>. Por eso hay que ordenar de lo más concreto a lo más general. Y nunca olvidar los <b>dos puntos</b> ni la <b>sangría</b>.</p>
+      <h3>while: mientras se cumpla… y el peligro del bucle infinito</h3>
+      <p>El curso lo explica con la <b>analogía del grifo abierto</b>: mientras el grifo esté abierto (condición <code>True</code>), el agua corre. Si te vas sin cerrarlo, la casa se inunda.</p>
+      <figure class="ci-fig" style="margin:0">
+        <p class="ci-fig-t">Un while solo termina si algo dentro del bucle cambia la condición</p>
+        <div class="ci-loops">
+          <div class="ci-loop bad">
+            <p class="ci-loop-h">✖ Bucle infinito</p>
+            <ol class="ci-flow">
+              <li class="q">¿x &lt; 4?</li>
+              <li>print(x)</li>
+              <li class="back">↺ pregunta otra vez… x siempre vale 0</li>
+            </ol>
+            <p class="ci-loop-res">El programa se cuelga y consume toda la memoria.</p>
+          </div>
+          <div class="ci-loop good">
+            <p class="ci-loop-h">✔ Bucle controlado</p>
+            <ol class="ci-flow">
+              <li class="q">¿x &lt; 4?</li>
+              <li>print(x)</li>
+              <li class="key">x += 1</li>
+              <li class="back">↺ vuelve a preguntar; al llegar a 4, sale</li>
+            </ol>
+            <p class="ci-loop-res">Imprime 0, 1, 2, 3 y sigue con el código.</p>
+          </div>
+        </div>
+        <p class="ci-caption">Las dos versiones empiezan igual y hacen lo mismo; solo se diferencian en el paso de actualización.</p>
+      </figure>
+      <div class="ci-note ci-coral"><span class="hand">checklist antes de ejecutar un while</span>1) ¿Empieza con una condición <code>True</code>? 2) ¿Hace la tarea que quiero? 3) <b>Crítico:</b> ¿hay algo dentro que acabará volviendo la condición <code>False</code>? Si no, ¡no lo ejecutes!</div>
+      <h3>for y range(): recorrer elemento a elemento</h3>
+<pre class="ci-code"><code>for animal in ["perro", "gato", "loro"]:
+    print(animal)          <span class="c"># perro, gato, loro</span>
+
+for i in range(5):         <span class="c"># 0, 1, 2, 3, 4 (el 5 no se incluye)</span>
+    print(i)
+
+range(2, 6)                <span class="c"># 2, 3, 4, 5</span>
+range(0, 10, 2)            <span class="c"># 0, 2, 4, 6, 8</span></code></pre>
+      <div class="ci-table"><table>
+        <thead><tr><th></th><th>while</th><th>for</th></tr></thead>
+        <tbody>
+          <tr><td>Se repite…</td><td>Mientras se cumpla una condición</td><td>Una vez por cada elemento</td></tr>
+          <tr><td>Variable de control</td><td>La actualizas tú</td><td>La gestiona Python</td></tr>
+          <tr><td>Analogía</td><td>Inflar un globo hasta llenarlo</td><td>Pasar lista en clase</td></tr>
+        </tbody>
+      </table></div>
+      <div class="ci-note ci-lilac"><span class="hand">en IA</span>Los condicionales limpian datos; los bucles son el mecanismo del aprendizaje: al entrenar una red neuronal, un <code>for</code> con <code>range()</code> define las <b>épocas</b>, cuántas veces repasa el algoritmo todos los datos.</div>
+    </section>
+
+    <!-- 9 · Funciones y módulos -->
+    <section id="m2-funciones">
+      <p class="ci-num">9 · reutilizar</p>
+      <h2>Funciones y módulos: no reinventar la rueda</h2>
+      <p class="ci-big">El curso lo explica <b>pensando como un chef</b>: una <b>función</b> es tu tarjeta de receta, escrita una vez y usada siempre; un <b>módulo</b> es una salsa ya hecha del supermercado.</p>
+<pre class="ci-code"><code>def suma(x, y):                       <span class="c"># def + nombre + parámetros + dos puntos</span>
+    """Devuelve la suma de x e y."""   <span class="c"># docstring</span>
+    return x + y                      <span class="c"># entrega el resultado</span>
+
+suma(2, 3)        <span class="c"># 5 (por posición)</span>
+suma(x=2, y=3)    <span class="c"># 5 (por nombre)</span></code></pre>
+      <div class="ci-cards c4">
+        <div class="ci-card"><span class="ci-chip">def</span><p>Palabra obligatoria para definir la función: el nombre de la receta.</p></div>
+        <div class="ci-card"><span class="ci-chip">Parámetros</span><p>Los datos de entrada: los ingredientes.</p></div>
+        <div class="ci-card"><span class="ci-chip">return</span><p>Entrega el plato terminado. En IA nadie mira la pantalla, así que mejor <code>return</code> que <code>print</code>.</p></div>
+        <div class="ci-card"><span class="ci-chip">global</span><p>Permite a la función modificar una variable que vive fuera de ella.</p></div>
+      </div>
+      <h3>Las 3 formas de importar</h3>
+      <div class="ci-table"><table>
+        <thead><tr><th>Forma</th><th>Código</th><th>Uso</th><th>En el supermercado</th></tr></thead>
+        <tbody>
+          <tr><td>Completa</td><td><code>import math</code></td><td><code>math.sqrt(25)</code></td><td>Todo el pasillo de repostería</td></tr>
+          <tr><td>Concreta</td><td><code>from math import sqrt</code></td><td><code>sqrt(100)</code></td><td>Solo la bolsa de azúcar</td></tr>
+          <tr><td>Con alias</td><td><code>import pandas as pd</code></td><td><code>pd.funcion()</code></td><td>Un mote corto para un nombre largo</td></tr>
+        </tbody>
+      </table></div>
+      <div class="ci-cards c2">
+        <div class="ci-card"><span class="ci-chip">Nativos</span><p><code>math</code> (operaciones matemáticas) y <code>time</code> (hora y pausas). Vienen con Python.</p></div>
+        <div class="ci-card ci-blue"><span class="ci-chip">Externos</span><p><b>NumPy</b> (matrices) y <b>Pandas</b> (análisis de datos). Hay que instalarlos; si no, <code>ModuleNotFoundError</code>.</p></div>
+      </div>
+      <h3>El algoritmo completo</h3>
+      <p>El ejemplo final del curso une todo: un módulo, una lista de diccionarios, una función, un bucle, extracción segura y una decisión.</p>
+<pre class="ci-code"><code><span class="c"># 1. MÓDULOS</span>
+import time
+
+<span class="c"># 2. ESTRUCTURAS: un dataset como lista de diccionarios</span>
+sensor_dataset = [
+    {"id": 1, "temperature": 22.5},
+    {"id": 2, "temperature": 80.0},   <span class="c"># ¡anomalía!</span>
+    {"id": 3, "temperature": 21.0},
+]
+
+<span class="c"># 3. FUNCIONES</span>
+def process_data(data):
+    print("Starting AI analysis...")
+    for sensor in data:                              <span class="c"># 4. BUCLE</span>
+        current_temp = sensor.get("temperature", 0)  <span class="c"># 5. EXTRACCIÓN SEGURA</span>
+        if current_temp &gt; 50.0:                      <span class="c"># 6. DECISIÓN</span>
+            print(f"ALERT: Sensor {sensor['id']} overheated ({current_temp}°C).")
+        else:
+            print(f"Sensor {sensor['id']} stable.")
+        time.sleep(1)
+
+process_data(sensor_dataset)</code></pre>
+    </section>
+
+    <!-- 10 · Conclusiones -->
+    <section id="m2-conclusiones">
+      <p class="ci-num">10 · conclusiones</p>
+      <h2>Ya vamos por la mitad</h2>
+      <p class="ci-big">Una introducción con <b>foco láser</b>: solo lo imprescindible para datos y Machine Learning. Desde aquí, NumPy y Pandas con datos reales.</p>
+      <div class="ci-note"><span class="hand">la mentalidad del científico de datos</span>Cuando veas un Excel de clientes, no veas "filas y columnas": visualiza <b>una lista llena de diccionarios</b>. Para encontrar a los morosos, no pienses en filtrar con el ratón: visualiza <b>un for con un if deuda &gt; 0</b>.</div>
+      <h3>Mi chuleta del módulo</h3>
+      <div class="ci-table"><table>
+        <thead><tr><th>Concepto</th><th>Analogía</th><th>Ejemplo</th><th>Error típico</th></tr></thead>
+        <tbody>
+          <tr><td>Variable</td><td>Caja con etiqueta</td><td><code>box = "Clothes"</code></td><td>Confundir la etiqueta con el contenido</td></tr>
+          <tr><td>Integer</td><td>Contar personas</td><td><code>people = 5</code></td><td>Meter decimales</td></tr>
+          <tr><td>Float</td><td>Pesar en una báscula</td><td><code>weight = 1.25</code></td><td>Usar coma en vez de punto</td></tr>
+          <tr><td>String</td><td>Una nota en un pos-it</td><td><code>note = "Hello"</code></td><td>Hacer cuentas con texto</td></tr>
+          <tr><td>Boolean</td><td>Un interruptor</td><td><code>light = True</code></td><td>Escribir <code>true</code></td></tr>
+          <tr><td>Lista</td><td>Lista de la compra</td><td><code>["Bread", "Milk"]</code></td><td>Olvidar corchetes o comas</td></tr>
+          <tr><td>Tupla</td><td>Ticket impreso</td><td><code>("Bread", 1.50)</code></td><td>Intentar modificarla</td></tr>
+          <tr><td>Diccionario</td><td>Agenda de teléfonos</td><td><code>{"John": 1234}</code></td><td>Olvidar los dos puntos o las llaves</td></tr>
+          <tr><td>if / elif / else</td><td>Un semáforo</td><td><code>if light == "green":</code></td><td>Olvidar los dos puntos o la sangría</td></tr>
+          <tr><td>for</td><td>Pasar lista</td><td><code>for name in names:</code></td><td>No definir bien qué se recorre</td></tr>
+          <tr><td>while</td><td>Inflar un globo</td><td><code>while air &lt; 10: air += 1</code></td><td>No actualizar la variable</td></tr>
+          <tr><td>Función</td><td>Tarjeta de receta</td><td><code>def cook(ingredient):</code></td><td>Olvidar <code>def</code></td></tr>
+          <tr><td>Módulo</td><td>Salsa ya hecha</td><td><code>import math</code></td><td>Usarlo sin importarlo antes</td></tr>
+        </tbody>
+      </table></div>
+    </section>
+
+    <!-- 11 · Glosario -->
+    <section id="m2-glosario">
+      <p class="ci-num">11 · glosario</p>
+      <h2>Glosario del módulo</h2>
+      <label class="sr" for="ciGlossQ2">Buscar un término</label>
+      <input class="ci-search" id="ciGlossQ2" data-gloss-q type="search" placeholder="Busca: tupla, KeyError, slicing…" autocomplete="off">
+      <div class="ci-gloss" id="ciGloss2" data-gloss></div>
+      <p id="ciGlossEmpty2" data-gloss-empty hidden style="color:var(--muted)">No hay ningún término con esa palabra.</p>
+    </section>
+
+    <!-- Test -->
+    <section id="m2-test" class="ci-test">
+      <p class="ci-num">test del módulo 2</p>
+      <h2>¿Lo has entendido?</h2>
+      <p class="ci-big">Las <b>20 preguntas</b> del test del módulo. Elige una respuesta y verás al momento si es correcta y por qué.</p>
+      <div class="ci-quiz" data-quiz="2"></div>
+    </section>
+  </div>
+</div>
+  </div>
+  <!-- Para añadir un módulo: copia el bloque <div class="ci-pane" data-mod="2" hidden>…</div>, cambia el 2 por 3
+       (también en los id m2- → m3-) y añade su glosario y sus preguntas en js/curso-ia.js (GLOSS[3] y QUIZZES[3]). -->
 </section>
 
 <!-- ===== Certificado ===== -->
@@ -459,7 +910,7 @@
       <dl>
         <dt>Imparte</dt><dd>VASS University</dd>
         <dt>Certifica</dt><dd>Lanbide</dd>
-        <dt>Módulos</dt><dd>4 · 1 completado</dd>
+        <dt>Módulos</dt><dd>4 · 2 completados</dd>
         <dt>Fin</dt><dd>Diciembre de 2026</dd>
       </dl>
     </div>
@@ -486,7 +937,7 @@
   <p>© 2026 Iratxe Olaizola. Apuntes elaborados por mí a partir del material del curso de VASS University. El código y la maquetación se hicieron con ayuda de IA (Claude) y los he revisado yo.<br><span class="foot-small">Sin cookies ni analítica. Las fuentes se sirven desde esta web.</span></p>
 </footer>
 
-<script src="../js/avatar.js?v=20261031"></script>
-<script src="../js/curso-ia.js?v=20261031"></script>
+<script src="../js/avatar.js?v=20261102"></script>
+<script src="../js/curso-ia.js?v=20261102"></script>
 </body>
 </html>
